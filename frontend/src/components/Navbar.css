@@ -1,0 +1,72 @@
+/* Navbar.css */
+
+.navbar {
+    background-color: #faf5f5;
+    padding: 10px;
+    box-shadow: 1px 1px 10px 1px;
+  }
+  
+  .nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav-item {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    padding: 5px;
+  }
+  
+  .nav-item a {
+    text-decoration: none;
+    color: rgb(10, 0, 0);
+    font-weight: bold;
+  }
+  .search-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar input {
+    padding: 5px;
+    margin-right: 15px;
+  }
+  
+  .search-button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .search-button:hover {
+    background-color: #0056b3; /* Change the color on hover */
+  }
+  .nav-item a:hover {
+    color: #00ff3c; /* Change the color on hover */
+  }
+.sign-in-button,
+.sign-up-button {
+  background-color: #ffc800;
+  color: white;
+  border: none;
+  border-radius: 18px;
+  margin-right: 50px;
+  cursor: pointer;
+  margin-top: 25px;
+  padding: 10px 30px 10px 30px;
+  align-items: center;
+}
+
+.sign-in-button:hover,
+.sign-up-button:hover {
+  background-color: #b98319; /* Change the color on hover */
+  color: #f0e7e7;
+}
+.auth-buttons {
+    margin-left: auto;
+}
