@@ -7,8 +7,9 @@ router.route("/add").post((req,res)=>{
     const email = req.body.email;
     const age = Number(req.body.age);
     const gender = req.body.gender;
-    const solid = req.body.rating;
+    const solid = req.body.solid;
     const role = req.body.role;
+    const password = req.body.password;
 
     const NewUser =  new User({
         name,
@@ -17,6 +18,7 @@ router.route("/add").post((req,res)=>{
         gender,
         solid,
         role,
+        password
     })
     NewUser.save().then(()=>{
         res.json(NewUser);
@@ -35,7 +37,7 @@ router.route("/").get((req,res)=>{
 
 router.route("/update/:id").put(async (req, res) => {
     let userId = req.params.id;
-    const { name, email, age, gender, solid, role } = req.body;
+    const { name, email, age, gender, solid, role, password } = req.body;
 
     const UpdateUser = {
         name,
@@ -44,6 +46,7 @@ router.route("/update/:id").put(async (req, res) => {
         gender,
         solid,
         role,
+        password
     };
 
     try {
@@ -91,4 +94,32 @@ router.route("/getRole/:role").get(async(req,res)=>{
     })
 })
 
+router.route("/login").post(async (req, res) => {
+    const email = req.body.email;
+    const password = req.body.password;
+    console.log("Received login request:", { email, password });
+    try {
+      // Find user by email
+      const user = await User.findOne({ email });
+      console.log("User:", { user });
+      if (user) {
+        // Compare the provided password with the password in the database
+        if (password === user.password) {
+          // Passwords match, login successful
+          const p = user.password;
+          console.log("Password:", { p });
+          res.status(200).json({ status: "success", user });
+        } else {
+          // Passwords do not match, login failed
+          res.status(401).json({ status: "Incorrect password" });
+        }
+      } else {
+        // User not found, login failed
+        res.status(404).json({ status: "User not found" });
+      }
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ status: "Error with login" });
+    }
+  });
 module.exports = router;
