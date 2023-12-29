@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "react-redux": "^9.0.4",
+    "redux": "^5.0.1"
   },
   "scripts": {
     "frontend": "cd frontend && npm start",

@@ -36,11 +36,12 @@
   }
   
   .search-button {
-    background-color: #007bff;
+    background-color: #000000;
     color: white;
     padding: 8px 16px;
     border: none;
     cursor: pointer;
+    width: 30%;
   }
   
   .search-button:hover {
@@ -51,20 +52,21 @@
   }
 .sign-in-button,
 .sign-up-button {
-  background-color: #ffc800;
+  background-color: #cfa304;
   color: white;
   border: none;
   border-radius: 18px;
   margin-right: 50px;
   cursor: pointer;
-  margin-top: 25px;
+  margin-top: 0px;
   padding: 10px 30px 10px 30px;
   align-items: center;
+  text-transform: none;
 }
 
 .sign-in-button:hover,
 .sign-up-button:hover {
-  background-color: #b98319; /* Change the color on hover */
+  background-color: #f0b949; /* Change the color on hover */
   color: #f0e7e7;
 }
 .auth-buttons {

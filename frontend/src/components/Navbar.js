@@ -1,8 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import './Navbar.css';
+//import background from '../images/background.png'
 
 function Navbar() {
+
+  const navigate = useNavigate();
+
+  const handleSignIn = () => {
+    // Handle sign-in logic, e.g., navigate to the login page
+    navigate('/login');
+  };
+
+  const handleSignUp = () => {
+    // Handle sign-up logic, e.g., navigate to the registration page
+    navigate('/registration');
+  };
   return (
     <header>
       <nav className="navbar">
@@ -23,8 +36,12 @@ function Navbar() {
           </div>
 
           <div className="auth-buttons">
-            <Link to="/login" className="sign-in-button">Sign In</Link>
-            <Link to="/registration" className="sign-up-button">Sign Up</Link>
+            <button onClick={handleSignIn} className="sign-in-button">
+            Sign In
+            </button>
+            <button onClick={handleSignUp} className="sign-up-button">
+            Sign Up
+            </button>
           </div>
         </ul>
       </nav>
