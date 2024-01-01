@@ -1,32 +1,41 @@
 // About.js
 import React from 'react';
 import './About.css'; // Import a separate CSS file for styling (optional)
-
+import img2 from '../images/about.png'
 function About() {
   return (
-    <div className="about-container">
-      <h2>About HDL Gen Hub</h2>
+    <div>
+      <div style={{display:"flex"}}>
+        <div className='topic'>
+          <p>Learn today,<br/>lead tomorrow</p>
+        </div>
+
+        <div className='about-image'>
+          <img src={img2} alt="" />
+        </div>
+        <div className='box'>
+        </div>
+      </div>
+      <div className='about-box'></div>
+
+      <div className='text-box'>
+      <p className='welcome'>Welcome to HDL Gen Hub </p>
+      <p1>
+        At HDL Gen Hub, we are dedicated to revolutionizing education by offering a dynamic
+        and comprehensive platform tailored to your learning needs. Our mission is to empower
+        individuals globally by providing accessible, high-quality education that transcends boundaries.
+      </p1>
+      <div className='his-text'>
+      <h3>Our Story</h3>
+
       <p>
-        HDL Gen Hub is an E-Learning platform dedicated to Hardware Description Language (HDL) education.
-        It provides a comprehensive learning experience for students and enthusiasts interested in
-        computer engineering, specifically focusing on HDLs like Verilog and VHDL.
+        Established by a team of passionate educators and tech enthusiasts,
+        HDL Gen Hub was born from the belief that education should be engaging, interactive, and adaptable.
+        We understand the evolving landscape of learning and aim to bridge the gap between traditional education and the digital era.
       </p>
-      <p>
-        Developed by a team of talented undergraduate students in Computer Engineering at the University
-        of Ruhuna, HDL Gen Hub aims to make HDL education accessible and enjoyable.
-      </p>
-      <h3>Client: Mr. Achintha Iroshan</h3>
-      <p>
-        Mr. Achintha Iroshan is a Lecturer in the Department of Electronic and Information Engineering
-        at the University of Ruhuna. His expertise and guidance have been invaluable in shaping HDL Gen Hub.
-      </p>
-      <h3>Developers</h3>
-      <ul>
-        <li>Siriwardhana T.D.R.D</li>
-        <li>Sandarenu D.T</li>
-        <li>Nadeeshani Jayarathne</li>
-        <li>Dahami Nethsarani</li>
-      </ul>
+      </div>
+      </div>
+    
     </div>
   );
 }

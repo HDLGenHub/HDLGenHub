@@ -1,18 +1,15 @@
 .home-container {
     display: flex;
-    align-items: left;
-    justify-content: center;
     flex-direction: column;
-    padding: 20px;
+    margin-top: 100px;
+    margin-left: 20px;
+    align-self: center;
   }
   
 .home-image {
-  width: 600px; /* Set the maximum width as needed */
+  width: 760px; /* Set the maximum width as needed */
   position: absolute;
-  margin-top: 150px;
-  margin-right: 200px;
-  top: 0;
-  right: 0;
+  margin: -20px 0px 0px 680px;
   }
   
   .home-content {
@@ -20,24 +17,68 @@
   }
   .home-content h1{
     text-align: left;
-    font-size: 60px;
+    font-size: 80px;
     margin-left: 100px;
-    font-weight: bolder;    
+    font-weight: bolder;
+    margin-top: -55px;    
   }
   .home-content h3{
     text-align: left;
-    font-size: 20px;
+    font-size: 25px;
     margin-left: 100px;
-    font-weight: bolder;    
+    font-weight: bolder; 
+    margin-bottom: 55px;    
   }
-  .home-content p{
+  .home p{
     font-weight: 800;
     font-size: 20px;
-    z-index: 2;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 20px;
     padding: 10px;
+    text-align: center;
   }
   .home-content a{
     text-align: center;
+  }
+  .text-home {
+    font-size: 20px;
+    text-align: center;
+    color: gray;
+  }
+  .text-centering {
+    text-align: center;
+    align-items: center;
+    width: 1300px;
+    align-self: center;
+  }
+  .home-line {
+    margin-left: -20px;
+    margin-top: 60px;
+    width: 100% +20px;
+    height: 2px;
+    background-color: rgb(211, 205, 205);
+  }
+  .home-box {
+    width: 280px;
+    height: 200px;
+    background-color: rgb(230, 230, 230);
+    box-shadow: 2px 1px 4px 0px rgb(183, 183, 183);
+    margin-top: 40px;
+    margin-left: 10%;
+    border-radius: 40px 0px;
+  }
+  .box-container {
+    display: flex;
+    margin-left: 40px;
+  }
+  .box-container span {
+    font-size: 50px;
+    font-weight: 600;
+    color: orange;
+    margin-left: 20px;
+  }
+  .box-container p {
+    font-size: 20px;
+    width: 200px;
+    margin-left: 40px;
   }

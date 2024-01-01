@@ -4,13 +4,16 @@
     background-color: #faf5f5;
     padding: 10px;
     box-shadow: 1px 1px 10px 1px;
+    min-height: 80px;
+    align-items: center;
   }
   
   .nav-list {
     list-style: none;
-    margin: 0;
+    margin: 15px 0px 0px 0px;
     padding: 0;
     display: flex;
+    align-self: center;
   }
   
   .nav-item {
@@ -18,6 +21,8 @@
     align-items: center;
     margin-right: 40px;
     padding: 5px;
+    align-self: center;
+    font-size: 24px;
   }
   
   .nav-item a {
@@ -58,7 +63,7 @@
   border-radius: 18px;
   margin-right: 50px;
   cursor: pointer;
-  margin-top: 0px;
+  margin-top: 10px;
   padding: 10px 30px 10px 30px;
   align-items: center;
   text-transform: none;

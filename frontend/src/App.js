@@ -9,6 +9,7 @@ import Login from './components/Login';
 import Registration from './components/Registration';
 import About from './components/About';
 import Learn from './components/Learn';
+import Help from './components/Help';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/learn" element={<Learn />} />
+          <Route path="/help" element={<Help />} />
         </Routes>
         <Footer />
       </div>

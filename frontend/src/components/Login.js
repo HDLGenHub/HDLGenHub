@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { setUser } from '../store/actions/userActions';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
@@ -15,6 +13,9 @@ function Login() {
   const handlesignup = () => {
     // Handle sign-in logic, e.g., navigate to the login page
     navigate('/registration');
+  };
+  const handleFogotPassword = () =>{
+    alert('password fogot? ha ha you will never found that!');
   };
 
   const handleLogin = async () => {
@@ -71,7 +72,7 @@ function Login() {
           />
         </div>
         <div>
-          <a className='a'>Forgot password?</a>
+          <button onClick={handleFogotPassword}>Forgot password?</button>
         </div>
         <div>
         <p className='p'>By clicking "Sign in," you agree to our <Link>Terms of Use</Link> and our <Link>Privacy Policy.</Link></p>
