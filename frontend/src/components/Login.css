@@ -69,4 +69,16 @@
     background-color: rgba(0, 0, 0, 0.0);
     color: red;
   }
-  
+  .forogotpassword{
+    background-color: transparent;
+    color: black;
+  }
+  .forogotpassword:hover{
+    background-color: transparent;
+    color: red;
+  }  
+  .forgotpasswordDiv{
+    margin-right: -60%;
+    align-self:flex-end;
+    align-items: flex-end;
+  }

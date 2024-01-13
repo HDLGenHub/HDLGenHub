@@ -8,5 +8,8 @@
     "frontend": "cd frontend && npm start",
     "backend": "cd backend && npm run dev",
     "launch": "concurrently \"npm run frontend \" \"npm run backend\""
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }

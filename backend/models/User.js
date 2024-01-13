@@ -29,7 +29,8 @@ const UserSchema = new Schema({
     password : {
         type : String,
         require : true
-    }
+    },
+    dpUrl: String
 })
 
 const User = mongoose.model("User",UserSchema);

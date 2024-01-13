@@ -1,0 +1,63 @@
+.edituser-container {
+  margin: 100px;
+}
+
+.user-details-box {
+  border: 2px solid #000000;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #d6eec9;
+}
+
+.user-details {
+  margin-top: 20px;
+  box-shadow: 1px 1px 5px 1px black;
+}
+.user-details tr{
+  color: #000000;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #3498db;
+  color: #ffffff;
+  border: 1px solid #3498db;
+  padding: 8px;
+  text-align: left;
+}
+
+td {
+  background-color: #ddeddd;
+  color: #000000;
+  border: 1px solid #000000;
+  padding: 8px;
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+
+.user-profile {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  display: flex;
+}
+
+.user-dp {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+.user-profile-head{
+  margin-left: 300px;
+}
+

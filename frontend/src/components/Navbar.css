@@ -13,7 +13,6 @@
     margin: 15px 0px 0px 0px;
     padding: 0;
     display: flex;
-    align-self: center;
   }
   
   .nav-item {
@@ -31,13 +30,15 @@
     font-weight: bold;
   }
   .search-bar {
+    width: 200px;
     display: flex;
     align-items: center;
   }
   
   .search-bar input {
+    width: 200px;
     padding: 5px;
-    margin-right: 15px;
+    margin-right: 15%;
   }
   
   .search-button {
@@ -46,7 +47,7 @@
     padding: 8px 16px;
     border: none;
     cursor: pointer;
-    width: 30%;
+    width: 50%;
   }
   
   .search-button:hover {
@@ -76,4 +77,22 @@
 }
 .auth-buttons {
     margin-left: auto;
+}
+.log-out-button{
+  margin-left: 2%;
+}
+.log-out-button button{
+  background-color: red;
+}
+.edit-user{
+  background-color: rebeccapurple;
+  margin-left: 30%;
+  border-radius: 80px;
+}
+.edit-user button{
+  background-color: green;
+  border-radius: 20px;
+}
+.space-fix{
+  width: 200px;
 }
