@@ -31,9 +31,12 @@ function Login() {
         // Store the user data in state or context
         // For simplicity, using local storage here. You might want to use a state management library like Redux or context API.
         localStorage.setItem('user', JSON.stringify(response.data.user));
+        localStorage.setItem('ref',1);
 
         // Redirect to the Learn page after successful login
-        navigate('/learn');
+        //navigate('/learn');
+        navigate('/');
+        window.location.reload();
       } else {
         alert('Incorrect email or password');
       }
@@ -71,8 +74,8 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div>
-          <button onClick={handleFogotPassword}>Forgot password?</button>
+        <div className='forgotpasswordDiv'>
+          <button className='forogotpassword' onClick={handleFogotPassword}>Forgot password?</button>
         </div>
         <div>
         <p className='p'>By clicking "Sign in," you agree to our <Link>Terms of Use</Link> and our <Link>Privacy Policy.</Link></p>

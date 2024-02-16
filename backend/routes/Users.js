@@ -1,6 +1,47 @@
-const router = require("express").Router();
-const { response } = require("express");
-let User = require("../models/User");
+const express = require("express");
+const router = express.Router();
+const multer = require("multer");
+const path = require("path");
+const { v4: uuidv4 } = require("uuid");
+const User = require("../models/User");
+
+// Multer storage configuration
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads/"); // Destination folder for uploaded files
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + "-" + uuidv4(); // Generate unique filename
+    const extension = path.extname(file.originalname); // Extract file extension
+    cb(null, uniqueSuffix + extension); // Set filename
+  },
+});
+
+// Multer file filter to accept only image files
+const fileFilter = (req, file, cb) => {
+  if (file.mimetype.startsWith("image/")) {
+    cb(null, true);
+  } else {
+    cb(new Error("Only image files are allowed"), false);
+  }
+};
+
+// Multer upload configuration
+const upload = multer({ storage: storage, fileFilter: fileFilter });
+
+// Route to handle file upload
+router.post("/upload", upload.single("avatar"), async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ message: "No file uploaded" });
+    }
+    const dpUrl = req.file.path; // Save file path to database
+    return res.status(200).json({ message: "File uploaded", dpUrl });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "Error uploading file" });
+  }
+});
 
 router.route("/add").post((req,res)=>{
     const name = req.body.name;
@@ -122,4 +163,34 @@ router.route("/login").post(async (req, res) => {
       res.status(500).json({ status: "Error with login" });
     }
   });
+  router.route("/enroll/:userId/:courseId").post(async(req, res) => {
+    try {
+        const userId = req.params.userId;
+        const courseId = req.params.courseId;
+
+        // Find the user by ID
+        const user = await User.findById(userId);
+
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        // Check if the course is already enrolled
+        if (user.enrolledCourses.includes(courseId)) {
+            return res.status(400).json({ message: 'User already enrolled in this course' });
+        }
+
+        // Add the course to the enrolledCourses array
+        user.enrolledCourses.push(courseId);
+
+        // Save the updated user document
+        await user.save();
+
+        res.status(200).json({ message: 'Course enrolled successfully' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Error enrolling in course' });
+    }
+});
+
 module.exports = router;

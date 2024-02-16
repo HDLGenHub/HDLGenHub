@@ -10,10 +10,15 @@ import Registration from './components/Registration';
 import About from './components/About';
 import Learn from './components/Learn';
 import Help from './components/Help';
+import PathShow from './components/RoleShow';
+import Setting from './components/setting';
+import Courses from './components/Lecturer_courses';
+import EditUser from './components/EditUser';
+import CreateCourse from './components/CreateCourse';
+import Course from './components/Course';
 
 function App() {
   return (
-
       <Router>
       <div className="App">
         <Navbar />
@@ -24,11 +29,16 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/learn" element={<Learn />} />
           <Route path="/help" element={<Help />} />
+          <Route path="/roleshow" element={<PathShow/>}/>
+          <Route path="/setting" element={<Setting/>}/>
+          <Route path="/courses" element={<Courses/>}/>
+          <Route path="/edituser" element={<EditUser/>}/>
+          <Route path="/createcourse" element={<CreateCourse/>}/>
+          <Route path="/course/:courseId" element={<Course/>}/>
         </Routes>
         <Footer />
       </div>
     </Router>
-
   );
 }
 

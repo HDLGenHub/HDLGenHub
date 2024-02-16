@@ -29,7 +29,15 @@ const UserSchema = new Schema({
     password : {
         type : String,
         require : true
-    }
+    },
+    dpUrl: {
+        type: String,
+        default: "",
+    },
+    enrolledCourses: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Course'
+    }]
 })
 
 const User = mongoose.model("User",UserSchema);

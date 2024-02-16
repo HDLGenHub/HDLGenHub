@@ -1,12 +1,18 @@
 {
   "dependencies": {
     "concurrently": "^8.2.2",
+    "multer": "^1.4.5-lts.1",
+    "react-feather": "^2.0.10",
     "react-redux": "^9.0.4",
-    "redux": "^5.0.1"
+    "redux": "^5.0.1",
+    "uuid": "^9.0.1"
   },
   "scripts": {
     "frontend": "cd frontend && npm start",
     "backend": "cd backend && npm run dev",
     "launch": "concurrently \"npm run frontend \" \"npm run backend\""
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
