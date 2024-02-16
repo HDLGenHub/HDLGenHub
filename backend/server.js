@@ -26,6 +26,10 @@ connection.once("open",()=>{
 
 const UserRouter = require("./routes/Users.js");
 app.use("/User",UserRouter);
+const CourseRouter = require("./routes/Courses.js");
+app.use("/Course",CourseRouter);
+const DocumentRouter = require("./routes/Courses.js");
+app.use("/Document",DocumentRouter);
 
 app.listen(PORT,()=>{
     console.log(`Server is up and running on port number: ${PORT}`);

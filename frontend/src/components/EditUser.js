@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './EditUser.css';
-import Dp from '../images/defaultDp.jpg'
+import Dp from '../images/defaultDp.jpg';
 
 const EditUser = () => {
   const [user, setUser] = useState(null);
+  const [dpFile, setDpFile] = useState(null); // State to store the selected profile picture file
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
@@ -12,6 +13,37 @@ const EditUser = () => {
       setUser(parsedUser);
     }
   }, []);
+
+  const handleFileChange = (e) => {
+    // Set the selected file to the state
+    setDpFile(e.target.files[0]);
+  };
+
+  const handleUpload = async () => {
+    if (!dpFile) {
+      alert('Please select a profile picture.');
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('dp', dpFile);
+
+    try {
+      const response = await fetch(`http://localhost:8070/User/upload/${user._id}`, {
+        method: 'POST',
+        body: formData,
+      });
+      if (response.ok) {
+        alert('Profile picture uploaded successfully.');
+      } else {
+        const data = await response.json();
+        alert(data.message || 'Failed to upload profile picture.');
+      }
+    } catch (error) {
+      console.error('Error uploading profile picture:', error);
+      alert('An error occurred while uploading profile picture. Please try again later.');
+    }
+  };
 
   return (
     <div className='edituser-container'>
@@ -23,8 +55,10 @@ const EditUser = () => {
               alt='Profile'
               className='user-dp'
             />
+            <input type='file' accept='image/*' onChange={handleFileChange} />
+            <button onClick={handleUpload}>Upload Profile Picture</button>
             <div className='user-profile-head'>
-              <h2>Welcome : {user.name}!</h2>
+              <h2>Welcome: {user.name}!</h2>
               <h3>User Details:</h3>
             </div>
           </div>

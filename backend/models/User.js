@@ -30,7 +30,14 @@ const UserSchema = new Schema({
         type : String,
         require : true
     },
-    dpUrl: String
+    dpUrl: {
+        type: String,
+        default: "",
+    },
+    enrolledCourses: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Course'
+    }]
 })
 
 const User = mongoose.model("User",UserSchema);

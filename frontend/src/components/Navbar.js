@@ -48,6 +48,7 @@ if(user.role==="student"){
             <span style={{ color: 'orange' }}>HDL </span> Gen Hub
           </Link>
         </li>
+        <li className="nav-item"><Link to="/learn">Learn</Link></li>
         <li className="nav-item"><Link to="/about">About</Link></li>
         <li className="nav-item"><Link to="/help">Help</Link></li>
 

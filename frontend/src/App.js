@@ -14,6 +14,8 @@ import PathShow from './components/RoleShow';
 import Setting from './components/setting';
 import Courses from './components/Lecturer_courses';
 import EditUser from './components/EditUser';
+import CreateCourse from './components/CreateCourse';
+import Course from './components/Course';
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
           <Route path="/setting" element={<Setting/>}/>
           <Route path="/courses" element={<Courses/>}/>
           <Route path="/edituser" element={<EditUser/>}/>
+          <Route path="/createcourse" element={<CreateCourse/>}/>
+          <Route path="/course/:courseId" element={<Course/>}/>
         </Routes>
         <Footer />
       </div>
