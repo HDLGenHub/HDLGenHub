@@ -16,8 +16,32 @@ const storage = multer.diskStorage({
     cb(null, uniqueSuffix + extension); // Set filename
   },
 });
+/////start to edit
+router.get('/',(req,res)=>{
+  try{
+    this.post.find({}).then(data=>{
+      res.json(data)
+    }).catch(error=>{
+      res.json({error})
+    })
+  }catch(error){
+    
+    res.json({error})
+  }
+})
+router.post(" /uploads",async(req,res)=>{
+  const body=req.body;
+  try{
+    const newImage=await this.post.create(body)
+    newImage.save();
+    res.status(201).json({msg:" new image uploaded!"})
 
-// Multer file filter to accept only image files
+  }catch(error){
+
+    res.status(409).json({message:error.message})
+  }
+})
+/*/ Multer file filter to accept only image files
 const fileFilter = (req, file, cb) => {
   if (file.mimetype.startsWith("image/")) {
     cb(null, true);
@@ -41,7 +65,7 @@ router.post("/upload", upload.single("avatar"), async (req, res) => {
     console.error(error);
     return res.status(500).json({ message: "Error uploading file" });
   }
-});
+});*/
 
 router.route("/add").post((req,res)=>{
     const name = req.body.name;
