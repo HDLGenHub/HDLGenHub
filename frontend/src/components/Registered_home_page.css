@@ -1,0 +1,10 @@
+
+.learning-path {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+    padding: 20px;
+    width: 550px;
+    height: 200px;
+} 

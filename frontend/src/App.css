@@ -50,3 +50,7 @@
   z-index: -1;
   background-repeat:round;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
