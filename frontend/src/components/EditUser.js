@@ -36,7 +36,7 @@ const EditUser = () => {
 
   const handleFileUpload = async (e) => {
     const file = e.target.files[0];
-    const base64 = await (file);
+    const base64 = await convertToBase64(file);
     console.log(base64)
     setPostImage({ ...postImage, myFile : base64 })
   }
@@ -93,11 +93,7 @@ const EditUser = () => {
           accept='.jpeg, .png, .jpg'
           onChange={(e) => handleFileUpload(e)}
          />
-
-         <h3>Doris Wilder</h3>
-         <span>Designer</span>
-
-         <button type='submit'>Submit</button>
+         <button type='submit'>Upload</button>
       </form>
     </div>
           <div className='user-details'>
@@ -139,3 +135,15 @@ const EditUser = () => {
 };
 
 export default EditUser;
+function convertToBase64(file){
+  return new Promise((resolve, reject) => {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(file);
+    fileReader.onload = () => {
+      resolve(fileReader.result)
+    };
+    fileReader.onerror = (error) => {
+      reject(error)
+    }
+  })
+}
