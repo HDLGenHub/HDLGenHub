@@ -8,6 +8,15 @@
   border-radius: 8px;
   background-color: #d6eec9;
 }
+.custom-file-upload img {
+  width: 150px; /* Adjust as needed */
+  height: 150px; /* Adjust as needed */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+
+
 
 .user-details {
   margin-top: 20px;
