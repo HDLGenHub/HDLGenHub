@@ -5,6 +5,9 @@ const path = require("path");
 const { v4: uuidv4 } = require("uuid");
 const User = require("../models/User");
 
+
+
+/*
 // Multer storage configuration
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -16,32 +19,8 @@ const storage = multer.diskStorage({
     cb(null, uniqueSuffix + extension); // Set filename
   },
 });
-/////start to edit
-router.get('/',(req,res)=>{
-  try{
-    this.post.find({}).then(data=>{
-      res.json(data)
-    }).catch(error=>{
-      res.json({error})
-    })
-  }catch(error){
-    
-    res.json({error})
-  }
-})
-router.post(" /uploads",async(req,res)=>{
-  const body=req.body;
-  try{
-    const newImage=await this.post.create(body)
-    newImage.save();
-    res.status(201).json({msg:" new image uploaded!"})
 
-  }catch(error){
-
-    res.status(409).json({message:error.message})
-  }
-})
-/*/ Multer file filter to accept only image files
+// Multer file filter to accept only image files
 const fileFilter = (req, file, cb) => {
   if (file.mimetype.startsWith("image/")) {
     cb(null, true);
@@ -65,7 +44,31 @@ router.post("/upload", upload.single("avatar"), async (req, res) => {
     console.error(error);
     return res.status(500).json({ message: "Error uploading file" });
   }
-});*/
+});
+*/
+router.get('/editImage', (req, res) => {
+  try{
+      Post.find({}).then(data => {
+          res.json(data)
+      }).catch(error => {
+          res.status(408).json({ error })
+      })
+  }catch(error){
+      res.json({error})
+  }
+})
+
+/** POST: http://localhost:8080/uploads  */
+router.post("/uploads", async (req, res) => {
+  const body = req.body;
+  try{
+      const newImage = await Post.create(body)
+      newImage.save();
+      res.status(201).json({ msg : "New image uploaded...!"})
+  }catch(error){
+      res.status(409).json({ message : error.message })
+  }
+})
 
 router.route("/add").post((req,res)=>{
     const name = req.body.name;
