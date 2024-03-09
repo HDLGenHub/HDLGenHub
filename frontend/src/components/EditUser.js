@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './EditUser.css';
+
 import Dp from '../images/defaultDp.jpg';
 
+import axios from 'axios';
+
+const url = "http://localhost:8070/uploads"
 const EditUser = () => {
   const [user, setUser] = useState(null);
   const [dpFile, setDpFile] = useState(null); // State to store the selected profile picture file
@@ -14,7 +18,32 @@ const EditUser = () => {
     }
   }, []);
 
-  const handleFileChange = (e) => {
+  const [postImage, setPostImage] = useState( { myFile : ""})
+
+  const createPost = async (newImage) => {
+    try{
+      await axios.post(url, newImage)
+    }catch(error){
+      console.log(error)
+    }
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    createPost(postImage)
+    console.log("Uploaded")
+  }
+
+  const handleFileUpload = async (e) => {
+    const file = e.target.files[0];
+    const base64 = await (file);
+    console.log(base64)
+    setPostImage({ ...postImage, myFile : base64 })
+  }
+
+
+
+ /* const handleFileChange = (e) => {
     // Set the selected file to the state
     setDpFile(e.target.files[0]);
   };
@@ -44,24 +73,33 @@ const EditUser = () => {
       alert('An error occurred while uploading profile picture. Please try again later.');
     }
   };
-
+*/
   return (
     <div className='edituser-container'>
       {user ? (
         <div className='user-details-box'>
-          <div className='user-profile'>
-            <img
-              src={user.dpUrl || Dp} // Set a default image URL or use a placeholder
-              alt='Profile'
-              className='user-dp'
-            />
-            <input type='file' accept='image/*' onChange={handleFileChange} />
-            <button onClick={handleUpload}>Upload Profile Picture</button>
-            <div className='user-profile-head'>
-              <h2>Welcome: {user.name}!</h2>
-              <h3>User Details:</h3>
-            </div>
-          </div>
+           <div className="App">
+      <form onSubmit={handleSubmit}>
+
+        <label htmlFor="file-upload" className='custom-file-upload'>
+          <img src={postImage.myFile || Dp} alt="" />
+        </label>
+
+        <input 
+          type="file"
+          lable="Image"
+          name="myFile"
+          id='file-upload'
+          accept='.jpeg, .png, .jpg'
+          onChange={(e) => handleFileUpload(e)}
+         />
+
+         <h3>Doris Wilder</h3>
+         <span>Designer</span>
+
+         <button type='submit'>Submit</button>
+      </form>
+    </div>
           <div className='user-details'>
             <table>
               <tbody>

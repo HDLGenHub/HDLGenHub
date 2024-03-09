@@ -28,7 +28,7 @@ const UserRouter = require("./routes/Users.js");
 app.use("/User",UserRouter);
 const CourseRouter = require("./routes/Courses.js");
 app.use("/Course",CourseRouter);
-const DocumentRouter = require("./routes/Courses.js");
+const DocumentRouter = require("./routes/Documents.js");
 app.use("/Document",DocumentRouter);
 
 app.listen(PORT,()=>{

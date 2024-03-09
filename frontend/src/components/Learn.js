@@ -22,6 +22,7 @@ const CoursesPage = () => {
     }
   }, []);
 
+
   // Function to navigate to the Course page when a course box is clicked
   const navigateToCourse = (courseId) => {
     // Replace the URL with the Course page URL using window.location.href
@@ -37,7 +38,6 @@ const CoursesPage = () => {
             {/* Add onClick event to trigger the navigateToCourse function */}
             <h3>{course.title}</h3>
             <p>{course.description}</p>
-            <p>Instructor: {course.instructor}</p>
             <p>Duration: {course.duration} hours</p>
             {/* Add more course details here as needed */}
           </div>
@@ -50,13 +50,11 @@ const CoursesPage = () => {
             {/* Add onClick event to trigger the navigateToCourse function */}
             <h3>{course.title}</h3>
             <p>{course.description}</p>
-            <p>Instructor: {course.instructor}</p>
             <p>Duration: {course.duration} hours</p>
             {/* Add more course details here as needed */}
           </div>
         ))}
       </div>
-    
     </div>
   );
 };

@@ -16,8 +16,33 @@ const storage = multer.diskStorage({
     cb(null, uniqueSuffix + extension); // Set filename
   },
 });
+/////start to edit
+/*
+router.get('/',(req,res)=>{
+  try{
+    this.post.find({}).then(data=>{
+      res.json(data)
+    }).catch(error=>{
+      res.json({error})
+    })
+  }catch(error){
+    
+    res.json({error})
+  }
+})*/
+router.post(" /uploads",async(req,res)=>{
+  const body=req.body;
+  try{
+    const newImage=await this.post.create(body)
+    newImage.save();
+    res.status(201).json({msg:" new image uploaded!"})
 
-// Multer file filter to accept only image files
+  }catch(error){
+
+    res.status(409).json({message:error.message})
+  }
+})
+/*/ Multer file filter to accept only image files
 const fileFilter = (req, file, cb) => {
   if (file.mimetype.startsWith("image/")) {
     cb(null, true);
@@ -41,7 +66,7 @@ router.post("/upload", upload.single("avatar"), async (req, res) => {
     console.error(error);
     return res.status(500).json({ message: "Error uploading file" });
   }
-});
+});*/
 
 router.route("/add").post((req,res)=>{
     const name = req.body.name;
@@ -68,13 +93,22 @@ router.route("/add").post((req,res)=>{
     })
 })
 
+/*
 router.route("/").get((req,res)=>{
     User.find().then((User)=>{
         res.json(User)
     }).catch((err)=>{
         console.log(err);
     })
-})
+})*/
+router.get('/', async (req, res) => {
+  try {
+      const users = await User.find();
+      res.json(users);
+  } catch (err) {
+      res.status(500).json({ message: err.message });
+  }
+});
 
 router.route("/update/:id").put(async (req, res) => {
     let userId = req.params.id;
@@ -163,7 +197,8 @@ router.route("/login").post(async (req, res) => {
       res.status(500).json({ status: "Error with login" });
     }
   });
-  router.route("/enroll/:userId/:courseId").post(async(req, res) => {
+
+  router.post("/enroll/:userId/:courseId",async(req, res) => {
     try {
         const userId = req.params.userId;
         const courseId = req.params.courseId;
@@ -181,7 +216,10 @@ router.route("/login").post(async (req, res) => {
         }
 
         // Add the course to the enrolledCourses array
-        user.enrolledCourses.push(courseId);
+        else{
+          //user.enrolledCourses.pop()
+          user.enrolledCourses.push(courseId);
+        }
 
         // Save the updated user document
         await user.save();
