@@ -231,4 +231,32 @@ router.route("/login").post(async (req, res) => {
     }
 });
 
+router.post("/unenroll/:userId/:courseId",async(req, res) => {
+  try {
+      const userId = req.params.userId;
+      const courseId = req.params.courseId;
+
+      // Find the user by ID
+      const user = await User.findById(userId);
+
+      if (!user) {
+          return res.status(404).json({ message: 'User not found' });
+      }
+
+      // Add the course to the enrolledCourses array
+      else{
+        var index = user.enrolledCourses.indexOf(courseId);
+        user.enrolledCourses = user.enrolledCourses.slice(0,index).concat(user.enrolledCourses.slice(index+1,user.enrolledCourses.length));
+      }
+
+      // Save the updated user document
+      await user.save();
+
+      res.status(200).json({ message: 'Course enrolled successfully' });
+  } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Error enrolling in course' });
+  }
+});
+
 module.exports = router;

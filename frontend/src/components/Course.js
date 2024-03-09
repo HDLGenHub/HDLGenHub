@@ -28,9 +28,17 @@ const Course = () => {
   }, [courseId,course]);
 
   console.log(instructor);
-  
+ 
+  const isEnrolled = localStorage.getItem('user') && JSON.parse(localStorage.getItem('user')).enrolledCourses.includes(courseId);
+  //alert(isEnrolled);
+
   const handleEnroll = async () => {
     try {
+      if (isEnrolled) {
+        alert('You are already enrolled in this course.');
+        return;
+      }
+  
       // Send a POST request to enroll the user in the course
       const response = await fetch(`http://localhost:8070/User/enroll/${userId}/${courseId}`, {
         method: 'POST',
@@ -42,7 +50,7 @@ const Course = () => {
           // Add any additional data if required
         })
       });
-
+  
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -54,11 +62,42 @@ const Course = () => {
     }
   };
 
+
+  const handleUnEnroll = async () => {
+    try {
+      if (!isEnrolled) {
+        alert('You are not enrolled in this course.');
+        return;
+      }
+      // Send a POST request to enroll the user in the course
+      const response = await fetch(`http://localhost:8070/User/unenroll/${userId}/${courseId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        // If you need to send any data in the request body, stringify it here
+        body: JSON.stringify({
+          // Add any additional data if required
+        })
+      });
+  
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      alert(data.message); // Show success message
+      //isEnrolled = false;
+    } catch (error) {
+      console.error('Error enrolling in course:', error);
+      alert('Error enrolling in course. Please try again.');
+    }
+  };
+  
   return (
     <div className="course-container">
       <div className="course-header">
         <h2>{course ? course.title : 'Loading...'}</h2>
-        <p className="instructor">{course ? `Instructor: ${instructor?instructor.user.name:'Loading'}` : 'Loading...'}</p>
+        <p className="instructor">{course ? `Instructor: ${instructor ? instructor.user.name : 'Loading'}` : 'Loading...'}</p>
       </div>
       <div className="course-content">
         {course ? (
@@ -81,8 +120,15 @@ const Course = () => {
                 </ul>
               </div>
             )}
-            {/* Add more course details here as needed */}
-            <button onClick={handleEnroll}>Enroll</button>
+            {/* Conditionally render the "Enroll" button or enrollment message */}
+            {isEnrolled ? (
+              <div>
+                <p>You are already enrolled in this course.</p>
+                <button onClick={handleUnEnroll}>UnEnroll</button>
+              </div>
+            ) : (
+              <button onClick={handleEnroll}>Enroll</button>
+            )}
           </div>
         ) : (
           <p>Loading course details...</p>
@@ -90,6 +136,6 @@ const Course = () => {
       </div>
     </div>
   );
-};
+        }
 
 export default Course;
