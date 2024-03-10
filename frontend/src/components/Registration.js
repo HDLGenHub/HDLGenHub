@@ -121,7 +121,7 @@ function Registration() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="solid">Solid<span style={{color:'red'}}>*</span></label>
+          <label htmlFor="solid">Registration Number<span style={{color:'red'}}>*</span></label>
           <input
             type="text"
             id="solid"

@@ -17,6 +17,7 @@ import EditUser from './components/EditUser';
 import CreateCourse from './components/CreateCourse';
 import Course from './components/Course';
 import Registered_home_page from './components/Registered_home_page';
+import Course_student from './components/Course_student';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="/createcourse" element={<CreateCourse/>}/>
           <Route path="/course/:courseId" element={<Course/>}/>
           <Route path="/registered_home_page" element={<Registered_home_page/>}/>
+          <Route path="/course_student" element={<Course_student/>}/>
         </Routes>
         <Footer />
       </div>

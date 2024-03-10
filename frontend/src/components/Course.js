@@ -17,7 +17,7 @@ const Course = () => {
   return (
     <div className="course-container">
       <div className="course-header">
-        <h2>{course ? course.title : 'Loading...'}</h2>
+        <h2 class="text-3xl font-bold text-left m-10 mb-3">{course ? course.title : 'Loading...'}</h2>
         <p className="instructor">{course ? `Instructor: ${course.instructor}` : 'Loading...'}</p>
       </div>
       <div className="course-content">

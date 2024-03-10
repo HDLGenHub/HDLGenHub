@@ -26,15 +26,15 @@ const Footer = () => {
 
       <div className="footer-section">
         <h4>About Us</h4>
-        <p>At HDL Gen Hub, we're passionate about redefining education 
+        <p class="text-justify">At HDL Gen Hub, we're passionate about redefining education 
           through innovation and accessibility. Our journey began with 
           a vision to democratize learning, making high-quality education
-           available to all, regardless of geographical boundaries or 
-           constraints. We believe in the power of knowledge to transform 
-           lives, and our e-learning platform stands as a testament to this 
-           belief. Committed to excellence, we curate a diverse range of courses,
-            leveraging cutting-edge technology to create an immersive and 
-            interactive learning experience.</p>
+          available to all, regardless of geographical boundaries or 
+          constraints. We believe in the power of knowledge to transform 
+          lives, and our e-learning platform stands as a testament to this 
+          belief. Committed to excellence, we curate a diverse range of courses,
+          leveraging cutting-edge technology to create an immersive and 
+          interactive learning experience.</p>
       </div>
     </div>
   );
