@@ -1,0 +1,65 @@
+.course-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.course-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.course-header h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.course-content {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.description {
+  margin-bottom: 20px;
+}
+
+.materials-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.materials-list li {
+  margin-bottom: 5px;
+}
+
+.video-container {
+  margin-bottom: 20px;
+}
+
+.compiler-container {
+  margin-bottom: 20px;
+}
+
+.enroll-container {
+  text-align: center;
+}
+
+.enroll-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.enroll-container button:hover {
+  background-color: #0056b3;
+}
+
+.enroll-container p {
+  margin-bottom: 10px;
+}

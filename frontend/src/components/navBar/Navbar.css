@@ -1,0 +1,98 @@
+/* Navbar.css */
+
+.navbar {
+    background-color: #faf5f5;
+    padding: 10px;
+    box-shadow: 1px 1px 10px 1px;
+    min-height: 80px;
+    align-items: center;
+  }
+  
+  .nav-list {
+    list-style: none;
+    margin: 15px 0px 0px 0px;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav-item {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    padding: 5px;
+    align-self: center;
+    font-size: 24px;
+  }
+  
+  .nav-item a {
+    text-decoration: none;
+    color: rgb(10, 0, 0);
+    font-weight: bold;
+  }
+  .search-bar {
+    width: 200px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar input {
+    width: 200px;
+    padding: 5px;
+    margin-right: 15%;
+  }
+  
+  .search-button {
+    background-color: #000000;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+  }
+  
+  .search-button:hover {
+    background-color: #0056b3; /* Change the color on hover */
+  }
+  .nav-item a:hover {
+    color: #00ff3c; /* Change the color on hover */
+  }
+.sign-in-button,
+.sign-up-button {
+  background-color: #cfa304;
+  color: white;
+  border: none;
+  border-radius: 18px;
+  margin-right: 50px;
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 10px 30px 10px 30px;
+  align-items: center;
+  text-transform: none;
+}
+
+.sign-in-button:hover,
+.sign-up-button:hover {
+  background-color: #f0b949; /* Change the color on hover */
+  color: #f0e7e7;
+}
+.auth-buttons {
+    margin-left: auto;
+}
+.log-out-button{
+  margin-left: 2%;
+}
+.log-out-button button{
+  background-color: red;
+}
+.edit-user{
+  background-color: rebeccapurple;
+  margin-left: 20%;
+  border-radius: 80px;
+}
+.edit-user button{
+  background-color: green;
+  border-radius: 20px;
+}
+.space-fix{
+  width: 200px;
+}

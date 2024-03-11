@@ -2,21 +2,21 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './components/Home';
-import Login from './components/Login';
-import Registration from './components/Registration';
-import About from './components/About';
-import Learn from './components/Learn';
-import Help from './components/Help';
-import PathShow from './components/RoleShow';
-import Setting from './components/setting';
-import Courses from './components/Lecturer_courses';
-import EditUser from './components/EditUser';
-import CreateCourse from './components/CreateCourse';
-import Course from './components/Course';
-import Registered_home_page from './components/Registered_home_page';
+import Navbar from './components/navBar/Navbar';
+import Footer from './components/footer/Footer';
+import Home from './components/home/Home';
+import Login from './components/login/Login';
+import Registration from './components/registration/Registration';
+import About from './components/aboutPage/About';
+import Learn from './components/learn/Learn';
+import Help from './components/help/Help';
+import PathShow from './components/roleShow/RoleShow';
+import Setting from './components/setting/setting';
+import Courses from './components/lecturerCourses/Lecturer_courses';
+import EditUser from './components/editUser/EditUser';
+import CreateCourse from './components/createCourse/CreateCourse';
+import Course from './components/course/Course';
+import Registered_home_page from './components/learnpageByNJ/Registered_home_page';
 
 function App() {
   return (
