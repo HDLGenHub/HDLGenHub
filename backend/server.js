@@ -28,6 +28,8 @@ const UserRouter = require("./routes/Users.js");
 app.use("/User",UserRouter);
 const CourseRouter = require("./routes/Courses.js");
 app.use("/Course",CourseRouter);
+const ActiveCourseRouter = require("./routes/ActiveCourses.js");
+app.use("/ActiveCourse",ActiveCourseRouter);
 const DocumentRouter = require("./routes/Documents.js");
 app.use("/Document",DocumentRouter);
 
