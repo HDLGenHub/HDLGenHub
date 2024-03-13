@@ -80,11 +80,11 @@ function Login() {
         <div>
         <p className='p'>By clicking "Sign in," you agree to our <Link>Terms of Use</Link> and our <Link>Privacy Policy.</Link></p>
         </div>
-        <button className='button' type="button" onClick={handleLogin}>
+        <button className='button1' type="button" onClick={handleLogin}>
           Sign In
         </button>
-        <div>
-          <p>Don't have an account?<button className='signupbutton' onClick={handlesignup}>Sign Up</button></p>
+        <div class="p-5">
+          <p>Don't have an account? <button className='signupbutton' onClick={handlesignup}>Sign Up</button></p>
         </div>
       </form>
     </div>

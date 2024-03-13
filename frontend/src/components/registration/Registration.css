@@ -1,14 +1,5 @@
 /* Registration.css */
 
-.registration-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  margin-top: 50px;
-}
-
 .registration-title {
   text-align: center;
   color: #333;
@@ -34,21 +25,8 @@ select {
   padding: 8px;
   box-sizing: border-box;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 15px;
   margin-top: 5px;
-}
-
-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #45a049;
 }
 
 .radio-group {
@@ -67,8 +45,8 @@ button:hover {
 }
 
 .reg-container {
-  max-width: 400px;
-  height: 800px;
+  max-width: 480px;
+  height: 840px;
   margin: 100px auto;
   padding: 20px;
   border: 2px solid #f1b637;

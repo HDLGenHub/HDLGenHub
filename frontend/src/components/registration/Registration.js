@@ -118,15 +118,17 @@ function Registration() {
             id="age"
             value={age}
             onChange={(e) => setAge(e.target.value)}
+            required
           />
         </div>
         <div className="form-group">
-          <label htmlFor="solid">Solid<span style={{color:'red'}}>*</span></label>
+          <label htmlFor="solid">Reg No<span style={{color:'red'}}>*</span></label>
           <input
             type="text"
             id="solid"
             value={solid}
             onChange={(e) => setSolid(e.target.value)}
+            required
           />
         </div>
         <div className="form-group">
@@ -135,6 +137,7 @@ function Registration() {
             id="gender"
             value={gender}
             onChange={(e) => setGender(e.target.value)}
+            required
           >
             <option value="">Select Gender</option>
             <option value="Male">Male</option>
@@ -167,11 +170,11 @@ function Registration() {
         </div>
         </div>
 
-          <button className="button" type="button" onClick={handleRegistration}>
+          <button className="button1" type="button" onClick={handleRegistration}>
             Sign Up
           </button>
-          <div>
-            <p>Already have an account?<button className='signupbutton' onClick={handleLogin}>Sign In</button></p>
+          <div class="p-8">
+            <p>Already have an account? <button className='signupbutton' onClick={handleLogin}>Sign In</button></p>
           </div>
         </form>
       </div>

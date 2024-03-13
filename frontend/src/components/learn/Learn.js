@@ -39,31 +39,35 @@ const CoursesPage = () => {
   };
 
   return (
-    <div className="courses-container">
-      <h2>Enrolled Courses</h2>
+    <div>
+      
+    
+    <div className="courses-container m-10">
+      <h2 class="text-left font-bold mb-10">Enrolled Courses</h2>
       <div className="courses-grid">
         {enrolledCourses.map(course => (
           <div className="en-course-box" key={course._id} onClick={() => navigateToCourse(course._id)}>
             {/* Add onClick event to trigger the navigateToCourse function */}
-            <h3>{course.title}</h3>
+            <h3 class="font-bold">{course.title}</h3>
             <p>{course.description}</p>
             <p>Duration: {course.duration} hours</p>
             {/* Add more course details here as needed */}
           </div>
         ))}
       </div>
-      <h2>All Courses</h2>
+      <h2 class="text-left font-bold mb-10 mt-10">All Courses</h2>
       <div className="courses-grid">
         {allCourses.map(course => (
           <div className="course-box" key={course._id} onClick={() => navigateToCourse(course._id)}>
             {/* Add onClick event to trigger the navigateToCourse function */}
-            <h3>{course.title}</h3>
+            <h3 class="font-bold">{course.title}</h3>
             <p>{course.description}</p>
             <p>Duration: {course.duration} hours</p>
             {/* Add more course details here as needed */}
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };

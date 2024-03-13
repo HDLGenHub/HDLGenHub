@@ -117,7 +117,7 @@ else if(user.role==="admin"){
           </button>
         </div>
         <div>
-          <button onClick={handleLogOut} className="log-out-button"><LogOut></LogOut></button>
+          <button onClick={handleLogOut} class="log-out-button "><LogOut></LogOut></button>
         </div>
       </ul>
     </nav>

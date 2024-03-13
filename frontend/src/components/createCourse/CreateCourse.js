@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import background from '../../images/background.png';
 //import axios from 'axios';
 
 const CreateCourse = ({ userId }) => {
@@ -34,72 +35,64 @@ const CreateCourse = ({ userId }) => {
   };
 
   return (
-    <div>
-      <h2>Create a New Course</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="title">Title:</label>
-          <input
-            type="text"
-            id="title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="description">Description:</label>
-          <textarea
-            id="description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            required
-          ></textarea>
-        </div>
-        {fields.map((field, index) => (
-          <div key={index}>
-            <label>{`Field ${index + 1}: ${field.type}`}</label>
-            <input
-              type="text"
-              value={field.value}
-              onChange={(e) => handleChangeField(index, e.target.value)}
-            />
-            <button type="button" onClick={() => handleRemoveField(index)}>
-              Remove
-            </button>
+    <div className="background-container">
+      <div>
+        <img src={background} alt="background" className="background-image" />
+      </div>
+      <div class="m-96 mt-20 mb-10 border-2 border-amber-500 rounded-3xl bg-orange-500 bg-opacity-10">
+        <h2 class="font-bold m-10">Create a New Course</h2>
+
+        <form class="max-w-xl mx-auto" onSubmit={handleSubmit}>
+
+          <div class="mb-5">
+            <label class="block mb-2 text-base font-medium text-gray-900" htmlFor="title">Title</label>
+            <input type="text" id="title" value={title} onChange={(e) => setTitle(e.target.value)} required />
           </div>
-        ))}
-        <div>
-          <label>Add Field:</label>
-          <select onChange={(e) => handleAddField(e.target.value)}>
-            <option value="material">Material</option>
-            <option value="link">Link</option>
-            <option value="youtube">YouTube Video</option>
-          </select>
-        </div>
-        <div>
-          <label htmlFor="duration">Duration (hours):</label>
-          <input
-            type="number"
-            id="duration"
-            value={duration}
-            onChange={(e) => setDuration(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="enrollmentStatus">Enrollment Status:</label>
-          <select
-            id="enrollmentStatus"
-            value={enrollmentStatus}
-            onChange={(e) => setEnrollmentStatus(e.target.value)}
-          >
-            <option value="open">Open</option>
-            <option value="closed">Closed</option>
-          </select>
-        </div>
-        <button type="submit">Create Course</button>
-      </form>
+
+          <div class="mb-5 w-full">
+            <label class="block mb-2 text-base font-medium text-gray-900" htmlFor="description">Description</label>
+            <textarea id="description" value={description}
+              onChange={(e) => setDescription(e.target.value)} required class="border border-gray-300 p-2 rounded-2xl w-full h-15"></textarea>
+          </div>
+
+          <div class="mb-5">
+            <label class="block mb-2 text-base font-medium text-gray-900" htmlFor="duration">Duration (hours)</label>
+            <input type="number" id="duration" value={duration} onChange={(e) => setDuration(e.target.value)} required/>
+          </div>
+
+          <div class="mb-5">
+            <label class="block mb-2 text-base font-medium text-gray-900" htmlFor="enrollmentStatus">Enrollment Status</label>
+            <select id="enrollmentStatus" value={enrollmentStatus} onChange={(e) => setEnrollmentStatus(e.target.value)}>
+              <option value="open">Open</option>
+              <option value="closed">Closed</option>
+            </select>
+          </div>
+
+
+          {fields.map((field, index) => (
+            <div key={index}>
+              <label class="block mb-2 text-base font-medium text-gray-900">{`Field ${index + 1}: ${field.type}`}</label>
+              <input type="text" value={field.value} onChange={(e) => handleChangeField(index, e.target.value)} />
+              <button type="button" class=" border-2 m-2 w-20 rounded-full border-red-500 hover:bg-red-500 hover:text-white" 
+              onClick={() => handleRemoveField(index)}>
+                Remove
+              </button>
+            </div>
+          ))}
+          <div class="w-40 mb-5">
+            <label class="block mb-2 text-base font-medium text-gray-900">Add Field</label>
+            <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 " onChange={(e) => handleAddField(e.target.value)}>
+              <option selected="">Select Field</option>
+              <option value="material">Material</option>
+              <option value="link">Link</option>
+              <option value="youtube">YouTube Video</option>
+            </select>
+          </div>
+
+
+          <button class="m-10 p-2 w-32 rounded-full font-bold hover:scale-110 bg-amber-500 text-white" type="submit">Create Course</button>
+        </form>
+      </div>
     </div>
   );
 };

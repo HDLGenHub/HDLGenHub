@@ -1,51 +1,79 @@
-import React, { useState, useEffect } from 'react';
-import './Lecturer_courses.css';
+import React, { useState, useEffect } from "react";
+import img from "../../images/course-vector.jpg"; // Import your image
 
 const Courses = () => {
   const [user, setUser] = useState(null);
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('user');
+    const storedUser = localStorage.getItem("user");
     if (storedUser) {
       const parsedUser = JSON.parse(storedUser);
       setUser(parsedUser);
-      
+
       // Fetch courses created by the user (lecturer)
       fetch(`http://localhost:8070/Course/courses?instructor=${parsedUser._id}`)
-        .then(response => response.json())
-        .then(data => setCourses(data))
-        .catch(error => console.error('Error fetching courses:', error));
+        .then((response) => response.json())
+        .then((data) => setCourses(data))
+        .catch((error) => console.error("Error fetching courses:", error));
     }
   }, []);
 
-  const handleEditCourse = courseId => {
+  const handleEditCourse = (courseId) => {
     // Open a new tab to edit the course
-    window.open(`http://localhost:8070/Course/courses/${courseId}`, '_blank');
+    window.location.href="http://localhost:8070/Course/courses/${courseId}";
   };
 
   const handleCreateCourse = () => {
     // Open a new tab to create a new course
-    window.open('http://localhost:3000/createcourse', '_blank');
+    window.location.href = "http://localhost:3000/createcourse";
   };
 
   return (
-    <div className='course-container'>
+    <div class="m-10">
       {user ? (
         <div>
-          <h2>Welcome to the Learning Portal, {user.name}!</h2>
+          <h2 class=" font-bold">
+            Welcome to the Learning Portal, {user.name}!
+          </h2>
           <div>
-            <button onClick={handleCreateCourse}>Create Course</button>
+            <button
+              class="rounded-full bg-amber-500 text-white p-3 m-5 hover:bg-amber-600"
+              onClick={handleCreateCourse}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                class="h-6 w-6 inline-block mr-2"
+              >
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path
+                  fill="white"
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-9H8v2h3v3h2v-3h3v-2h-3V8h-2v3z"
+                />
+              </svg>
+              Create Course
+            </button>
           </div>
-          <h3>Your Courses:</h3>
-          <ul>
-            {courses.map(course => (
-              <li key={course._id}>
-                {course.title}
-                <button onClick={() => handleEditCourse(course._id)}>Edit Course</button>
-              </li>
+
+          <div>
+          <hr/>
+          <h3 class="text-2xl font-bold text-left ml-28 pb-5 mt-10">Your Courses</h3>
+          <div class="grid grid-cols-4 grid-flow-row gap-y-4 mr-20 ml-20">
+            {courses.map((course) => (
+              <div class="w-60 rounded overflow-hidden shadow-lg m-5" key={course._id}>
+                <div class="px-10 py-4">
+                <img class="pb-5" src={img} alt="cover-img" />
+                  <div class="font-bold text-xl mb-5">{course.title}</div>
+                  <button class="border-2 border-amber-500 hover:bg-amber-500 hover:text-white py-2 px-4 rounded-full"
+                    onClick={() => handleEditCourse(course._id)}>
+                    Edit Course
+                  </button>
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
+          </div>
         </div>
       ) : (
         <p>User data not found or not loaded yet.</p>
