@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './EditUser.css';
 
-import Dp from '../images/defaultDp.jpg';
+import Dp from '../../images/defaultDp.jpg';
 
 import axios from 'axios';
 
@@ -20,28 +20,79 @@ const EditUser = () => {
 
   const [postImage, setPostImage] = useState( { myFile : ""})
 
-  const createPost = async (newImage) => {
+  /*const createPost = async (newImage) => {
     try{
       await axios.post(url, newImage)
     }catch(error){
       console.log(error)
     }
-  }
-
+  }*/
+  const createPost = async (newImage) => {
+    try {
+      // Upload the image
+      const response = await axios.post(url, newImage);
+      // Get the uploaded image URL from the response
+      const imageUrl = response.data.imageUrl; // Adjust accordingly to your server response
+      // Update the user data in localStorage with the new image URL
+      const updatedUser = { ...user, profilePicture: imageUrl };
+      localStorage.setItem('user', JSON.stringify(updatedUser));
+      // Alert message after successful photo submission
+      window.alert("Photo submitted successfully!");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("Submitting form...");
+    alert("Photo submitted successfully!");
+  
+    try {
+      // Rest of your code...
+    } catch (error) {
+      console.error("Error submitting user data:", error);
+    }
+  };
+  
+  /*
   const handleSubmit = (e) => {
     e.preventDefault();
     createPost(postImage)
-    console.log("Uploaded")
-  }
+    try {
+      // Send form data to the backend route for storing in MongoDB
+      await axios.post("http://localhost:8070/users/submit", {
+        name: user.name,
+        email: user.email,
+        age: user.age,
+        gender: user.gender,
+        solid: user.solid,
+        role: user.role,
+        password: user.password
+      });
+
+      // If successful, log a message and perform any additional actions as needed
+      console.log("User data submitted successfully");
+    } catch (error) {
+      // If an error occurs, log the error
+      console.error("Error submitting user data:", error);
+    }
+
+  }*/
 
   const handleFileUpload = async (e) => {
     const file = e.target.files[0];
-    const base64 = await convertToBase64(file);
-    console.log(base64)
-    setPostImage({ ...postImage, myFile : base64 })
-  }
-
-
+    const reader = new FileReader();
+  
+    reader.onloadend = () => {
+      // When reading is complete, set the base64 data
+      setPostImage({ ...postImage, myFile: reader.result });
+    };
+  
+    // Read the file as base64
+    reader.readAsDataURL(file);
+  };
+  
 
  /* const handleFileChange = (e) => {
     // Set the selected file to the state
@@ -93,7 +144,9 @@ const EditUser = () => {
           accept='.jpeg, .png, .jpg'
           onChange={(e) => handleFileUpload(e)}
          />
-         <button type='submit'>Upload</button>
+
+       
+         <button type='submit' className='blackButton' onClick={handleSubmit}>Submit</button>
       </form>
     </div>
           <div className='user-details'>
@@ -135,15 +188,3 @@ const EditUser = () => {
 };
 
 export default EditUser;
-function convertToBase64(file){
-  return new Promise((resolve, reject) => {
-    const fileReader = new FileReader();
-    fileReader.readAsDataURL(file);
-    fileReader.onload = () => {
-      resolve(fileReader.result)
-    };
-    fileReader.onerror = (error) => {
-      reject(error)
-    }
-  })
-}
