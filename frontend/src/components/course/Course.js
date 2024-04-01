@@ -125,12 +125,12 @@ const Course = () => {
               <IDECompiler/>
             {/* Conditionally render the "Enroll" button or enrollment message */}
             {isEnrolled ? (
-              <div>
+              <div class="m-5">
                 <p>You are already enrolled in this course.</p>
-                <button onClick={handleUnEnroll}>Unenroll</button>
+                <button class="m-5 border-2 p-2 mt-5 bg-amber-500 rounded-full" onClick={handleUnEnroll}>Unenroll</button>
               </div>
             ) : (
-              <button onClick={handleEnroll}>Enroll</button>
+              <button class="m-5 border-2 p-2 bg-amber-500 rounded-full" onClick={handleEnroll}>Enroll</button>
             )}
           </div>
         ) : (

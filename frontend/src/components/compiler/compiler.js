@@ -37,7 +37,7 @@ const IDECompiler = () => {
       url: 'https://online-code-compiler.p.rapidapi.com/v1/',
       headers: {
         'content-type': 'application/json',
-        'X-RapidAPI-Key': '1b958639e6mshedb661f6fce1b59p162d4bjsn41d580499015',
+        'X-RapidAPI-Key': 'eb4b08fae2mshcbeba7d360358d3p11679ejsn3ebf92525167',
         'X-RapidAPI-Host': 'online-code-compiler.p.rapidapi.com'
       },
       data: {
