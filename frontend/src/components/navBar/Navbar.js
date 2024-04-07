@@ -128,16 +128,17 @@ else if(user.role==="admin"){
 else{
   return(
     <nav class="bg-white border-gray-200 fixed w-full z-20 border-b shadow-sm top-0 start-0">
-      <div class="max-w-screen-xl flex items-center justify-between p-2">
-        <div class="flex font-semibold">
-          <li class="block flex-initial text-gray-900 rounded hover:text-amber-700 mx-10">
+      <div class="flex justify-between items-center p-2">
+        
+        <div class="flex font-semibold m-2 gap-2">
+          <li class="block flex-initial text-gray-900 rounded hover:text-amber-700 md:mx-10">
             <Link to="/"><span style={{ color: 'orange' }}>HDL </span> Gen Hub</Link>
           </li>
-          <li class="block text-gray-900 rounded hover:text-black hover:scale-105"><Link to="/about">About</Link></li>
-          <li class="block text-gray-900 rounded hover:text-black hover:scale-105 mx-10"><Link to="/help">Help</Link></li>
+          <li class="block text-gray-900 rounded hover:text-black hover:scale-105 ml-2"><Link to="/about">About</Link></li>
+          <li class="block text-gray-900 rounded hover:text-black hover:scale-105 md:mx-10 mx-5"><Link to="/help">Help</Link></li>
         </div>
         
-      <div class="flex sm:order-2">
+      <div class="flex sm:order-2 md:gap-5 gap-2 md:mr-5 items-center">
         <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="sm:hidden text-gray-500 hover:bg-gray-10 rounded-lg text-sm p-2.5 me-1">
           <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
@@ -152,9 +153,14 @@ else{
             </svg>
             <span class="sr-only">Search icon</span>
           </div>
-          <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50" placeholder="Search..."/>
+          <input type="text" id="search-navbar" class="block w-full h-8 p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50" placeholder="Search..."/>
         </div>
+        <div class="flex md:order-2 space-x-2 md:space-x-5 rtl:space-x-reverse">
+          <button onClick={handleSignIn} type="button" class="w-16 h-8 md:w-20 md:h-9 text-white bg-amber-500 hover:bg-amber-600 text-xs md:font-medium rounded-full md:text-sm px-2 text-center">Sign In</button>
+          <button onClick={handleSignUp} type="button" class="w-16 h-8 md:w-20 md:h-9 text-white bg-amber-500 hover:bg-amber-600 text-xs md:font-medium rounded-3xl md:text-sm px-2 text-center">Sign Up</button>
       </div>
+      </div>
+      
       </div>
     </nav>
   );
