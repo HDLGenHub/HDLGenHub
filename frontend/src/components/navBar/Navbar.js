@@ -131,9 +131,10 @@ else{
       <div class="flex justify-between items-center p-2">
         
         <div class="flex font-semibold m-2 gap-2">
-          <li class="block flex-initial text-gray-900 rounded hover:text-amber-700 md:mx-10">
+          <li class="block flex-initial text-gray-900 rounded hover:text-amber-700 md:mx-5">
             <Link to="/"><span style={{ color: 'orange' }}>HDL </span> Gen Hub</Link>
           </li>
+          <div class="md:border-transparent border-r-2 border-gray-300 h-5"></div>
           <li class="block text-gray-900 rounded hover:text-black hover:scale-105 ml-2"><Link to="/about">About</Link></li>
           <li class="block text-gray-900 rounded hover:text-black hover:scale-105 md:mx-10 mx-5"><Link to="/help">Help</Link></li>
         </div>
