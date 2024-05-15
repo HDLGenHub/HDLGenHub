@@ -8,7 +8,9 @@ const EditCourse = () => {
     title: '',
     description: '',
     duration: '',
+    fields: [],
     enrollmentStatus: '',
+    instructor: '',
     // Add more fields as needed
   });
 
@@ -26,8 +28,12 @@ const EditCourse = () => {
       setEditedCourse({
         title: course.title,
         description: course.description,
-        duration: course.duration.toString(),
+        duration: course.duration ? course.duration.toString() : '',
         enrollmentStatus: course.enrollmentStatus,
+        instructor: course.instructor,
+        //lectureNotes: course.lectureNotes || '', // Update with actual lecture notes data
+        //youtubeVideo: course.youtubeVideo || '', // Update with actual YouTube video data
+       // fields: course.fields || [], // Assuming fields is an array of strings
         // Update with more fields as needed
       });
     }
@@ -41,18 +47,25 @@ const EditCourse = () => {
     });
   };
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Send updated course data to your backend for processing
-      const response = await fetch(`http://localhost:8070/Course/courses/${courseId}`, {
+      const formData = new FormData();
+  
+      // Append text data to formData
+      formData.append('title', editedCourse.title);
+      formData.append('description', editedCourse.description);
+      formData.append('duration', editedCourse.duration);
+      formData.append('enrollmentStatus', editedCourse.enrollmentStatus);
+      formData.append('instructor', editedCourse.instructor);
+      // Append lectureNotes file to formData
+      //formData.append('lectureNotes', editedCourse.lectureNotes);
+  
+      const response = await fetch(`http://localhost:8070/Course/editcourses/${courseId}`, {
         method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(editedCourse),
+        body: formData, // Send formData instead of JSON.stringify(editedCourse)
       });
-
+  
       if (response.ok) {
         alert('Course updated successfully!');
         // Optionally, you can redirect the user to the course details page or another route
@@ -65,6 +78,7 @@ const EditCourse = () => {
       alert('An error occurred while updating the course. Please try again later.');
     }
   };
+  
 
   return (
     <div className="course-container">
@@ -119,6 +133,7 @@ const EditCourse = () => {
                 <option value="closed">Closed</option>
               </select>
             </div>
+          
             {/* Add more form fields for other properties */}
             <button type="submit">Save Changes</button>
           </form>

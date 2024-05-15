@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const PathShow = () => {
+const RoleShow = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -25,6 +25,6 @@ const PathShow = () => {
   );
 };
 
-export default PathShow;
+export default RoleShow;
 
 

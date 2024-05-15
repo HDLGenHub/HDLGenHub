@@ -15,7 +15,9 @@ import Courses from './components/lecturerCourses/Lecturer_courses';
 import EditUser from './components/editUser/EditUser';
 import CreateCourse from './components/createCourse/CreateCourse';
 import Course from './components/course/Course';
-import Registered_home_page from './components/learnpageByNJ/Registered_home_page';
+import RegisteredHomePage from './components/learnpageByNJ/RegisteredHomePage';
+import EditCourse from './components/editCourse/EditCourse';
+import CreateUpdateContent from './components/createContent/createContent';
 
 function App() {
   return (
@@ -35,7 +37,9 @@ function App() {
           <Route path="/edituser" element={<EditUser/>}/>
           <Route path="/createcourse" element={<CreateCourse/>}/>
           <Route path="/course/:courseId" element={<Course/>}/>
-          <Route path="/registered_home_page" element={<Registered_home_page/>}/>
+          <Route path="/editcourse" element={<EditCourse/>}/>
+          <Route path="/createcontent" element={<CreateUpdateContent/>}/>
+          <Route path="/registeredhomepage" element={<RegisteredHomePage/>}/>
         </Routes>
         <Footer />
       </div>

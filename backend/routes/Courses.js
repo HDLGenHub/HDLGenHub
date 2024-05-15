@@ -36,6 +36,31 @@ router.post('/courses', async (req, res) => {
     }
 });
 
+router.put('/editcourses/:courseId', async (req, res) => {
+    try {
+      const { courseId } = req.params;
+      const { title, description, duration, enrollmentStatus, instructor } = req.body;
+  
+      // Find the course by courseId
+      const course = await Course.findById(courseId);
+  
+      // Update course properties with the provided data
+      course.title = title;
+      course.description = description;
+      course.duration = duration;
+      course.enrollmentStatus = enrollmentStatus;
+      course.instructor = instructor;
+  
+      // Save the updated course
+      const updatedCourse = await course.save();
+  
+      res.json(updatedCourse);
+    } catch (err) {
+      res.status(400).json({ message: err.message });
+    }
+  });
+  
+
 router.patch('/courses/:id', getCourse, async (req, res) => {
     const { title, description, instructor, materials, duration, enrollmentStatus } = req.body;
 
@@ -56,9 +81,24 @@ router.patch('/courses/:id', getCourse, async (req, res) => {
     }
     if (enrollmentStatus) {
         res.course.enrollmentStatus = enrollmentStatus;
-    }const express = require('express');
-const router = express.Router();
-const Course = require('../models/Course');
+    }
+
+    try {
+        const updatedCourse = await res.course.save();
+        res.json(updatedCourse);
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+});
+
+router.delete('/courses/:id', getCourse, async (req, res) => {
+    try {
+        await res.course.remove();
+        res.json({ message: 'Course deleted' });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
 
 router.get('/courses', async (req, res) => {
     try {
@@ -115,41 +155,6 @@ router.patch('/courses/:id', getCourse, async (req, res) => {
     if (enrollmentStatus) {
         res.course.enrollmentStatus = enrollmentStatus;
     }
-
-    try {
-        const updatedCourse = await res.course.save();
-        res.json(updatedCourse);
-    } catch (err) {
-        res.status(400).json({ message: err.message });
-    }
-});
-
-router.delete('/courses/:id', getCourse, async (req, res) => {
-    try {
-        await res.course.remove();
-        res.json({ message: 'Course deleted' });
-    } catch (err) {
-        res.status(500).json({ message: err.message });
-    }
-});
-
-async function getCourse(req, res, next) {
-    let course;
-    try {
-        course = await Course.findById(req.params.id);
-        if (!course) {
-            return res.status(404).json({ message: 'Course not found' });
-        }
-    } catch (err) {
-        return res.status(500).json({ message: err.message });
-    }
-
-    res.course = course;
-    next();
-}
-
-module.exports = router;
-
 
     try {
         const updatedCourse = await res.course.save();

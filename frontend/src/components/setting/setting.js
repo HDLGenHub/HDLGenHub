@@ -34,7 +34,7 @@ const Setting = () => {
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   return (
-    <div className="setting-container">
+    <div className="setting-container mt-20 mb-20 m-10">
       <div className="teacher-column">
         <h2>Teachers</h2>
         <table>

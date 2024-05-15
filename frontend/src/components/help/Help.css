@@ -13,6 +13,8 @@
 .help-container{
     display: flex;
 }
+
+
 .help-search{
     width: 40%;
     height: 40px;

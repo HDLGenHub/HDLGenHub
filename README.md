@@ -1,4 +1,26 @@
-Downlaod all the file and locte them
-Then open the root folder in vscode
-look there are package.json file on the root , and also backend and frontend folder as well
-By going each directry install the dependancies showing in the package.json file
+# HDL GenHub 
+
+=======================
+
+# Software Group Project
+
+=======================
+
+This is a group project for the Software Group Project module at the Faculty of Engineering, University of Ruhuna. The project is to create a web application that allows users to generate HDL code from Verilog Compiler. 
+
+## Technologies
+
+1. MongoDB
+2. Express
+3. React
+4. Node.js
+5. Tailwind CSS
+
+## Team Members
+
+1. Siriwardana R.T. (EG/2020/4219)
+2. Sandarenu D.T (EG/2020/4191)
+3. Jayarathnr G.U.T.N.C. (EG/2020/3981)
+4. Nethsarani D.W.D. (EG/2020/4096)
+
+

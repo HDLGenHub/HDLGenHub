@@ -8,6 +8,7 @@ const CreateCourse = ({ userId }) => {
   const [fields, setFields] = useState([]);
   const [duration, setDuration] = useState('');
   const [enrollmentStatus, setEnrollmentStatus] = useState('open');
+  const [instructor, setInstructor]=useState('');
 
   const handleAddField = (type) => {
     const newField = {
@@ -30,8 +31,36 @@ const CreateCourse = ({ userId }) => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    // Handle form submission...
+    e.preventDefault(); // Prevent default form submission
+    try {
+      const response = await fetch('http://localhost:8070/Course/courses', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          title,
+          description,
+          fields,
+          duration,
+          enrollmentStatus,
+          instructor,
+        }),
+      });
+  
+      if (response.ok) {
+        // Course created successfully
+        alert('Course created successfully!');
+      } else {
+        // Handle errors
+        const data = await response.json();
+        throw new Error(data.message);
+      }
+    } catch (error) {
+      console.error('Error creating course:', error.message);
+      // Display error message
+      alert('Error creating course: ' + error.message);
+    }
   };
 
   return (
@@ -89,8 +118,15 @@ const CreateCourse = ({ userId }) => {
             </select>
           </div>
 
+          <div class="mb-5">
+            <label class="block mb-2 text-base font-medium text-gray-900" htmlFor="instructor">Instructor</label>
+            <input type="text" id="instructor" value={instructor} onChange={(e) => setInstructor(e.target.value)} required/>
+          </div>
 
-          <button class="m-10 p-2 w-32 rounded-full font-bold hover:scale-110 bg-amber-500 text-white" type="submit">Create Course</button>
+          
+
+
+          <button class="m-10 p-2 w-32 rounded-full font-bold hover:scale-110 bg-amber-500 text-white"  onClick={handleSubmit}  type="submit">Create Course</button>
         </form>
       </div>
     </div>

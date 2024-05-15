@@ -8,7 +8,7 @@ import email_icon from '../../images/email_icon.png';
 const Footer = () => {
   return (
     <div>
-      <div className="flex justify-around bg-gray-200 lg:gap-20 md:p-8 p-2 gap-10">
+      <div className="flex justify-around bg-gray-300 lg:gap-20 md:p-8 p-2 gap-10">
         <div class="md:flex md:gap-20 p-2 pr-0">
           <div class="text-left m-2">
             <h4 class="font-medium md:ml-5">Contact Us</h4>

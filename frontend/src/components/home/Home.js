@@ -5,23 +5,22 @@ import settings from '../../images/settings.png'
 import world from '../../images/world.png'
 import work from '../../images/work.png'
 
-import './Home.css';
 function Home() {
     return (
-      <div className="flex flex-col mt-10">
+      <div className="flex flex-col mt-10 md:mt-20">
         <div class="flex pb-0 p-5">
-          <div className="w-1/2 text-left md:ml-10 mt-3 ">
+          <div className="w-1/2 text-left md:ml-32 mt-3">
             <h3 class="font-bold md:text-2xl text-sm md:p-5 p-1"><span style={{color:'orange'}}>HDL</span> Gen Hub <span class="font-thin">for learners</span></h3>
-            <h1 class="font-extrabold lg:text-7xl md:p-3 p-1 text-3xl">Fast & easiest</h1>
-            <h1 class="font-extrabold lg:text-7xl md:p-3 p-1  text-3xl"> way to</h1>
-            <h1 class="font-extrabold lg:text-7xl md:p-3 p-1 text-3xl">learn <span style={{color:'orange'}}>HDL</span></h1>
+            <h1 class="font-extrabold lg:text-7xl md:p-3 p-1 text-3xl">Fast & <span style={{color:'orange'}}>Easiest</span></h1>
+            <h1 class="font-extrabold lg:text-6xl md:p-3 p-1 text-3xl"> Way to Learn</h1>
+            <h1 class="font-extrabold lg:text-7xl md:p-3 p-1 text-3xl"><span style={{color:'orange'}}>HDL</span></h1>
           </div>
-          <img src={homeimage} alt="Home" class="lg:h-96 h-40 mt-20 md:mt-20"/>
+          <img src={homeimage} alt="Home" class="lg:h-96 h-40 mt-20 md:mt-20 md:mr-20"/>
         </div>
         <div class="h-0.5 bg-gray-200">
         </div>
-        <p class='font-extrabold text-xl center md:m-14 m-10 md:mb-0 mb-0'>Exclusive content, exceptional quality</p>
-        <div class='text-center center md:m-10 m-5 mb-16'>
+        <p class='font-extrabold text-xl center md:m-14 m-10 md:mb-0 md:mt-20 mb-0'>Exclusive content, exceptional quality</p>
+        <div class='text-center center md:m-10 m-5 mb-16 '>
           <h class='md:text-xl text-gray-500 text-justify'>
             Unlock the world of HDLs through our immersive e-learning platform. 
             From beginner basics to advanced techniques, dive into digital design at your own pace.
@@ -29,15 +28,15 @@ function Home() {
         </div>
         
         <div class='md:flex md:flex-row md:justify-around flex justify-center flex-col gap-16 items-center md:m-20 mt-0 mb-10'>
-          <div class='w-64 h-48 bg-neutral-200 shadow-lg rounded-ss-3xl rounded-ee-3xl'>
+          <div class='w-64 h-48 bg-neutral-200 shadow-lg rounded-ss-3xl rounded-ee-3xl  hover:scale-110'>
             <p class="text-3xl font-bold text-amber-500 m-5">100+</p>
             <p class="text-xl font-bold text-center m-2 mt-0">hours of content to gain knowledge <br/>(updating regularly)</p>
           </div>
-          <div class='w-64 h-48 bg-neutral-200 shadow-lg rounded-ss-3xl rounded-ee-3xl'>
+          <div class='w-64 h-48 bg-neutral-200 shadow-lg rounded-ss-3xl rounded-ee-3xl  hover:scale-110'>
             <p class="text-3xl font-bold text-amber-500 m-5 mb-3">100+</p>
             <p class="text-xl font-bold text-center m-5 mt-0">expert from the university with the best guidance</p>
           </div>
-          <div class='w-64 h-48 bg-neutral-200 shadow-lg rounded-ss-3xl rounded-ee-3xl'>
+          <div class='w-64 h-48 bg-neutral-200 shadow-lg rounded-ss-3xl rounded-ee-3xl  hover:scale-110'>
             <p class="text-3xl font-bold text-amber-500 m-5 mb-3">350+</p>
             <p class="text-xl font-bold text-center m-3 mt-0">users to unleash their Potential through E-Learning Excellence</p>
           </div>
