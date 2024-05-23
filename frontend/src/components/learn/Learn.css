@@ -15,8 +15,6 @@
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  width: auto;
-  height: 140px;
 }
 .en-course-box:hover {
   background-color: #eedca3;
@@ -36,10 +34,19 @@
 .course-box h3 {
   font-size: 18px;
   margin-bottom: 10px;
-  margin: 10px;
 }
 
 .course-box p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.en-course-box h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.en-course-box p {
   font-size: 14px;
   margin-bottom: 5px;
 }

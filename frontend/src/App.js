@@ -19,6 +19,7 @@ import RegisteredHomePage from './components/learnpageByNJ/RegisteredHomePage';
 import EditCourse from './components/editCourse/EditCourse';
 import CreateUpdateContent from './components/createContent/createContent';
 
+
 function App() {
   return (
       <Router>
@@ -40,6 +41,9 @@ function App() {
           <Route path="/editcourse" element={<EditCourse/>}/>
           <Route path="/createcontent" element={<CreateUpdateContent/>}/>
           <Route path="/registeredhomepage" element={<RegisteredHomePage/>}/>
+          <Route path="/courses/:courseId/content/new" component={<CreateUpdateContent/>} /> {/* For creating new content */}
+          <Route path="/courses/:courseId/content/:contentId" component={<CreateUpdateContent/>} /> {/* For updating existing content */}
+        
         </Routes>
         <Footer />
       </div>

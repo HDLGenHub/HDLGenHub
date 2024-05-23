@@ -29,29 +29,13 @@
     text-shadow: 1px 4px 5px rgba(0, 0, 0, 0.5);
 }
 .help-boxes-container{
-    display: flex;
+    display: flex;;
 }
 
-.help-box1{
-    text-align: center;
-    width: 300px;
-    height: 200px;
-    background-color: rgb(255, 255, 255);
-    margin-top: 40px;
-    margin-left: 120px;
-    border-width: 1pt;
-    border-color: rgb(179, 172, 172);
-    border-style: solid;
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-    overflow:hidden;
-}
 .help-box2{
     width: 300px;
     height: 200px;
     background-color: rgb(255, 255, 255);
-    margin-top: 40px;
-    margin-left: 20px;
     border-width: 1pt;
     border-color: rgb(179, 172, 172);
     border-style: solid;
@@ -62,6 +46,5 @@
 .help-icon{
     width: 60px;
     height: 60px;
-    align-items: center;
-    margin-top: 20px;
+    margin: 20px;
 }
