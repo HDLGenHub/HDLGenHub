@@ -1,0 +1,19 @@
+{
+  "name": "hdlgenhubbackend",
+  "version": "1.0.0",
+  "description": "Backend of HDL Gen Hub",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DulshanSiriwardhana/HDLGenHubBackend.git"
+  },
+  "author": "T.D Rasindu Dulshan Siriwardhana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DulshanSiriwardhana/HDLGenHubBackend/issues"
+  },
+  "homepage": "https://github.com/DulshanSiriwardhana/HDLGenHubBackend#readme"
+}
