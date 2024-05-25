@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./Navbar.css";
 import { LogOut } from "react-feather";
 import { User } from "react-feather";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 //import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 //import background from '../images/background.png'
@@ -18,7 +19,9 @@ function Navbar() {
       //alert(parsedUser);
     }
   }, []);
+  
   const navigate = useNavigate();
+
   const handleSignIn = () => {
     // Handle sign-in logic, e.g., navigate to the login page
     navigate("/login");
@@ -33,15 +36,24 @@ function Navbar() {
   const handleLogOut = () => {
     localStorage.removeItem("user");
     setUser(null);
-    navigate("/");
-    window.location.reload();
+    toast.info("You have been logged out successfully.", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+    });
+    setTimeout(() => {
+      navigate("/");
+      window.location.reload();
+    }, 2000);
   };
 
   if (user) {
     if (user.role === "student") {
       return (
         <header>
-          <nav class="bg-gray-200 border-gray-200 fixed w-full z-20 border-b shadow-2xl top-0 start-0">
+          <nav class="bg-gray-100 border-gray-100 fixed w-full z-20 border-b shadow-2xl top-0 start-0">
             <div class="flex justify-between items-center p-2">
               <div class="flex font-semibold m-2 gap-2">
                 <li class="block flex-initial text-gray-900 rounded hover:text-amber-700 md:mx-5">
@@ -133,12 +145,13 @@ function Navbar() {
               </div>
             </div>
           </nav>
+          <ToastContainer />
         </header>
       );
     } else if (user.role === "teacher") {
       return (
         <header>
-          <nav class="bg-gray-200 border-gray-200 fixed w-full z-20 border-b shadow-2xl top-0 start-0">
+          <nav class="bg-gray-100 border-gray-100 fixed w-full z-20 border-b shadow-2xl top-0 start-0">
             <div class="flex justify-between items-center p-2">
               <div class="flex font-semibold m-2 gap-2">
                 <li class="block flex-initial text-gray-900 rounded hover:text-amber-700 md:mx-5">
@@ -230,12 +243,13 @@ function Navbar() {
               </div>
             </div>
           </nav>
+          <ToastContainer />
         </header>
       );
     } else if (user.role === "admin") {
       return (
         <header>
-          <nav class="bg-gray-200 border-gray-200 fixed w-full z-20 border-b shadow-2xl top-0 start-0">
+          <nav class="bg-gray-100 border-gray-100 fixed w-full z-20 border-b shadow-2xl top-0 start-0">
             <div class="flex justify-between items-center p-2">
               <div class="flex font-semibold m-2 gap-2">
                 <li class="block flex-initial text-gray-900 rounded hover:text-amber-700 md:mx-5">
@@ -311,12 +325,15 @@ function Navbar() {
               </div>
             </div>
           </nav>
+          <ToastContainer />
         </header>
       );
     }
-  } else {
+  }
+
     return (
-      <nav class="bg-gray-200 border-gray-200 fixed w-full z-20 border-b shadow-2xl top-0 start-0">
+      <header>
+      <nav class="bg-gray-100 border-gray-100 fixed w-full z-20 border-b shadow-2xl top-0 start-0">
         <div class="flex justify-between items-center p-2">
           <div class="flex font-semibold m-2 gap-2">
             <li class="block flex-initial text-gray-900 rounded hover:text-amber-700 md:mx-5">
@@ -404,8 +421,9 @@ function Navbar() {
           </div>
         </div>
       </nav>
+      <ToastContainer />
+      </header>
     );
   }
-}
 
 export default Navbar;

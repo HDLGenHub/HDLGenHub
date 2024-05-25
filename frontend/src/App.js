@@ -1,5 +1,5 @@
-import React from 'react';
 import './App.css';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navBar/Navbar';
 import Footer from './components/footer/Footer';
@@ -18,9 +18,22 @@ import Course from './components/course/Course';
 import RegisteredHomePage from './components/learnpageByNJ/RegisteredHomePage';
 import EditCourse from './components/editCourse/EditCourse';
 import CreateUpdateContent from './components/createContent/createContent';
-
+import Loading from './components/Loading';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
   return (
       <Router>
       <div className="App">
