@@ -1,0 +1,258 @@
+.navbarcontainer{
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 5px 1px #e1e1e1;
+    font-weight: 500;
+}
+.navbarcontainer a{
+    text-decoration: none;
+}
+.navbarleftcontainer{
+    display: flex;
+    float: left;
+    align-items: center;
+    justify-content: center;
+}
+.navbarleftcontainer ul{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+.navbarleftcontainer ul li{
+    display: flex;
+}
+.navbarrightcontainer{
+    display: flex;
+    float: right;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+}
+.navbarrightcontainer ul{
+    display: flex;
+    gap: 30px;
+}
+.navbarrightcontainer ul li{
+    display: flex;
+}
+.navbarhometext{
+    width: 105px;
+    margin-left: -10px;
+    font-weight: 700;
+}
+.navbarsignin{
+    background-color: #fa9746;
+    width: 80px;
+    height: 30px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbarsignup{
+    background-color: #e1e1e1;
+    width: 80px;
+    height: 30px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 600px){
+    .navbarcontainer{
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .navbarleftcontainer{
+        display: flex;
+        float: left;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbarleftcontainer ul{
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbarleftcontainer ul li{
+        display: flex;
+        font-size: 10px;
+    }
+    .navbarrightcontainer{
+        display: flex;
+        float: right;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+    }
+    .navbarrightcontainer ul{
+        display: flex;
+        gap: 8px;
+    }
+    .navbarrightcontainer ul li{
+        display: flex;
+        font-size: 10px;
+    }
+    .navbarhometext{
+        width: 65px;
+        margin-left: -30px;
+    }
+    .navbarsignin{
+        background-color: #fa9746;
+        width: 40px;
+        height: 20px;
+        border-radius: 10px;
+        font-size: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbarsignup{
+        background-color: #e1e1e1;
+        width: 40px;
+        height: 20px;
+        border-radius: 10px;
+        font-size: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .navbarcontainer{
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .navbarleftcontainer{
+        display: flex;
+        float: left;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbarleftcontainer ul{
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbarleftcontainer ul li{
+        display: flex;
+        font-size: 8px;
+    }
+    .navbarrightcontainer{
+        display: flex;
+        float: right;
+        align-items: center;
+        justify-content: center;
+        margin-right: 8px;
+    }
+    .navbarrightcontainer ul{
+        display: flex;
+        gap: 8px;
+    }
+    .navbarrightcontainer ul li{
+        display: flex;
+        font-size: 8px;
+    }
+    .navbarhometext{
+        width: 52px;
+        margin-left: -30px;
+    }
+    .navbarsignin{
+        background-color: #fa9746;
+        width: 32px;
+        height: 20px;
+        border-radius: 10px;
+        font-size: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbarsignup{
+        background-color: #e1e1e1;
+        width: 32px;
+        height: 20px;
+        border-radius: 10px;
+        font-size: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 320px){
+    .navbarcontainer{
+        display: flex;
+        height: 200px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .navbarleftcontainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-style: groove;
+    }
+    .navbarleftcontainer ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-style: groove;
+    }
+    .navbarleftcontainer ul li{
+        display: flex;
+        font-size: 8px;
+        border-style: groove;
+    }
+    .navbarrightcontainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-style: groove;
+    }
+    .navbarrightcontainer ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-style: groove;
+    }
+    .navbarrightcontainer ul li{
+        display: flex;
+        font-size: 8px;
+        border-style: groove;
+    }
+    .navbarhometext{
+        width: 52px;
+    }
+    .navbarsignin{
+        background-color: #fa9746;
+        width: 32px;
+        height: 20px;
+        border-radius: 10px;
+        font-size: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbarsignup{
+        background-color: #e1e1e1;
+        width: 32px;
+        height: 20px;
+        border-radius: 10px;
+        font-size: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

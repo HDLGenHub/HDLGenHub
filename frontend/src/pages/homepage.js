@@ -1,7 +1,8 @@
-const HomePage =()=>{
+import './homepage.css';
 
+const HomePage =()=>{
     return(
-        <div>
+        <div className="homepagecontainer">
             Home Page
         </div>
     );
