@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const QuestionSchema = new Schema(
     {
-        question: {
+        problem: {
             type: String,
             require: true
         },

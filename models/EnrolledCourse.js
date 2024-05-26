@@ -11,7 +11,7 @@ const EnrolledCourseSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: 'Teacher'
         },
-        Date: {
+        date: {
             type: String,
             require: false
         }
