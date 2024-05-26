@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router.Router();
+const router = express.Router();
 const Video = require('../models/Video');
 
 router.get('/', async(req, res)=>{

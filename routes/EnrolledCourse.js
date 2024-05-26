@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router.Router();
+const router = express.Router();
 const EnrolledCourse = require('../models/EnrolledCourse');
 
 router.get('/', async(req, res)=>{

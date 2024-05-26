@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router.Router();
+const router = express.Router();
 const Teacher = require('../models/Teacher');
 
 router.get('/', async(req, res)=>{

@@ -13,7 +13,7 @@ const CourseComponentSchema = new Schema(
         },
         item: {
             type: Schema.Types.ObjectId,
-            ref: ['Video','Document','Quiz','Coding']
+            ref: 'Video'||'Document'||'Quiz'||'Coding'
         }
     }
 )

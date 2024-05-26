@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router.Router();
+const router = express.Router();
 const Coding = require('../models/Coding');
 
 router.get('/', async(req, res)=>{

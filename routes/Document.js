@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router.Router();
+const router = express.Router();
 const Document = require('../models/Document');
 
 router.get('/', async(req, res)=>{

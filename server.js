@@ -15,9 +15,38 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(() => console.log('MongoDB connected'))
 .catch(error => console.log(error));
 
-const usersRouter = require('./routes/users');
+const AdminRouter = require('./routes/Admin');
+app.use('/Admin', AdminRouter);
 
-app.use('/users', usersRouter);
+const CodingRouter = require('./routes/Coding');
+app.use('/Coding', CodingRouter);
+
+const CourseRouter = require('./routes/Course');
+app.use('/Course', CourseRouter);
+
+const CourseComponentRouter = require('./routes/CourseComponent');
+app.use('/CourseComponent', CourseComponentRouter);
+
+const DocumentRouter = require('./routes/Document');
+app.use('/Document', DocumentRouter);
+
+const EnrolledCourseRouter = require('./routes/EnrolledCourse');
+app.use('/EnrolledCourse', EnrolledCourseRouter);
+
+const QuestionRouter = require('./routes/Question');
+app.use('/Question', QuestionRouter);
+
+const QuizRouter = require('./routes/Quiz');
+app.use('/Quiz', QuizRouter);
+
+const StudentRouter = require('./routes/Student');
+app.use('/Student', StudentRouter);
+
+const TeacherRouter = require('./routes/Teacher');
+app.use('/Teacher', TeacherRouter);
+
+const VideoRouter = require('./routes/Video');
+app.use('/Video', VideoRouter);
 
 const PORT = process.env.PORT || 4000;
 
