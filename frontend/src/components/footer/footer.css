@@ -1,15 +1,13 @@
 .footercontainer{
-    border-style: groove;
     background-color: #e1e1e1;
     gap: 0px;
+    z-index: 1;
 }
 .footeruppercontainer{
-    border-style: groove;
     display: flex;
     flex-direction: row;
 }
 .footerlowercontainer{
-    border-style: groove;
     height: 40px;
     display: flex;
     flex-direction: column;
@@ -18,24 +16,24 @@
     font-size: 14px;
 }
 .footeruppersection1{
-    border-style: groove;
     flex: 3;
+    padding: 10px;
     padding-inline: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .footeruppersection2{
-    border-style: groove;
+    padding: 10px;
     flex: 3;
 }
 .footeruppersection3{
-    border-style: groove;
+    padding: 10px;
     flex: 3;
 }
 .footeruppersection4{
-    border-style: groove;
     flex: 5;
+    padding: 10px;
     padding-inline: 20px;
     padding-bottom: 20px;
 }
@@ -123,17 +121,18 @@
     height: 1px;
     margin: 0px;
 }
+.footeruppersectionverticlelines{
+    width: 1px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background-color: black;
+}
 @media screen and (max-width:600px){
-    .footercontainer{
-        border-style: groove;
-    }
     .footeruppercontainer{
-        border-style: groove;
         display: flex;
         flex-direction: column;
     }
     .footerlowercontainer{
-        border-style: groove;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -141,7 +140,6 @@
         font-size: 8px;
     }
     .footerlowercontainer p{
-        border-style: groove;
         display: flex;
         flex-direction: column;
         align-items: center;

@@ -19,6 +19,7 @@ const Footer =()=>{
                         </div>
                     </div>
                 </div>
+                <div className='footeruppersectionverticlelines'></div>
                 <div className='footeruppersection2'>
                     <h1>FOLLOW US ON</h1>
                     <div className="social-icon">
@@ -33,12 +34,14 @@ const Footer =()=>{
                         </a>
                     </div>
                 </div>
+                <div className='footeruppersectionverticlelines'></div>
                 <div className='footeruppersection3'>
                     <h1>HELP</h1>
                     <p>My Account</p>
                     <p>My Learning</p>
                     <p>Courses</p>
                 </div>
+                <div className='footeruppersectionverticlelines'></div>
                 <div className='footeruppersection4'>
                     <h1>ABOUT US</h1>
                     <div className='footeruppersection4paragraph'>At  <span style={{fontWeight:'700'}}><span style={{color:'#fa9746'}}>HDL</span> Gen Hub</span>, we're passionate about redefining education

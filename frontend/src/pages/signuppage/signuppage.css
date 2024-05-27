@@ -1,0 +1,12 @@
+.signuppagecontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../images/SignInUpBackground.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.signuppagediv{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}

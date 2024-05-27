@@ -1,0 +1,94 @@
+.signincontainer{
+    border-style: groove;
+    border-color: #fa9746;
+    min-width: 360px;
+    min-height: 500px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(225,225,225,0.5);
+}
+.signinheader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 40px;
+}
+.signininputs{
+    width: 80%;
+}
+.signininputfield{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.signininputfield label{
+    font-size: 12px;
+}
+.signininputfield input{
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 24px;
+    border-radius: 10px;
+    background-color: rgba(225,225,225,0.5);
+}
+.signinbottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 80%;
+}
+.signinagreementtext{
+    margin-top: 10px;
+    font-size: 10px;
+    width: 100%;
+}
+.signinbutton button{
+    margin-top: 10px;
+    font-size: 14px;
+    background-color: #fa9746;
+    width: 80px;
+    height: 30px;
+    border-radius: 20px;
+}
+.signinforgotpw{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 10px;
+}
+.signinforgotpw a{
+    color: #fa9746;
+    font-weight: 600;
+    text-decoration: none;
+}
+.singindonthaveacc{
+    font-size: 10px;
+}
+.singindonthaveacc a{
+    color: #fa9746;
+    font-weight: 600;
+    text-decoration: none;
+}
+@media screen and (max-width: 400px) {
+    .signincontainer{
+        border-style: groove;
+        border-color: #fa9746;
+        min-width: auto;
+        max-width: 360px;
+        min-height: 500px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(225,225,225,0.2);
+    }    
+}
