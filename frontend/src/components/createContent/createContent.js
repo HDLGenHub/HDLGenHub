@@ -1,23 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams, useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
+import { useParams, useNavigate } from 'react-router-dom';
 
 const CreateUpdateContent = () => {
-  const { courseId, contentId } = useParams(); // Retrieve courseId and contentId from URL parameters
-  const navigate = useNavigate(); // Use useNavigate instead of useHistory
+  const { courseId, contentId } = useParams();
+  const navigate = useNavigate();
   const [content, setContent] = useState({
     title: '',
     type: '',
     fileUrl: '',
     submissions: [],
-    feedback: '',
-    resources: []
+    feedback: [],
+    resources: [{ title: '', url: '' }],
   });
 
   useEffect(() => {
     if (contentId) {
-      // If editing existing content, fetch content details
-      axios.get(`http://localhost:8070/Course/courses/${courseId}/content/${contentId}`)
+      axios.get(`http://localhost:8070/courses/${courseId}/content/${contentId}`)
         .then(response => {
           setContent(response.data);
         })
@@ -26,22 +25,42 @@ const CreateUpdateContent = () => {
   }, [courseId, contentId]);
 
   const handleChange = (e) => {
-    setContent({ ...content, [e.target.name]: e.target.value });
+  
+    const { name, value } = e.target;
+    setContent({ ...content, [name]: value });
+  };
+
+  const handleResourceChange = (index, event) => {
+    const newResources = content.resources.map((resource, i) => {
+      if (i === index) {
+        return { ...resource, [event.target.name]: event.target.value };
+      }
+      return resource;
+    });
+    setContent({ ...content, resources: newResources });
+  };
+
+  const addResource = () => {
+    setContent({
+      ...content,
+      resources: [...content.resources, { title: '', url: '' }],
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('Submitting form:', content); // Add logging
+    console.log('courseId:', courseId); // Log courseId to check if it is defined
+
     try {
       if (contentId) {
-        // Update existing content
-        await axios.put(`http://localhost:8070/Course/courses/${courseId}/content/${contentId}`, content);
+        await axios.put(`http://localhost:8070/courses/${courseId}/content/${contentId}`, content);
         alert('Content updated successfully!');
       } else {
-        // Create new content
-        await axios.post(`http://localhost:8070/Course/courses/${courseId}/content`, content);
+        await axios.post(`http://localhost:8070/courses/${courseId}/content`, content);
         alert('Content created successfully!');
       }
-      navigate(`/courses/${courseId}`); // Redirect to course page after saving
+      navigate(`/courses/${courseId}`);
     } catch (error) {
       console.error('Error creating/updating content:', error);
       alert('An error occurred while creating/updating content. Please try again later.');
@@ -50,9 +69,9 @@ const CreateUpdateContent = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:8070/Course/courses/${courseId}/content/${contentId}`);
+      await axios.delete(`http://localhost:8070/courses/${courseId}/content/${contentId}`);
       alert('Content deleted successfully!');
-      navigate(`/courses/${courseId}`); // Redirect to course page after deleting
+      navigate(`/courses/${courseId}`);
     } catch (error) {
       console.error('Error deleting content:', error);
       alert('An error occurred while deleting content. Please try again later.');
@@ -66,15 +85,35 @@ const CreateUpdateContent = () => {
         <label>Title:</label>
         <input type="text" name="title" value={content.title} onChange={handleChange} required />
         <label>Type:</label>
-        <input type="text" name="type" value={content.type} onChange={handleChange} required />
+        <select name="type" value={content.type} onChange={handleChange} required>
+          <option value="">Select type</option>
+          <option value="Lecture notes">Lecture</option>
+          <option value="Assignment">Assignment</option>
+          <option value="Quiz">Quiz</option>
+          <option value="Project">Project</option>
+        </select>
         <label>File URL:</label>
         <input type="text" name="fileUrl" value={content.fileUrl} onChange={handleChange} />
-        <label>Feedback:</label>
-        <textarea name="feedback" value={content.feedback} onChange={handleChange} />
-        <label>Submissions:</label>
-        <input type="text" name="submissions" value={content.submissions} onChange={handleChange} />
         <label>Resources:</label>
-        <input type="text" name="resources" value={content.resources} onChange={handleChange} />
+        {content.resources.map((resource, index) => (
+          <div key={index}>
+            <input
+              type="text"
+              name="title"
+              placeholder="Resource Title"
+              value={resource.title}
+              onChange={(e) => handleResourceChange(index, e)}
+            />
+            <input
+              type="text"
+              name="url"
+              placeholder="Resource URL"
+              value={resource.url}
+              onChange={(e) => handleResourceChange(index, e)}
+            />
+          </div>
+        ))}
+        <button type="button" onClick={addResource}>Add Resource</button>
         <button type="submit">Save</button>
         {contentId && <button type="button" onClick={handleDelete}>Delete</button>}
       </form>
