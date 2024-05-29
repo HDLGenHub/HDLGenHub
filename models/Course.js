@@ -7,6 +7,10 @@ const CourseSchema = new Schema(
             type: String,
             require: true
         },
+        coverimage: {
+            type: String,
+            require: true
+        },
         description: {
             type: String,
             require: true
@@ -15,25 +19,9 @@ const CourseSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: 'CourseComponent'
         }],
-        age: {
-            type: Number,
-            require: false
-        },
-        dp: {
-            type: String,
-            require: true
-        },
-        gender: {
-            type: String,
-            require: true
-        },
-        chatid: {
+        createdby: {
             type: Schema.Types.ObjectId,
-            require: true
-        },
-        password: {
-            type: String,
-            require: true
+            ref: 'Teacher'
         }
     }
 )

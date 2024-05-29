@@ -22,17 +22,15 @@ router.get('/:id', async(req, res)=>{
 });
 
 router.post('/', async(req, res)=>{
-    const { name, description, coursecomponents, age, dp, gender, chatid, password } = req.body;
+    const { name, description, coursecomponents, createdby } = req.body;
+    console.log(req.body);
     const course = new Course(
         {
             name,
             description,
+            coverimage,
             coursecomponents,
-            age,
-            dp,
-            gender,
-            chatid,
-            password
+            createdby
         }
     )
     try{
@@ -60,5 +58,16 @@ router.delete('/:id', async (req, res)=>{
         res.status(400).json({message:error.message});
     }
 });
+
+router.get('/courses/:id', async (req, res)=>{
+    const id = req.params.id;
+    console.log(id);
+    try{
+        const response = await Course.find({"createdby":id});
+        res.status(201).json(response);
+    } catch(error){
+        res.status(400).json({message:error.message});
+    }
+})
 
 module.exports = router;

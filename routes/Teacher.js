@@ -61,4 +61,24 @@ router.delete('/:id', async (req, res)=>{
     }
 });
 
+router.post('/login', async (req, res)=>{
+    const email = req.body.email;
+    const password = req.body.password;
+    try{
+        const response = await Teacher.findOne({email});
+        if(response){
+            if(password === response.password){
+                res.status(200).json({status: "success", response});
+            }
+            else{
+                res.status(201).json({status: "incorrect password"});
+            }
+        } else{
+            res.status(201).json({status: "user not found"});
+        }
+    } catch{
+        res.status(200).json({status: "error with login"});
+    }
+});
+
 module.exports = router;

@@ -12,7 +12,7 @@ const DocumentSchema = new Schema(
             require: true
         },
         url: {
-            type: Number,
+            type: String,
             require: false
         }
     }

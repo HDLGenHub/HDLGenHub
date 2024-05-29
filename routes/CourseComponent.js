@@ -22,12 +22,13 @@ router.get('/:id', async(req, res)=>{
 });
 
 router.post('/', async(req, res)=>{
-    const { name, description, item } = req.body;
+    const { name, description, item, itemtype } = req.body;
     const coursecomponent = new CourseComponent(
         {
             name , 
             description, 
-            item
+            item,
+            itemtype
         }
     )
     try{

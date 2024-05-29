@@ -14,6 +14,10 @@ const CourseComponentSchema = new Schema(
         item: {
             type: Schema.Types.ObjectId,
             ref: 'Video'||'Document'||'Quiz'||'Coding'
+        },
+        itemtype: {
+             type: String,
+             require: true
         }
     }
 )
