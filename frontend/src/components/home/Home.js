@@ -7,9 +7,9 @@ import work from "../../images/work.png";
 
 function Home() {
   return (
-    <div className="flex flex-col mt-10 md:mt-20">
+    <div class="flex flex-col mt-10 md:mt-20 bg-white">
       <div class="flex pb-0 p-5">
-        <div className="w-1/2 text-left md:ml-32 mt-3">
+        <div class="w-1/2 text-left md:ml-32 mt-3">
           <h3 class="font-bold md:text-2xl text-sm md:p-5 p-1">
             <span style={{ color: "orange" }}>HDL</span> Gen Hub{" "}
             <span class="font-thin">for learners</span>
@@ -32,11 +32,11 @@ function Home() {
         />
       </div>
       <div class="h-0.5 bg-gray-200"></div>
-      <p class="font-extrabold text-xl center md:m-14 m-10 md:mb-0 md:mt-20 mb-0">
+      <p class="font-bold font-sans text-xl center md:m-14 m-10 md:mb-0 md:mt-20 mb-0">
         Exclusive content, exceptional quality
       </p>
       <div class="text-center center md:m-10 m-5 mb-16 ">
-        <h class="md:text-xl text-gray-500 text-justify">
+        <h class="md:text-lg text-gray-500 text-justify">
           Unlock the world of HDLs through our immersive e-learning platform.
           From beginner basics to advanced techniques, dive into digital design
           at your own pace. Engage, practice, and connect in a community-driven
@@ -44,21 +44,21 @@ function Home() {
         </h>
       </div>
 
-      <div class="md:flex md:flex-row md:justify-around flex justify-center flex-col gap-16 items-center md:m-20 mt-0 mb-10">
-        <div class="w-64 h-48 bg-neutral-200 shadow-lg rounded-ss-3xl rounded-ee-3xl  hover:scale-110">
+      <div class="md:flex md:flex-row md:justify-around flex justify-center flex-col gap-16 items-center md:m-20 md:mt-10 mt-0 mb-10">
+        <div class="w-96 h-48 bg-gray-100 rounded-ss-3xl rounded-ee-3xl hover:scale-110">
           <p class="text-3xl font-bold text-amber-500 m-5">100+</p>
           <p class="text-xl font-bold text-center m-2 mt-0">
             hours of content to gain knowledge <br />
             (updating regularly)
           </p>
         </div>
-        <div class="w-64 h-48 bg-neutral-200 shadow-lg rounded-ss-3xl rounded-ee-3xl  hover:scale-110">
+        <div class="w-96 h-48 bg-gray-100 rounded-ss-3xl rounded-ee-3xl  hover:scale-110">
           <p class="text-3xl font-bold text-amber-500 m-5 mb-3">100+</p>
           <p class="text-xl font-bold text-center m-5 mt-0">
             expert from the university with the best guidance
           </p>
         </div>
-        <div class="w-64 h-48 bg-neutral-200 shadow-lg rounded-ss-3xl rounded-ee-3xl  hover:scale-110">
+        <div class="w-96 h-48 bg-gray-100 rounded-ss-3xl rounded-ee-3xl  hover:scale-110">
           <p class="text-3xl font-bold text-amber-500 m-5 mb-3">350+</p>
           <p class="text-xl font-bold text-center m-3 mt-0">
             users to unleash their Potential through E-Learning Excellence

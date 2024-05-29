@@ -53,7 +53,7 @@ function Navbar() {
     if (user.role === "student") {
       return (
         <header>
-          <nav class="bg-gray-100 border-gray-100 fixed w-full z-20 border-b shadow-2xl top-0 start-0">
+          <nav class="bg-white border-gray-100 fixed w-full z-20 border-b shadow-sm top-0 start-0">
             <div class="flex justify-between items-center p-2">
               <div class="flex font-semibold m-2 gap-2">
                 <li class="block flex-initial text-gray-900 rounded hover:text-amber-700 md:mx-5">
@@ -130,7 +130,7 @@ function Navbar() {
                   <button
                     onClick={handleEdit}
                     type="button"
-                    class="w-16 h-8 md:w-20 md:h-9 text-white bg-amber-500 hover:bg-amber-600 text-xs md:font-medium rounded-full md:text-sm px-2 text-center"
+                    class="w-12 h-8 md:w-12 md:h-9 text-white bg-amber-500 hover:bg-amber-600 text-xs md:font-medium rounded-full md:text-sm px-2 text-center"
                   >
                     <User></User>
                   </button>
@@ -151,7 +151,7 @@ function Navbar() {
     } else if (user.role === "teacher") {
       return (
         <header>
-          <nav class="bg-gray-100 border-gray-100 fixed w-full z-20 border-b shadow-2xl top-0 start-0">
+          <nav class="bg-white border-gray-100 fixed w-full z-20 border-b shadow-sm top-0 start-0">
             <div class="flex justify-between items-center p-2">
               <div class="flex font-semibold m-2 gap-2">
                 <li class="block flex-initial text-gray-900 rounded hover:text-amber-700 md:mx-5">
@@ -249,7 +249,7 @@ function Navbar() {
     } else if (user.role === "admin") {
       return (
         <header>
-          <nav class="bg-gray-100 border-gray-100 fixed w-full z-20 border-b shadow-2xl top-0 start-0">
+          <nav class="bg-white border-gray-100 fixed w-full z-20 border-b shadow-sm top-0 start-0">
             <div class="flex justify-between items-center p-2">
               <div class="flex font-semibold m-2 gap-2">
                 <li class="block flex-initial text-gray-900 rounded hover:text-amber-700 md:mx-5">
@@ -333,7 +333,7 @@ function Navbar() {
 
     return (
       <header>
-      <nav class="bg-gray-100 border-gray-100 fixed w-full z-20 border-b shadow-2xl top-0 start-0">
+      <nav class="bg-white border-gray-100 fixed w-full z-20 border-b shadow-sm top-0 start-0">
         <div class="flex justify-between items-center p-2">
           <div class="flex font-semibold m-2 gap-2">
             <li class="block flex-initial text-gray-900 rounded hover:text-amber-700 md:mx-5">

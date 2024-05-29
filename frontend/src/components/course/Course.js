@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom"; // Import useParams to access route parameters
-import "./Course.css"; // Import CSS file for styling
+import { useParams } from "react-router-dom"; 
+import "./Course.css";
 import IDECompiler from "../compiler/compiler.js";
 
 const Course = () => {
-  const { courseId } = useParams(); // Get the courseId from the URL params
+  const { courseId } = useParams(); 
   const [course, setCourse] = useState(null);
   const [instructor, setInstructor] = useState(null);
   const [isEnrolled, setIsEnrolled] = useState(false); // Add state for enrollment status
@@ -162,68 +162,70 @@ const Course = () => {
     if (course.title === "Intoduction to HDL") {
       return (
         <>
-        <div className="course-container">
-          <div className="course-header m-20">
-          <h2>{course ? course.title : "Loading..."}</h2>
-          <p className="instructor">
-            {course
-              ? `Instructor: ${instructor ? instructor.user.name : "Loading"}`
-              : "Loading..."}
-          </p>
-        </div>
-        <div className="course-content">
-          {course ? (
-            <div>
-              <p className="description">{course.description}</p>
-              {course.materials && course.materials.length > 0 && (
+          <div className="course-container">
+            <div className="course-header m-20">
+              <h2 class="font-bold">{course ? course.title : "Loading..."}</h2>
+              <p className="instructor font-medium font-serif text-xl">
+                {course
+                  ? `Instructor: ${
+                      instructor ? instructor.user.name : "Loading"
+                    }`
+                  : "Loading..."}
+              </p>
+            </div>
+            <div className="course-content items-center">
+              {course ? (
                 <div>
-                  <h3>Materials</h3>
-                  <ul className="materials-list">
-                    {course.materials.map((material) =>
-                      renderMaterial(material)
-                    )}
-                  </ul>
-                </div>
-              )}
-                <div className="mt-10 w-4/5">
-                {/* Embed Verilog compiler iframe */}
-                <iframe
-                  title={`Verilog tutorial ${course.title}`}
-                  src="https://www.youtube.com/embed/nblGw37Fv8A"
-                  width="100%"
-                  height="400px"
-                  frameBorder="0"
-                  allowFullScreen
-                ></iframe>
-                <hr className="m-10"></hr>
-                <IDECompiler />
-              </div>
-              {/* Conditionally render the "Enroll" button or enrollment message */}
-              {isEnrolled ? (
-                <div className="m-5">
-                  <p>You are already enrolled in this course.</p>
-                  <button
-                    className="m-5 border-2 p-2 mt-5 bg-amber-500 rounded-full"
-                    onClick={handleUnEnroll}
-                  >
-                    Unenroll
-                  </button>
+                  <p className="description">{course.description}</p>
+                  {course.materials && course.materials.length > 0 && (
+                    <div>
+                      <h3>Materials</h3>
+                      <ul className="materials-list">
+                        {course.materials.map((material) =>
+                          renderMaterial(material)
+                        )}
+                      </ul>
+                    </div>
+                  )}
+                  <div class="mt-10 items-center w-full">
+                    {/* Embed Verilog compiler iframe */}
+                    <iframe
+                      title={`Verilog tutorial ${course.title}`}
+                      src="https://www.youtube.com/embed/nblGw37Fv8A"
+                      width="80%"
+                      height="400px"
+                      frameBorder="0"
+                      allowFullScreen
+                    ></iframe>
+                    <hr className="m-10"></hr>
+                    <IDECompiler />
+                  </div>
+                  {/* Conditionally render the "Enroll" button or enrollment message */}
+                  {isEnrolled ? (
+                    <div className="m-5">
+                      <p>You are already enrolled in this course.</p>
+                      <button
+                        className="m-5 border-2 p-2 mt-5 bg-amber-500 rounded-full"
+                        onClick={handleUnEnroll}
+                      >
+                        Unenroll
+                      </button>
+                    </div>
+                  ) : (
+                    <button
+                      className="m-5 border-2 p-2 bg-amber-500 rounded-full"
+                      onClick={handleEnroll}
+                    >
+                      Enroll
+                    </button>
+                  )}
                 </div>
               ) : (
-                <button
-                  className="m-5 border-2 p-2 bg-amber-500 rounded-full"
-                  onClick={handleEnroll}
-                >
-                  Enroll
-                </button>
+                <p>Loading course details...</p>
               )}
             </div>
-          ) : (
-            <p>Loading course details...</p>
-          )}
-        </div>
-      </div>
-      </>
+          </div>
+        </>
       );
     } else {
       // Render course details

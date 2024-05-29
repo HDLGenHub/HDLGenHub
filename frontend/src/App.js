@@ -18,7 +18,7 @@ import Course from './components/course/Course';
 import RegisteredHomePage from './components/learnpageByNJ/RegisteredHomePage';
 import EditCourse from './components/editCourse/EditCourse';
 import CreateUpdateContent from './components/createContent/createContent';
-import Loading from './components/Loading';
+import Loading from './components/loading/Loading';
 
 function App() {
   const [loading, setLoading] = useState(true);

@@ -43,8 +43,8 @@ function Login() {
         setTimeout(() => {
           navigate('/');
           window.location.reload();
-        },2000);
-
+        }, 2000);
+        
       } else {
         toast.error('Incorrect email or password', {
           position: "top-center",

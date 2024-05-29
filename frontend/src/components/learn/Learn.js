@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom'; 
 import img from "../../images/learning.jpg";
 import './Learn.css'; // Import CSS file for styling
 
@@ -59,12 +58,7 @@ const CoursesPage = () => {
 
   return (
     <div>
-      <div className="mt-20">
-        <div className="text-2xl text-left p-5 ml-10">
-          <h1>Explore Learning Paths</h1>
-        </div>
-
-        <div className="">
+        <div className="mt-24">
           <figure className="ml-10 mr-10 filter grayscale-0 hover:brightness-110 ">
             <img className="rounded-2xl size-full h-80" src={img} alt="product" />
             <div>
@@ -93,15 +87,14 @@ const CoursesPage = () => {
               </figcaption>
             </div>
           </figure>
-        </div>
 
         <div className="courses-container m-10">
           <h2 className="text-left font-bold mb-10">Enrolled Courses</h2>
           <div className="courses-grid">
             {enrolledCourses.map(course => (
-              <div className="en-course-box" key={course._id} onClick={() => navigateToCourse(course._id)}>
-                <h3 className="font-bold p-2">{course.title}</h3>
-                <p className="p-2">{course.description}</p>
+              <div className="en-course-box shadow-md shadow-gray-300 hover:scale-105" key={course._id} onClick={() => navigateToCourse(course._id)}>
+                <h3 className="font-bold bg-white p-5 rounded-xl">{course.title}</h3>
+                <p className="p-2 font-medium">{course.description}</p>
                 <p>Duration: {course.duration} hours</p>
                 <p>Instructor: {instructors[course._id] ? instructors[course._id].user.name : 'Loading...'}</p>
               </div>
@@ -111,9 +104,9 @@ const CoursesPage = () => {
           <h2 className="text-left font-bold mb-10 mt-10">All Courses</h2>
           <div className="courses-grid">
             {allCourses.map(course => (
-              <div className="course-box" key={course._id} onClick={() => navigateToCourse(course._id)}>
-                <h3 className="font-bold p-2">{course.title}</h3>
-                <p className="p-2">{course.description}</p>
+              <div className="course-box shadow-md shadow-gray-300 hover:scale-105" key={course._id} onClick={() => navigateToCourse(course._id)}>
+                <h3 className="font-bold bg-white p-5 rounded-xl">{course.title}</h3>
+                <p className="p-2 font-medium">{course.description}</p>
                 <p>Duration: {course.duration} hours</p>
                 <p>Instructor: {instructors[course._id] ? instructors[course._id].user.name : 'Loading...'}</p>
               </div>

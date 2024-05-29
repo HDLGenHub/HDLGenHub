@@ -7,8 +7,8 @@ import email_icon from '../../images/email_icon.png';
 
 const Footer = () => {
   return (
-    <div>
-      <div className="flex justify-around bg-gray-300 lg:gap-20 md:p-8 p-2 gap-10">
+    <div className="bg-gray-300">
+      <div className="flex justify-around bg-gray-300 lg:gap-20 md:p-5 p-2">
         <div class="md:flex md:gap-20 p-2 pr-0">
           <div class="text-left m-2">
             <h4 class="font-medium md:ml-5">Contact Us</h4>
@@ -29,10 +29,10 @@ const Footer = () => {
           <p class="text-justify">At HDL Gen Hub, we're revolutionizing education with innovation and accessibility. Our e-learning platform breaks geographical barriers, providing high-quality education for all.</p>
         </div>
     </div>
-    
 
-    <div class="h-10 bg-amber-600 text-center opacity-75">
-      <p class="text-center text-white p-2">© 2024 HDL Gen Hub. All rights reserved.</p>
+    <div class="">
+      <hr class="bg-amber-600 h-0.5 ml-10 mr-10"></hr>
+      <p class="text-center">© 2024 HDL Gen Hub. All rights reserved.</p>
     </div>
   </div>
   );
