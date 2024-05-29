@@ -1,0 +1,24 @@
+.coursemanagebarconatiner{
+    width: 160px;
+}
+.coursemanagebar-item{
+    display: flex;
+    flex-direction: column;
+}
+.coursemanagebar-item button{
+    width: 100%;
+    height: 60px;
+    background-color: #fa9746;
+    border-width: 0;
+}
+.coursemanagebar-item button:hover{
+    background-color: #000000;
+    color: white;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+.coursemanagebar-item button:active{
+    background-color: #ca0000;
+    color: white;
+    transition-duration: 0s;
+}

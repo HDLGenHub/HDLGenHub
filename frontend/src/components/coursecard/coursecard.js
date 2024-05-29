@@ -11,12 +11,12 @@ const Coursecard =()=>{
     useEffect(()=>{
         const fetchData=async()=>{
             const response = await axios.get(`http://localhost:4000/Course/${id}`);
-            setData(response);
+            setData(response.data);
         }
         fetchData();
     },[])
     console.log("Courses: ",id);
-
+    console.log("Data", data);
     if(data){
         return(
             <div className="coursecardcontainer">
@@ -31,6 +31,11 @@ const Coursecard =()=>{
                     </div>
                 </div>
             </div>
+        );
+    }
+    else{
+        return(
+            <div>Hi</div>
         );
     }
 }

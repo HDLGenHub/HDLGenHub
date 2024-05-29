@@ -1,21 +1,19 @@
 .coursecardcontainer{
-    border-style: groove;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 .coursecard-coursecomponent{
-    border-style: groove;
+    width: 100%;
 }
 .coursecardpack{
-    border-style: groove;
-    width: 90%;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background-color: #e1e1e1;
-    border-radius: 20px;
+    background-color: #ffffff;
+    width: 100%;
 }
 .coursecardpack h1{
     text-align: center;

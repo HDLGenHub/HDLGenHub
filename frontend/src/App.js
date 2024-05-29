@@ -8,6 +8,7 @@ import SignUpPage from './pages/signuppage/signuppage';
 import SignInPage from './pages/signinpage/signinpage';
 import CoursePage from './pages/coursepage/coursepage';
 import Coursecard from './components/coursecard/coursecard';
+import Managecoursepage from './pages/managecoursepage/managecoursepage';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
             <Route path='/signuppage' element={<SignUpPage/>}/>
             <Route path='/signinpage' element={<SignInPage/>}/>
             <Route path='/courses' element={<CoursePage/>}/>
-            <Route path='/managecourse/:id' element={<Coursecard/>}/>
+            <Route path='/managecourse/:id' element={<Managecoursepage/>}/>
           </Routes>
         </div>
         <Footer/>

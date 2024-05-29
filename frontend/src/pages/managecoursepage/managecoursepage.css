@@ -1,0 +1,12 @@
+.manageopenedcourse{
+    display: flex;
+    gap: 10px;
+}
+.managecoursepage-coursecard{
+    width: 100%;
+}
+.managecoursepagebar{
+    border-style: groove;
+    border-width: 0 2px 0 0;
+    border-color: black;
+}
