@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import './signup.css'
+import './signup.css';
+import axios from 'axios';
+import { Hashing } from '../../security/hashing';
 
 const Signup =()=>{
     const [gender, setGender] = useState("");
@@ -8,6 +10,42 @@ const Signup =()=>{
     const [lastname, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const handleSignup =async()=>{
+        console.log({gender, role, firstname, lastname, email, password});
+        if(gender && role && firstname && lastname && email && password){
+            const name = firstname+" "+lastname;
+            var res;
+            try{
+                if(role==="Student"){
+                    res = await axios.post('http://localhost:4000/Student', {
+                        name,
+                        email,
+                        gender,
+                        password
+                    });
+                }
+                else{
+                    res = await axios.post('http://localhost:4000/Teacher', {
+                        name,
+                        email,
+                        gender,
+                        password
+                    });
+                }
+                console.log(res);
+                alert("User Registered Succussfuly");
+                setFirstName('');
+                setLastName('');
+                setGender('');
+                setRole('');
+                setEmail('');
+                setPassword('');
+            } catch{
+                alert("User Registration Failed");
+            }
+        }
+    }
     return(
         <div className="signupcontainer">
             <div className='signupheader'>
@@ -22,7 +60,7 @@ const Signup =()=>{
                     <label>Email Address</label>
                     <input type='text' value={email} onChange={(e)=>setEmail(e.target.value)}></input>
                     <label>Password</label>
-                    <input type='password'></input>
+                    <input type='password' value={password} onChange={(e)=>setPassword(e.target.value)}></input>
                 </div>
                 <div className='signupselection'>
                 <label>Gender</label>
@@ -84,7 +122,7 @@ const Signup =()=>{
                     </label>
                 </div>
                 <div className='signupbutton'>
-                    <button>Sign Up</button>
+                    <button onClick={handleSignup}>Sign Up</button>
                 </div>
             </div>
         </div>

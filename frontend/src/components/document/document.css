@@ -1,0 +1,10 @@
+.documentcontainer{
+    width: 100%;
+    border-style: groove;
+}
+.documentcontainer iframe{
+    border-style: groove;
+}
+.documentiframe{
+    border-style: groove;
+}

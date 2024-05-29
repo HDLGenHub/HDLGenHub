@@ -1,9 +1,52 @@
 import { useState } from 'react';
 import './signin.css'
+import axios from 'axios';
+import { setCache } from '../../caching/cache';
+import { useNavigate } from "react-router-dom";
 
 const Signin =()=>{
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [loggedstudent, setLoggedstudent] = useState("");
+    const [loggedteacher, setLoggedteacher] = useState("");
+    const navigate = useNavigate();
+
+    const handleSignin =async()=>{
+        if(email && password){
+            try{
+                console.log({email, password});
+                const student = await axios.post('http://localhost:4000/Student/login',{
+                    email,
+                    password
+                });
+                const teacher = await axios.post('http://localhost:4000/Teacher/login',{
+                    email,
+                    password
+                });
+                if(student.data.status === "success"){
+                    setLoggedstudent(student);
+                    setCache('HDLGenHub_Student', JSON.stringify(student.data.response));
+                    setCache('HDLGenHub_User', JSON.stringify({data:student.data.response, role:'student'}));
+                    setCache('HDLGenHub_loggedState',1);
+                    alert('Student logged');
+                }
+                if(teacher.data.status === "success"){
+                    setLoggedteacher(teacher);
+                    setCache('HDLGenHub_Teacher', JSON.stringify(teacher.data.response));
+                    setCache('HDLGenHub_User', JSON.stringify({data:teacher.data.response, role:'teacher'}));
+                    setCache('HDLGenHub_loggedState',1);
+                    alert('Teacher logged');
+                }
+                console.log({student, teacher});
+                setEmail('');
+                setPassword('');
+                navigate('/');
+                window.location.reload();
+            } catch{
+                alert('User logging failed');
+            }
+        }
+    }
     return(
         <div className="signincontainer">
             <div className='signinheader'>
@@ -27,7 +70,7 @@ const Signin =()=>{
                     </label>
                 </div>
                 <div className='signinbutton'>
-                    <button>Sign In</button>
+                    <button onClick={handleSignin}>Sign In</button>
                 </div>
                 <div className='singindonthaveacc'>Don't have an account? <a href='/signuppage'>Sign Up</a></div>
             </div>

@@ -6,6 +6,8 @@ import Navbar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
 import SignUpPage from './pages/signuppage/signuppage';
 import SignInPage from './pages/signinpage/signinpage';
+import CoursePage from './pages/coursepage/coursepage';
+import Coursecard from './components/coursecard/coursecard';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
             <Route path="/" element={<HomePage/>}/>
             <Route path='/signuppage' element={<SignUpPage/>}/>
             <Route path='/signinpage' element={<SignInPage/>}/>
+            <Route path='/courses' element={<CoursePage/>}/>
+            <Route path='/managecourse/:id' element={<Coursecard/>}/>
           </Routes>
         </div>
         <Footer/>
