@@ -36,7 +36,7 @@ router.post('/courses', async (req, res) => {
     }
 });
 
-router.put('/editcourses/:courseId', async (req, res) => {
+router.put('/courses/:courseId/editcourses', async (req, res) => {
     try {
       const { courseId } = req.params;
       const { title, description, duration, enrollmentStatus, instructor } = req.body;

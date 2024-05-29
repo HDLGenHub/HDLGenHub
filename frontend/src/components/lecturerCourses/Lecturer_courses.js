@@ -25,7 +25,7 @@ const Courses = () => {
   };*/
   const handleEditCourse = (courseId) => {
     // Open a new tab to edit the course
-    window.location.href = `http://localhost:3000/editcourse`;
+    window.location.href = `http://localhost:3000/courses/${courseId}/editcourses`;
   };
 
   const handleCreateCourse = () => {
@@ -34,7 +34,7 @@ const Courses = () => {
   };
   const handleCreateContent = (courseId) => {
     // Open a new tab to create course content for the specified course
-    window.location.href = `http://localhost:3000/createcontent`;
+    window.location.href = `http://localhost:3000/courses/${courseId}/content`;
   };
 
   return (
@@ -88,7 +88,7 @@ const Courses = () => {
                       </button>
                       <button
                         class="rounded-full py-2 px-3 mt-5 border-amber-500 border-2 hover:border-2  hover:text-white hover:bg-amber-500 w-44"
-                        onClick={handleCreateContent}
+                        onClick={() => handleCreateContent(course._id)}
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"

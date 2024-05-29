@@ -51,10 +51,10 @@ function App() {
           <Route path="/edituser" element={<EditUser/>}/>
           <Route path="/createcourse" element={<CreateCourse/>}/>
           <Route path="/course/:courseId" element={<Course/>}/>
-          <Route path="/editcourse" element={<EditCourse/>}/>
-          <Route path="/createcontent" element={<CreateUpdateContent/>}/>
+          <Route path="/courses/:courseId/editcourse" element={<EditCourse/>}/>
+          
           <Route path="/registeredhomepage" element={<RegisteredHomePage/>}/>
-          <Route path="/courses/:courseId/content/new" component={<CreateUpdateContent/>} /> {/* For creating new content */}
+          <Route path="/courses/:courseId/content" element={<CreateUpdateContent/>} /> {/* For creating new content */}
           <Route path="/courses/:courseId/content/:contentId" component={<CreateUpdateContent/>} /> {/* For updating existing content */}
         
         </Routes>

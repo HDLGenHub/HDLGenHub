@@ -5,7 +5,7 @@ const router = express.Router();
 const Content = require('../models/Content');
 
 // Route to create new content
-router.post('/courses/:courseId/content', async (req, res) => {
+router.post('/courses/:courseId/content/', async (req, res) => {
   try {
     const { courseId } = req.params;
     const { title, type, fileUrl, submissions, feedback, resources } = req.body;

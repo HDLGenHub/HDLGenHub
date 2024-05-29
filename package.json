@@ -1,8 +1,10 @@
 {
   "dependencies": {
     "@material-tailwind/react": "^2.1.9",
+    "autoprefixer": "^10.4.19",
     "concurrently": "^8.2.2",
     "multer": "^1.4.5-lts.1",
+    "postcss-cli": "^11.0.0",
     "prismjs": "^1.29.0",
     "react-feather": "^2.0.10",
     "react-redux": "^9.0.4",
