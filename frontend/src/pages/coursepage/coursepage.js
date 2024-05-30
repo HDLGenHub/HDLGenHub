@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { getCache } from "../../caching/cache";
-import Coursecard from "../../components/coursecard/coursecard";
 import Smallcoursecard from "../../components/smallcoursecard/smallcoursecard";
 import './coursepage.css';
 import Coursepagecover from "../../components/coursepagecover/coursepagecover";

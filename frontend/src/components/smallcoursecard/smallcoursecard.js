@@ -18,11 +18,6 @@ const Smallcoursecard =(Data)=>{
                     <h1>{data.name}</h1>
                     <h2>{data.description}</h2>
                     <div className='smallcoursecardcover'>{data.coverimage?(<Coverimage Image={data.coverimage}/>):null}</div>
-                    {/*<div className="smallcoursecard-coursecomponent">
-                        {data.coursecomponents?(data.coursecomponents.map((coursecomponentid)=>(
-                            <div key={coursecomponentid}>{<Coursecomponent id={coursecomponentid}/>}</div>
-                        ))):null}
-                    </div>*/}
                 </div>
             </button>
         </div>

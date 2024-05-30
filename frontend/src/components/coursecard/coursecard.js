@@ -8,25 +8,35 @@ import axios from 'axios';
 const Coursecard =()=>{
     const {id} = useParams();
     const [data, setData] = useState();
+    const [coursecomponents, setCoursecomponents] = useState();
     useEffect(()=>{
+        const fetchCoursecomponents=async(data)=>{
+            console.log("under fetching course components: ", data);
+            const res = await axios.get(`http://localhost:4000/Coursecomponent/course/${id}`);
+            setCoursecomponents(res.data);
+        }
         const fetchData=async()=>{
             const response = await axios.get(`http://localhost:4000/Course/${id}`);
             setData(response.data);
         }
         fetchData();
+        fetchCoursecomponents(data);
     },[])
     console.log("Courses: ",id);
     console.log("Data", data);
+    console.log("Course components: ", coursecomponents)
     if(data){
         return(
             <div className="coursecardcontainer">
                 <div className="coursecardpack">
-                    <h1>{data.name}</h1>
-                    <h2>{data.description}</h2>
-                    <div className='coursecardcover'>{data.coverimage?(<Coverimage Image={data.coverimage}/>):null}</div>
+                    <div className='coursecardpack-top'>
+                        <h1>{data.name}</h1>
+                        <h2>{data.description}</h2>
+                        <div className='coursecardcover'>{data.coverimage?(<Coverimage Image={data.coverimage}/>):null}</div>
+                    </div>
                     <div className="coursecard-coursecomponent">
-                        {data.coursecomponents?(data.coursecomponents.map((coursecomponentid)=>(
-                            <div key={coursecomponentid}>{<Coursecomponent id={coursecomponentid}/>}</div>
+                        {coursecomponents?(coursecomponents.map((coursecomponentid)=>(
+                            <div className='coursecard-coursecomponent-each' key={coursecomponentid._id}>{<Coursecomponent id={coursecomponentid._id}/>}</div>
                         ))):null}
                     </div>
                 </div>

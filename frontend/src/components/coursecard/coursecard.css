@@ -21,5 +21,28 @@
 .coursecardpack h2{
     text-align: center;
     font-size: 100%;
-    color: rgb(225, 0, 255);
+    color: rgb(0, 0, 0);
+}
+.coursecardpack-top{
+    background-color: #e1e1e1;
+    border-style: groove;
+    border-width: 0 0 2px 0;
+    border-color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.coursecardcover{
+    width: 80%;
+}
+.coursecard-coursecomponent-each{
+    height: 100%;
+    width: 100%;
+    background-color: #e1e1e1;
+    border-style: groove;
+    border-width: 0 0 2px 0;
+    border-color: black;
+    padding: 20px 0 20px 0;
 }

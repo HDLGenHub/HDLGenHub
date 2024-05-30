@@ -21,7 +21,7 @@ const Coursecomponent =(Id)=>{
             {coursecomponent?(
                 <div className="coursecomponent">
                     {(coursecomponent.data.itemtype==="video")?(<Video id={coursecomponent.data.item}/>):null}
-                    {(coursecomponent.data.itemtype==="document")?(<Document id={coursecomponent.data.item}/>):null}
+                    {/*{(coursecomponent.data.itemtype==="document")?(<Document id={coursecomponent.data.item}/>):null}*/}
                 </div>
             ):null}
         </div>

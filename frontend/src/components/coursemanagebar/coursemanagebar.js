@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import './coursemanagebar.css';
 import axios from 'axios';
 import { useParams } from 'react-router';
+import Enrolledstudentshow from '../enrolledstudentshow/enrolledstudentshow';
+import Popup from 'reactjs-popup';
+import Addcourseitem from '../addcourseitem/addcourseitem';
 
 const Coursemanagebar =()=>{
     const {id} = useParams();
@@ -16,21 +19,17 @@ const Coursemanagebar =()=>{
         fetchEnrollment();
     },[])
 
-    /*
-    const fetchStudent =(studentid)=>{
-        const response = axios.get(`http://localhost:4000/Student/${studentid}`);
-        setStudent(response.data.name);
-    }
-    const showStudent =(studentid)=>{
-        fetchStudent(studentid);
-        return student;
-    }*/
 
     return(
         <div className="coursemanagebarconatiner">
             <div className='coursemanagebar-item'>
                 <button>Save Course</button>
-                <button>Add New Item</button>
+                <Popup trigger = {<button>Add New Item</button>} modal nested>
+                    {
+                        <Addcourseitem/>
+                    }
+                </Popup>
+                
                 <button>Remove Item</button>
                 <button>Delete Course</button>
             </div>
@@ -41,7 +40,7 @@ const Coursemanagebar =()=>{
 
                     <div className='coursemanagebar-students-each'>
                         {Enrolls?(Enrolls.map((enroll)=>(
-                            <div key={enroll}>{enroll.enrolledby}</div>
+                            <div key={enroll} className='coursemanagebar-onestudent'>{<Enrolledstudentshow studentid={enroll.enrolledby}/>}</div>
                         ))):null}
                     </div>
                 </div>

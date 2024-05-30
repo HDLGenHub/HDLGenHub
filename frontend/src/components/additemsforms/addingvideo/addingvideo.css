@@ -1,0 +1,14 @@
+.addingvideocontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+    border-style: groove;
+    background-color: #e1e1e1;
+    height: 50%;
+}
+.addingvideocontainer label{
+    font-size: 10px;
+    font-weight: 900;
+}

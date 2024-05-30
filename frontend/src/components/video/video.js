@@ -17,13 +17,21 @@ const Video =(Id)=>{
     console.log(id);
     console.log("Video: ",video);
     return(
-        <div>
-            <div className="videocontainer">
-                {video?(
-                    <ReactPlayer className='video' url={video.data.url} controls={true} width="100%" height="100%"/>
-                ):null}
-                
-            </div>
+        <div className="videocontainer">
+            {video?(
+                <div className='videocontainer-video'>
+                    <div className='videocontainer-video-header'>
+                        <h1>{video.data.name}</h1>
+                    </div>
+                    <div className='videocontainer-vh'>
+                        <div className='video'><ReactPlayer url={video.data.url} controls={true} width="100%" height="100%"/></div>
+                        <div className='videocontainer-video-description'>
+                            <h1>{video.data.description}</h1>
+                        </div>
+                    </div>
+                </div>
+            ):null}
+            
         </div>
     );
 }

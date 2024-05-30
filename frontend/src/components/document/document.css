@@ -1,8 +1,6 @@
 .documentcontainer{
-    width: 100%;
-    border-style: groove;
-}
-.documentcontainer iframe{
+    width: 600px;
+    height: 800px;
     border-style: groove;
 }
 .documentiframe{
