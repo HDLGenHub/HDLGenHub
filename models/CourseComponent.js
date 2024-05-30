@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 
 const CourseComponentSchema = new Schema(
     {
+        courseid:{
+            type: Schema.Types.ObjectId,
+            ref: 'Course'
+        },
         name: {
             type: String,
             require: true

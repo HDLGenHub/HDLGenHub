@@ -55,5 +55,15 @@ router.delete('/:id', async (req, res)=>{
         res.status(400).json({message:error.message});
     }
 });
+router.get('/enrolledcourses/:courseid', async (req, res)=>{
+    const courseid = req.params.courseid;
+    console.log(courseid);
+    try{
+        const response = await EnrolledCourse.find({"courseid":courseid});
+        res.status(201).json(response);
+    } catch(error){
+        res.status(400).json({message:error.message});
+    }
+})
 
 module.exports = router;

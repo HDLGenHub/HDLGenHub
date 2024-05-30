@@ -15,10 +15,6 @@ const CourseSchema = new Schema(
             type: String,
             require: true
         },
-        coursecomponents: [{
-            type: Schema.Types.ObjectId,
-            ref: 'CourseComponent'
-        }],
         createdby: {
             type: Schema.Types.ObjectId,
             ref: 'Teacher'
