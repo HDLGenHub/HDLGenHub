@@ -46,3 +46,8 @@
     border-color: black;
     padding: 20px 0 20px 0;
 }
+@media screen and (max-width:300px){
+    .coursecardpack-top{
+        font-size: 12px;
+    }
+}

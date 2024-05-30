@@ -1,7 +1,6 @@
 .addcourseitemcontainer{
     width: 400px;
     height: 400px;
-    border-style: groove;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,7 +10,6 @@
     width: 90%;
     display: flex;
     justify-content: end;
-    border-style: groove;
 }
 .addcourseitem-button button{
     background-color: red;
@@ -23,16 +21,23 @@
 .addcourseitem{
     width: 90%;
     height: 90%;
-    border-style: groove;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     background-color: rgb(127, 161, 255);
+    box-shadow: 0px 0px 20px 0px black;
 }
 .addcourseitem-select{
-    border-style: groove;
     display: flex;
     flex-direction: column;
     text-align: center;
+}
+.addcourseitem-select h1{
+    font-size: 28px;
+}
+.addcourseitem-select select{
+    text-align: center;
+    height: 20px;
+    border-radius: 5px;
 }

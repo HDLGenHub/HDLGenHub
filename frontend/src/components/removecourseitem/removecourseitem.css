@@ -1,0 +1,48 @@
+.removecourseitemcontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+.removecourseitem-button button{
+    background-color: red;
+    border-width: 0;
+    font-weight: 800;
+}
+.removecourseitem{
+    min-height: 300px;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.removecourseitem-select{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.removecourseitem-select h1{
+    border-style: groove;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.removecourseitem-select-items{
+    border-style: groove;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 160px;
+    width: 90%;
+}
+.removecourseitem button{
+    border-style: groove;
+    min-width: 100px;
+    min-height: 30px;
+    border-radius: 20px;
+    background-color: orange;
+}

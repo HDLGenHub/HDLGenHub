@@ -35,4 +35,49 @@
 }
 .coursemanagebar-students-each{
     border-style: groove;
+    height: 300px;
+    overflow-y: scroll;
+}
+.coursemanagebar-students-each::-webkit-scrollbar{
+    width: 0px;
+}
+.coursemanagebar-onestudent{
+    border-style: groove;
+    background-color: #000000;
+    color: white;
+}
+
+@media screen and (max-width:480px){
+    .coursemanagebarconatiner{
+        width: 100%;
+    }
+    .coursemanagebar-item{
+        display: flex;
+        flex-direction: row;
+        border-style: groove;
+    }
+    .coursemanagebar-item button{
+        width: 100%;
+        height: 40px;
+        background-color: #fa9746;
+        border-width: 1px;
+        border-style: groove;
+    }
+}
+@media screen and (max-width:300px){
+    .coursemanagebarconatiner{
+        width: 100%;
+    }
+    .coursemanagebar-item{
+        display: flex;
+        flex-direction: column;
+        border-style: groove;
+    }
+    .coursemanagebar-item button{
+        width: 100%;
+        height: 60px;
+        background-color: #fa9746;
+        border-width: 1px;
+        border-style: groove;
+    }
 }

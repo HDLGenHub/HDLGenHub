@@ -9,6 +9,7 @@ import SignInPage from './pages/signinpage/signinpage';
 import CoursePage from './pages/coursepage/coursepage';
 import Coursecard from './components/coursecard/coursecard';
 import Managecoursepage from './pages/managecoursepage/managecoursepage';
+import LearnPage from './studentpages/learnpage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path='/signinpage' element={<SignInPage/>}/>
             <Route path='/courses' element={<CoursePage/>}/>
             <Route path='/managecourse/:id' element={<Managecoursepage/>}/>
+            <Route path='/learn' element={<LearnPage/>}/>
           </Routes>
         </div>
         <Footer/>
