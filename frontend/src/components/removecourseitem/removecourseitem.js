@@ -8,7 +8,7 @@ const Removecourseitem =()=>{
     const [coursecomponents, setCoursecomponents] = useState();
     const [checked, setChecked] = useState([]);
     const {id} = useParams();
-    console.log("Remove item id: ", id);
+
     useEffect(()=>{
         const fetchCourses=async()=>{
             const res = await axios.get(`http://localhost:4000/Coursecomponent/course/${id}`);
@@ -21,7 +21,17 @@ const Removecourseitem =()=>{
         setIsOpen(0);
     }
     const handleChnage=(e)=>{
-        setChecked([...checked,e]);
+        if(checked.includes(e)){
+            var tempList = checked;
+            tempList = tempList.filter(item => item!=e);
+            setChecked(tempList);
+            console.log(checked);
+        }
+        else{
+            var tempList = checked;
+            tempList.push(e);
+            console.log(tempList);
+        }
     }
     const deleteCoursecomponent=async(coursecomponentid)=>{
         const res = await axios.delete(`http://localhost:4000/Coursecomponent/${coursecomponentid}`);
@@ -46,7 +56,7 @@ const Removecourseitem =()=>{
                         <div className='removecourseitem-select-items'>
                                 {coursecomponents?(coursecomponents.map(item=>{
                                     return (
-                                    <label>
+                                    <label key={item._id}>
                                         <input 
                                                 type='checkbox' 
                                                 name='item' 

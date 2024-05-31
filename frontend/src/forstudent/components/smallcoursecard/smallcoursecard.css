@@ -1,0 +1,69 @@
+.student-smallcoursecardcontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 10px;
+    box-shadow: 0px 0px 10px 0px black;
+    transition: transform 0.5s ease-out;
+    transition: transform 0.5s ease-out;
+    border-radius: 15px;
+}
+.student-smallcoursecardcontainer:hover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    box-shadow: 0px 0px 10px 0px #000000;
+    transform: translate(0, -10px);
+}
+.student-smallcoursecardcontainer:active{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    box-shadow: 0px 0px 10px 0px #000000;
+    transform: translate(0, -100px);
+}
+.student-smallcoursecardpack{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+.student-smallcoursecardtext{
+    flex: 1;
+    width: 100%;
+}
+.student-smallcoursecardtext h1{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    text-align: start;
+    font-size: 16px;
+    margin: 0;
+}
+.student-smallcoursecardtext h2{
+    font-size: 100%;
+    width: 100%;
+    height: 30%;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    text-align: start;
+    margin: 0;
+    color: #858585;
+}
+.student-smallcoursecardcover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex: 1;
+}
+.student-smallcoursecardcontainer button{
+    height: 100%;
+}

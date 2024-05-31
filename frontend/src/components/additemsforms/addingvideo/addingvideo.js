@@ -36,7 +36,7 @@ const Addingvideo =(courseId)=>{
     const postcomponent =async(video)=>{
         const courseid = id;
         const itemtype = 'video';
-        if(video){
+        while(video){
             const name = video.data.name;
             const description = video.data.description;
             const item = video.data._id;
@@ -51,6 +51,11 @@ const Addingvideo =(courseId)=>{
                 setSavedcoursecomponent(postedcoursecomponentresponse);
                 console.log(postedcoursecomponentresponse);
                 console.log(savedcoursecomponent);
+                setVideotitle('');
+                setVideolink('');
+                setVideodescription('');
+                window.location.reload();
+                break;
             } else{
                 alert("Missing details to add an item");
             }

@@ -1,13 +1,19 @@
 import { useParams } from "react-router";
 import './deletecourse.css';
 import { useState } from "react";
+import axios from "axios";
 
 const Deletecourse=()=>{
-    const {courseid} = useParams();
+    const courseid = useParams();
     const [isopen, setIsopen] = useState(1);
+    console.log(courseid.id);
 
-    const handleDelete=()=>{
-
+    const handleDelete=async()=>{
+        const res = await axios.delete(`http://localhost:4000/Course/${courseid.id}`);
+        console.log(res);
+        alert("Deleted :", courseid.id);
+        setIsopen(0);
+        window.location.reload();
     }
     const closeWindow=()=>{
         setIsopen(0);

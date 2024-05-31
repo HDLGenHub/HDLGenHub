@@ -9,7 +9,8 @@ import SignInPage from './pages/signinpage/signinpage';
 import CoursePage from './pages/coursepage/coursepage';
 import Coursecard from './components/coursecard/coursecard';
 import Managecoursepage from './pages/managecoursepage/managecoursepage';
-import LearnPage from './studentpages/learnpage';
+import LearnPage from './forstudent/learnpage/learnpage';
+import CreationPage from './pages/creationpage/creationpage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path='/courses' element={<CoursePage/>}/>
             <Route path='/managecourse/:id' element={<Managecoursepage/>}/>
             <Route path='/learn' element={<LearnPage/>}/>
+            <Route path='/creation' element={<CreationPage/>}/>
           </Routes>
         </div>
         <Footer/>
