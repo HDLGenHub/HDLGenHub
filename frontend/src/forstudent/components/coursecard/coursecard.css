@@ -1,61 +1,99 @@
-.student-coursecardcontainer{
-    width: 220px;
-    height: 150px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-.student-coursecardcontainer:hover{
+.student-coursecardmaincontainer{
+    width: 360px;
+    height: 265px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    height: 180px;
-    box-shadow: 0px 0px 10px 0px #000000;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 black;
+    margin-top: 20px;
+    transition: transform 0.5s ease-out;
+}
+.student-coursecardmaincontainer:hover{
+    width: 360px;
+    height: 265px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0 rgb(0, 0, 0);
+    margin-top: 20px;
     transform: translate(0, -10px);
 }
-.student-coursecardcontainer:active{
+.student-coursecardmaincontainer button{
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+.student-coursecardcontainer{
+    width: 95%;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    height: 180px;
-    box-shadow: 0px 0px 10px 0px #000000;
-    transform: translate(0, -100px);
+    flex-direction: column;
+}
+.student-coursecardcover{
+    width: 340px;
+    height: 200px;
 }
 .student-coursecardtext{
-    flex: 1;
     width: 100%;
 }
 .student-coursecardtext h1{
-    width: 100%;
-    height: 60%;
-    min-height: 40px;
-    display: flex;
-    align-items: center;
-    text-align: start;
-    font-size: 16px;
-    margin: 0;
-}
-.student-coursecardtext h2{
-    font-size: 100%;
-    width: 100%;
-    height: 30%;
-    font-size: 10px;
-    display: flex;
-    align-items: center;
-    text-align: start;
-    margin: 0;
-    color: #858585;
-}
-.student-coursecardcover{
+    font-size: 14px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100px;
-    margin-bottom: 1px;
-    flex: 1;
+    text-align: center;
+    margin: 0;
 }
-.student-coursecardcontainer button{
-    height: 100%;
+.student-coursecardtext h2{
+    font-size: 10px;
+    margin: 0;
+}
+@media screen and (max-width:400px) {
+    .student-coursecardmaincontainer{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        box-shadow: 0 0 10px 0 black;
+        margin-top: 20px;
+    }
+    .student-coursecardmaincontainer button{
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+    .student-coursecardcontainer{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .student-coursecardcover{
+        width: 100%;
+        height: 100%;
+    }
+    .student-coursecardtext{
+        width: 100%;
+        height: 100%;
+    }
+    .student-coursecardtext h1{
+        height: 100%;
+        font-size: 12px;
+        height: 60px;
+        margin: 10px;
+    }
+    .student-coursecardtext h2{
+        height: 100%;
+        font-size: 10px;
+        margin: 8px;
+    }
 }

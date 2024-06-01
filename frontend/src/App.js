@@ -11,6 +11,7 @@ import Managecoursepage from './pages/managecoursepage/managecoursepage';
 import LearnPage from './forstudent/learnpage/learnpage';
 import CreationPage from './pages/creationpage/creationpage';
 import ProfilePage from './pages/profilepage/profilepage';
+import StudentCoursePage from './forstudent/studentcoursepage/studentcoursepage';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path='/learn' element={<LearnPage/>}/>
             <Route path='/creation' element={<CreationPage/>}/>
             <Route path='/profile' element={<ProfilePage/>}/>
+            <Route path='/coursepage/:id' element={<StudentCoursePage/>}/>
           </Routes>
         </div>
         <Footer/>

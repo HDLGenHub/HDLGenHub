@@ -24,7 +24,7 @@ const Enrolledcourses=()=>{
 
     //alert(JSON.stringify(courses));
     return(
-        <div>{enrolledcourses?(enrolledcourses.map(enrolledcourse=>(
+        <div className="student-coursecardset">{enrolledcourses?(enrolledcourses.map(enrolledcourse=>(
             <div key={enrolledcourse._id} className="student-coursecardpack">
                 <Coursecard data={enrolledcourse.courseid}/>
             </div>
