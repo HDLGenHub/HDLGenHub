@@ -7,7 +7,6 @@ import Footer from './components/footer/footer';
 import SignUpPage from './pages/signuppage/signuppage';
 import SignInPage from './pages/signinpage/signinpage';
 import CoursePage from './pages/coursepage/coursepage';
-import Coursecard from './components/coursecard/coursecard';
 import Managecoursepage from './pages/managecoursepage/managecoursepage';
 import LearnPage from './forstudent/learnpage/learnpage';
 import CreationPage from './pages/creationpage/creationpage';
