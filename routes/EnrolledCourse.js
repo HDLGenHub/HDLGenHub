@@ -22,9 +22,10 @@ router.get('/:id', async(req, res)=>{
 });
 
 router.post('/', async(req, res)=>{
-    const { enrolledby, courseid, date } = req.body;
+    const { key, enrolledby, courseid, date } = req.body;
     const enrolledcourse = new EnrolledCourse(
         {
+            key,
             enrolledby,
             courseid,
             date
@@ -66,7 +67,7 @@ router.get('/enrolledcourses/:courseid', async (req, res)=>{
     }
 })
 router.get('/student/:studentid', async (req, res)=>{
-    const courseid = req.params.studentid;
+    const studentid = req.params.studentid;
     console.log(studentid);
     try{
         const response = await EnrolledCourse.find({"enrolledby":studentid});

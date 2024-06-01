@@ -3,13 +3,17 @@ const Schema = mongoose.Schema;
 
 const EnrolledCourseSchema = new Schema(
     {
+        key: {
+            type: String,
+            unique: true
+        },
         enrolledby: {
             type: Schema.Types.ObjectId,
             ref: 'Student'
         },
         courseid: {
             type: Schema.Types.ObjectId,
-            ref: 'Teacher'
+            ref: 'Course'
         },
         date: {
             type: String,
