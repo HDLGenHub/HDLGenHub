@@ -22,7 +22,7 @@ function Help() {
       </div>
 
       <div class="md:flex gap-10 mt-20">
-        <div className="help-box2 hover:scale-105 flex items-center flex-col">
+        <div className="help-box2 hover:scale-105 flex items-center flex-col transform transition duration-300 ease-in-out">
           <Play className="help-icon" />
           <h3>Getting Started</h3>
           <p style={{ fontSize: "14px", width: "240px" }}>
@@ -31,7 +31,7 @@ function Help() {
           </p>
         </div>
 
-        <div className="help-box2 hover:scale-105 flex items-center flex-col">
+        <div className="help-box2 hover:scale-105 flex items-center flex-col transform transition duration-300 ease-in-out">
           <User className="help-icon" />
           <h3>Account/Profile</h3>
           <p style={{ fontSize: "14px", width: "240px", marginLeft: "26px" }}>
@@ -39,7 +39,7 @@ function Help() {
           </p>
         </div>
 
-        <div className="help-box2 hover:scale-105 flex items-center flex-col">
+        <div className="help-box2 hover:scale-105 flex items-center flex-col transform transition duration-300 ease-in-out">
           <Book className="help-icon" />
           <h3>Learning Experience</h3>
           <p style={{ fontSize: "14px", width: "240px", marginLeft: "26px" }}>
@@ -48,7 +48,7 @@ function Help() {
             experience
           </p>
         </div>
-        <div className="help-box2 hover:scale-105 flex items-center flex-col">
+        <div className="help-box2 hover:scale-105 flex items-center flex-col transform transition duration-300 ease-in-out">
           <Shield className="help-icon" />
           <h3>Trust & Safe</h3>
           <p style={{ fontSize: "14px", width: "240px", marginLeft: "26px" }}>

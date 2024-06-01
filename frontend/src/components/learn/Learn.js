@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import img from "../../images/learning.jpg";
-import './Learn.css'; // Import CSS file for styling
+import "../learn/Learn.css";
 
 const CoursesPage = () => {
   const [allCourses, setAllCourses] = useState([]);
@@ -58,29 +58,29 @@ const CoursesPage = () => {
 
   return (
     <div>
-        <div className="mt-24">
-          <figure className="ml-10 mr-10 filter grayscale-0 hover:brightness-110 ">
-            <img className="rounded-2xl size-full h-80" src={img} alt="product" />
+        <div class="mt-24">
+          <figure class="ml-10 mr-10 filter grayscale-0 hover:brightness-110 ">
+            <img class="rounded-2xl size-full h-80" src={img} alt="product" />
             <div>
-              <figcaption className="absolute text-white bottom-10 grid grid-cols-2 m-10 grid-rows-1 grid-flow-row gap-20">
-                <div className="text-left">
-                  <h1 className="text-5xl p-3 mt-8 ml-10">Explore Lessons...</h1>
-                  <p className="text-lg ml-10 p-3">
+              <figcaption class="absolute text-white bottom-10 grid grid-cols-2 m-10 grid-rows-1 grid-flow-row gap-20">
+                <div class="text-left">
+                  <h1 class="text-5xl p-3 mt-8 ml-10">Explore Lessons...</h1>
+                  <p class="text-lg ml-10 p-3">
                     From beginner basics to advanced techniques, dive into digital
                     design for mastering hardware description languages.
                   </p>
                 </div>
-                <div className="grid items-center grid-cols-2 gap-10 text-lg">
-                  <button className="drop-shadow-lg rounded-tr-3xl h-16 rounded-bl-3xl bg-orange-500 hover:scale-105 hover:bg-orange-500">
+                <div class="grid items-center grid-cols-2 gap-10 text-lg">
+                  <button class="drop-shadow-lg rounded-tr-3xl h-16 rounded-bl-3xl bg-orange-500 hover:scale-105 hover:bg-orange-500 transform transition duration-300 ease-in-out">
                     Introduction to HDL
                   </button>
-                  <button className="drop-shadow-lg rounded-tr-3xl h-16 rounded-bl-3xl bg-orange-500 hover:scale-105 hover:bg-orange-500">
+                  <button class="drop-shadow-lg rounded-tr-3xl h-16 rounded-bl-3xl bg-orange-500 hover:scale-105 hover:bg-orange-500 transform transition duration-300 ease-in-out">
                     Basic Syntax
                   </button>
-                  <button className="drop-shadow-lg rounded-tr-3xl h-16 rounded-bl-3xl bg-orange-500 hover:scale-105 hover:bg-orange-500">
+                  <button class="drop-shadow-lg rounded-tr-3xl h-16 rounded-bl-3xl bg-orange-500 hover:scale-105 hover:bg-orange-500 transform transition duration-300 ease-in-out">
                     Combinational Logic
-                  </button>
-                  <button className="drop-shadow-lg rounded-tr-3xl h-16 rounded-bl-3xl bg-orange-500 hover:scale-105 hover:bg-orange-500">
+                  </button> 
+                  <button class="drop-shadow-lg rounded-tr-3xl h-16 rounded-bl-3xl bg-orange-500 hover:scale-105 hover:bg-orange-500 transform transition duration-300 ease-in-out">
                     Sequential Logic
                   </button>
                 </div>
@@ -88,25 +88,25 @@ const CoursesPage = () => {
             </div>
           </figure>
 
-        <div className="courses-container m-10">
-          <h2 className="text-left font-bold mb-10">Enrolled Courses</h2>
-          <div className="courses-grid">
+        <div class="courses-container m-10">
+          <h2 class="text-left font-bold mb-10">Enrolled Courses</h2>
+          <div class="courses-grid">
             {enrolledCourses.map(course => (
-              <div className="en-course-box shadow-md shadow-gray-300 hover:scale-105" key={course._id} onClick={() => navigateToCourse(course._id)}>
-                <h3 className="font-bold bg-white p-5 rounded-xl">{course.title}</h3>
-                <p className="p-2 font-medium">{course.description}</p>
+              <div class="bg-amber-200 p-5 rounded-lg cursor-pointer hover:bg-green-200 shadow-md shadow-gray-300 hover:scale-105 transform transition duration-300 ease-in-out" key={course._id} onClick={() => navigateToCourse(course._id)}>
+                <h3 class="font-bold bg-white p-5 rounded-xl">{course.title}</h3>
+                <p class="p-2 font-medium">{course.description}</p>
                 <p>Duration: {course.duration} hours</p>
                 <p>Instructor: {instructors[course._id] ? instructors[course._id].user.name : 'Loading...'}</p>
               </div>
             ))}
           </div>
 
-          <h2 className="text-left font-bold mb-10 mt-10">All Courses</h2>
-          <div className="courses-grid">
+          <h2 class="text-left font-bold mb-10 mt-10">All Courses</h2>
+          <div class="courses-grid">
             {allCourses.map(course => (
-              <div className="course-box shadow-md shadow-gray-300 hover:scale-105" key={course._id} onClick={() => navigateToCourse(course._id)}>
-                <h3 className="font-bold bg-white p-5 rounded-xl">{course.title}</h3>
-                <p className="p-2 font-medium">{course.description}</p>
+              <div class="bg-blue-200 p-5 rounded-lg cursor-pointer hover:bg-red-200 shadow-md shadow-gray-300 hover:scale-105 transform transition duration-300 ease-in-out" key={course._id} onClick={() => navigateToCourse(course._id)}>
+                <h3 class="font-bold bg-white p-5 rounded-xl">{course.title}</h3>
+                <p class="p-2 font-medium">{course.description}</p>
                 <p>Duration: {course.duration} hours</p>
                 <p>Instructor: {instructors[course._id] ? instructors[course._id].user.name : 'Loading...'}</p>
               </div>

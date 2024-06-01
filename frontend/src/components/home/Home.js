@@ -7,67 +7,66 @@ import work from "../../images/work.png";
 
 function Home() {
   return (
-    <div class="flex flex-col mt-10 md:mt-20 bg-white">
-      <div class="flex pb-0 p-5">
-        <div class="w-1/2 text-left md:ml-32 mt-3">
-          <h3 class="font-bold md:text-2xl text-sm md:p-5 p-1">
+    <div className="flex flex-col mt-10 md:mt-20 bg-white">
+      <div className="flex flex-col md:flex-row items-center pb-0 p-5">
+        <div className="md:w-1/2 text-left md:ml-32 mt-10">
+          <h3 className="font-bold md:text-2xl text-sm md:p-5 p-1">
             <span style={{ color: "orange" }}>HDL</span> Gen Hub{" "}
-            <span class="font-thin">for learners</span>
+            <span className="font-thin">for learners</span>
           </h3>
-          <h1 class="font-extrabold lg:text-7xl md:p-3 p-1 text-3xl">
+          <h1 className="font-extrabold lg:text-7xl md:p-3 p-1 text-4xl">
             Fast & <span style={{ color: "orange" }}>Easiest</span>
           </h1>
-          <h1 class="font-extrabold lg:text-6xl md:p-3 p-1 text-3xl">
-            {" "}
+          <h1 className="font-extrabold lg:text-6xl md:p-3 p-1 text-4xl">
             Way to Learn
           </h1>
-          <h1 class="font-extrabold lg:text-7xl md:p-3 p-1 text-3xl">
+          <h1 className="font-extrabold lg:text-7xl md:p-3 p-1 text-4xl">
             <span style={{ color: "orange" }}>HDL</span>
           </h1>
         </div>
         <img
           src={homeimage}
           alt="Home"
-          class="lg:h-96 h-40 mt-20 md:mt-20 md:mr-20"
+          className="lg:h-96 h-52 mt-10 md:mt-0 md:mr-20"
         />
       </div>
-      <div class="h-0.5 bg-gray-200"></div>
-      <p class="font-bold font-sans text-xl center md:m-14 m-10 md:mb-0 md:mt-20 mb-0">
+      <div className="h-0.5 bg-gray-200"></div>
+      <p className="font-bold text-xl text-center md:m-14 m-10 md:mb-0 md:mt-20 mb-0">
         Exclusive content, exceptional quality
       </p>
-      <div class="text-center center md:m-10 m-5 mb-16 ">
-        <h class="md:text-lg text-gray-500 text-justify">
+      <div className="text-center md:m-10 md:ml-36 md:mr-36 m-5 mb-16">
+        <p className="md:text-base text-gray-500 text-justify">
           Unlock the world of HDLs through our immersive e-learning platform.
           From beginner basics to advanced techniques, dive into digital design
           at your own pace. Engage, practice, and connect in a community-driven
           space designed for mastering hardware description languages.
-        </h>
+        </p>
       </div>
 
-      <div class="md:flex md:flex-row md:justify-around flex justify-center flex-col gap-16 items-center md:m-20 md:mt-10 mt-0 mb-10">
-        <div class="w-96 h-48 bg-gray-100 rounded-ss-3xl rounded-ee-3xl hover:scale-110">
-          <p class="text-3xl font-bold text-amber-500 m-5">100+</p>
-          <p class="text-xl font-bold text-center m-2 mt-0">
+      <div className="md:flex md:justify-around md:flex-row flex-col gap-16 text-center items-center md:m-20 md:mt-10 mt-0 mb-10">
+        <div className="transform transition duration-300 ease-in-out w-96 h-48 bg-gray-100 rounded-ss-3xl rounded-ee-3xl hover:scale-110 flex justify-center flex-col shadow-lg">
+          <p className="text-3xl font-bold text-amber-500 m-5">100+</p>
+          <p className="text-xl font-extralight m-5 mt-0">
             hours of content to gain knowledge <br />
             (updating regularly)
           </p>
         </div>
-        <div class="w-96 h-48 bg-gray-100 rounded-ss-3xl rounded-ee-3xl  hover:scale-110">
-          <p class="text-3xl font-bold text-amber-500 m-5 mb-3">100+</p>
-          <p class="text-xl font-bold text-center m-5 mt-0">
-            expert from the university with the best guidance
+        <div className="transform transition duration-300 ease-in-out w-96 h-48 bg-gray-100 rounded-ss-3xl rounded-ee-3xl hover:scale-110 flex justify-center flex-col shadow-lg">
+          <p className="text-3xl font-bold text-amber-500 m-9 mb-3">100+</p>
+          <p className="text-xl font-extralight m-10 mt-0">
+            experts from the university with the best guidance
           </p>
         </div>
-        <div class="w-96 h-48 bg-gray-100 rounded-ss-3xl rounded-ee-3xl  hover:scale-110">
-          <p class="text-3xl font-bold text-amber-500 m-5 mb-3">350+</p>
-          <p class="text-xl font-bold text-center m-3 mt-0">
-            users to unleash their Potential through E-Learning Excellence
+        <div className="transform transition duration-300 ease-in-out w-96 h-48 bg-gray-100 rounded-ss-3xl rounded-ee-3xl hover:scale-110 flex justify-center flex-col shadow-lg">
+          <p className="text-3xl font-bold text-amber-500 m-5 mb-3">350+</p>
+          <p className="text-xl font-extralight m-7 mt-0">
+            users unleashing their potential through E-Learning excellence
           </p>
         </div>
       </div>
       <div></div>
-      <div class="bg-black md:h-64 h-80 md:rounded-ss-3xl md:rounded-t-3xl rounded-ss-2xl rounded-t-2xl mt-10">
-        <h1 class="text-white md:m-10 m-5 md:text-2xl text-lg font-bold">
+      <div className="bg-black md:h-80 h-96 md:rounded-ss-3xl md:rounded-t-3xl rounded-ss-2xl rounded-t-2xl mt-10 p-5">
+        <h1 className="text-white md:m-16 m-10 md:text-2xl text-lg font-bold text-center">
           Job-ready talent, Superior outcomes
         </h1>
         <div class="flex text-white justify-around">

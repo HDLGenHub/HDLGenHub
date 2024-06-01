@@ -6,53 +6,61 @@ const Courses = () => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
+    // Retrieve user data from localStorage
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       const parsedUser = JSON.parse(storedUser);
       setUser(parsedUser);
 
-      // Fetch courses created by the user (lecturer)
+      // Fetch courses for the logged-in user (lecturer)
       fetch(`http://localhost:8070/Course/courses?instructor=${parsedUser._id}`)
-        .then((response) => response.json())
-        .then((data) => setCourses(data))
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          // Ensure that the fetched courses are for the logged-in user
+          const userCourses = data.filter(course => course.instructor === parsedUser._id);
+          setCourses(userCourses);
+        })
         .catch((error) => console.error("Error fetching courses:", error));
     }
   }, []);
 
-  /* const handleEditCourse = (courseId) => {
-    // Open a new tab to edit the course
-    window.location.href="http://localhost:8070/Course/courses/${courseId}";
-  };*/
   const handleEditCourse = (courseId) => {
-    // Open a new tab to edit the course
     window.location.href = `http://localhost:3000/courses/${courseId}/editcourses`;
   };
 
   const handleCreateCourse = () => {
-    // Open a new tab to create a new course
     window.location.href = "http://localhost:3000/createcourse";
   };
+
   const handleCreateContent = (courseId) => {
-    // Open a new tab to create course content for the specified course
     window.location.href = `http://localhost:3000/courses/${courseId}/content`;
   };
 
+  const navigateToCourse = (courseId) => {
+    window.location.href = `/course/${courseId}`;
+  };
+
   return (
-    <div class="m-10 mt-32">
+    <div className="m-10 mt-32">
       {user ? (
         <div>
-          <h2 class=" font-bold">
+          <h2 className="font-bold">
             Welcome to the Learning Portal, {user.name}!
           </h2>
           <div>
             <button
-              class="rounded-full bg-amber-500 text-white p-3 m-5 hover:bg-amber-600 hover:scale-105"
+              className="rounded-full bg-amber-500 text-white p-3 m-5 hover:bg-amber-600 hover:scale-105 transform transition duration-300 ease-in-out"
               onClick={handleCreateCourse}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
-                class="h-6 w-6 inline-block mr-2"
+                className="h-6 w-6 inline-block mr-2"
               >
                 <path fill="none" d="M0 0h24v24H0z" />
                 <path
@@ -66,20 +74,23 @@ const Courses = () => {
 
           <div>
             <hr />
-            <h3 class="text-2xl font-bold text-left ml-28 pb-5 mt-10">
+            <h3 className="text-2xl font-bold text-left ml-28 pb-5 mt-10">
               Your Courses
             </h3>
 
-            <div class="grid grid-cols-4 grid-flow-row gap-y-4 mr-20 ml-20">
+            <div className="grid grid-cols-2 grid-flow-row gap-y-5 gap-x-10 mr-10 ml-10">
               {courses.map((course) => (
                 <div
-                  class="w-60 rounded-xl overflow-hidden shadow-lg m-5 hover:scale-110"
+                  className="rounded-xl overflow-hidden shadow-lg m-5"
                   key={course._id}
                 >
-                  <div class="px-10 py-4">
-                    <img class="pb-5" src={img} alt="cover-img" />
-                    <div class="font-bold text-xl mb-5">{course.title}</div>
-                    <div className="flex flex-col items-center">
+                  <div className="p-2 flex items-center">
+                    <img className="h-48 cursor-pointer hover:scale-105 transform transition duration-300 ease-in-out" src={img} alt="cover-img" onClick={() => navigateToCourse(course._id)}/>
+                    <div className="flex w-2/3 flex-col items-center">
+                    <div className="font-bold text-xl mb-5 cursor-pointer hover:text-amber-600" onClick={() => navigateToCourse(course._id)}>{course.title}</div>
+                    <p class="p-2 font-medium">{course.description}</p>
+                    <p>Duration: {course.duration} hours</p>
+                    <div className="flex items-center m-5 gap-5">
                       <button
                         className="border-2 border-amber-500 hover:bg-amber-500 hover:text-white py-2 px-4 rounded-full"
                         onClick={() => handleEditCourse(course._id)}
@@ -87,13 +98,13 @@ const Courses = () => {
                         Edit Course
                       </button>
                       <button
-                        class="rounded-full py-2 px-3 mt-5 border-amber-500 border-2 hover:border-2  hover:text-white hover:bg-amber-500 w-44"
+                        className="border-2 border-amber-500 hover:bg-amber-500 hover:text-white py-2 px-4 rounded-full"
                         onClick={() => handleCreateContent(course._id)}
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
-                          class="h-6 w-6 inline-block mr-2 hover:fill-amber-500"
+                          className="h-6 w-6 inline-block mr-2"
                         >
                           <path fill="none" d="M0 0h24v24H0z" />
                           <path
@@ -103,6 +114,7 @@ const Courses = () => {
                         </svg>
                         Create Content
                       </button>
+                      </div>
                     </div>
                   </div>
                 </div>

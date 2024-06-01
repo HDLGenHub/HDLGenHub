@@ -22,19 +22,20 @@ const EditCourse = () => {
   useEffect(() => {
     if (course) {
       setEditedCourse({
-        title: course.title,
-        description: course.description,
+        title: course.title || '',
+        description: course.description || '',
         duration: course.duration ? course.duration.toString() : '',
-        enrollmentStatus: course.enrollmentStatus,
-        instructor: course.instructor,
+        enrollmentStatus: course.enrollmentStatus || '',
+        instructor: course.instructor || '',
       });
     }
   }, [course]);
 
   const handleInputChange = e => {
+    const { name, value } = e.target;
     setEditedCourse({
       ...editedCourse,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   };
 

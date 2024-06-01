@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import Navbar from './components/navBar/Navbar';
 import Footer from './components/footer/Footer';
 import Home from './components/home/Home';
@@ -11,7 +12,7 @@ import Learn from './components/learn/Learn';
 import Help from './components/help/Help';
 import PathShow from './components/roleShow/RoleShow';
 import Setting from './components/setting/setting';
-import Courses from './components/lecturerCourses/Lecturer_courses';
+import Courses from './components/lecturerCourses/LecturerCourses';
 import EditUser from './components/editUser/EditUser';
 import CreateCourse from './components/createCourse/CreateCourse';
 import Course from './components/course/Course';
@@ -22,6 +23,16 @@ import Loading from './components/loading/Loading';
 
 function App() {
   const [loading, setLoading] = useState(true);
+
+  const ScrollToTop = () => {
+    const { pathname } = useLocation();
+  
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+  
+    return null;
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -36,6 +47,7 @@ function App() {
   }
   return (
       <Router>
+      <ScrollToTop />
       <div className="App">
         <Navbar />
         <Routes>
@@ -51,12 +63,9 @@ function App() {
           <Route path="/edituser" element={<EditUser/>}/>
           <Route path="/createcourse" element={<CreateCourse/>}/>
           <Route path="/course/:courseId" element={<Course/>}/>
-          <Route path="/courses/:courseId/editcourse" element={<EditCourse/>}/>
-          
+          <Route path="/courses/:courseId/editcourses" element={<EditCourse/>}/>
           <Route path="/registeredhomepage" element={<RegisteredHomePage/>}/>
-          <Route path="/courses/:courseId/content" element={<CreateUpdateContent/>} /> {/* For creating new content */}
-          <Route path="/courses/:courseId/content/:contentId" component={<CreateUpdateContent/>} /> {/* For updating existing content */}
-        
+          <Route path="/courses/:courseId/content" element={<CreateUpdateContent/>}/>
         </Routes>
         <Footer />
       </div>

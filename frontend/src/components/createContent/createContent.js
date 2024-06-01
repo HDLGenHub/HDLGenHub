@@ -60,7 +60,7 @@ const CreateUpdateContent = () => {
         await axios.post(`http://localhost:8070/courses/${courseId}/content`, content);
         alert('Content created successfully!');
       }
-      navigate(`/courses/${courseId}`);
+      navigate(`/courses`);
     } catch (error) {
       console.error('Error creating/updating content:', error);
       alert('An error occurred while creating/updating content. Please try again later.');
@@ -87,7 +87,7 @@ const CreateUpdateContent = () => {
         <label>Type:</label>
         <select name="type" value={content.type} onChange={handleChange} required>
           <option value="">Select type</option>
-          <option value="Lecture notes">Lecture</option>
+          <option value="video">video</option>
           <option value="Assignment">Assignment</option>
           <option value="Quiz">Quiz</option>
           <option value="Project">Project</option>
@@ -113,7 +113,7 @@ const CreateUpdateContent = () => {
             />
           </div>
         ))}
-        <button type="button" onClick={addResource}>Add Resource</button>
+        <button type="button" onClick={addResource}>Add Resources</button>
         <button type="submit">Save</button>
         {contentId && <button type="button" onClick={handleDelete}>Delete</button>}
       </form>

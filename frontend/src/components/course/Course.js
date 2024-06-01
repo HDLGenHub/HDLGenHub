@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom"; 
+import { useParams } from "react-router-dom";
 import "./Course.css";
 import IDECompiler from "../compiler/compiler.js";
 
 const Course = () => {
-  const { courseId } = useParams(); 
+  const { courseId } = useParams();
   const [course, setCourse] = useState(null);
   const [instructor, setInstructor] = useState(null);
-  const [isEnrolled, setIsEnrolled] = useState(false); // Add state for enrollment status
+  const [isEnrolled, setIsEnrolled] = useState(false);
 
   const userId = localStorage.getItem("user")
     ? JSON.parse(localStorage.getItem("user"))._id
     : null;
 
   useEffect(() => {
-    // Fetch course details from your backend API based on the courseId
     fetch(`http://localhost:8070/Course/courses/${courseId}`)
       .then((response) => response.json())
       .then((data) => setCourse(data))
@@ -22,7 +21,6 @@ const Course = () => {
   }, [courseId]);
 
   useEffect(() => {
-    // Fetch instructor details from your backend API based on the course instructor
     if (course) {
       fetch(`http://localhost:8070/User/get/${course.instructor}`)
         .then((response) => response.json())
@@ -34,7 +32,6 @@ const Course = () => {
   }, [course]);
 
   useEffect(() => {
-    // Check if the user is enrolled in the course
     if (localStorage.getItem("user")) {
       const user = JSON.parse(localStorage.getItem("user"));
       setIsEnrolled(user.enrolledCourses.includes(courseId));
@@ -48,7 +45,6 @@ const Course = () => {
         return;
       }
 
-      // Send a POST request to enroll the user in the course
       const response = await fetch(
         `http://localhost:8070/User/enroll/${userId}/${courseId}`,
         {
@@ -63,14 +59,12 @@ const Course = () => {
         throw new Error("Network response was not ok");
       }
       const data = await response.json();
-      alert(data.message); // Show success message
+      alert(data.message);
 
-      // Update local storage
       const user = JSON.parse(localStorage.getItem("user"));
       user.enrolledCourses.push(courseId);
       localStorage.setItem("user", JSON.stringify(user));
 
-      // Update state
       setIsEnrolled(true);
     } catch (error) {
       console.error("Error enrolling in course:", error);
@@ -85,7 +79,6 @@ const Course = () => {
         return;
       }
 
-      // Send a POST request to unenroll the user from the course
       const response = await fetch(
         `http://localhost:8070/User/unenroll/${userId}/${courseId}`,
         {
@@ -100,16 +93,14 @@ const Course = () => {
         throw new Error("Network response was not ok");
       }
       const data = await response.json();
-      alert(data.message); // Show success message
+      alert(data.message);
 
-      // Update local storage
       const user = JSON.parse(localStorage.getItem("user"));
       user.enrolledCourses = user.enrolledCourses.filter(
         (id) => id !== courseId
       );
       localStorage.setItem("user", JSON.stringify(user));
 
-      // Update state
       setIsEnrolled(false);
     } catch (error) {
       console.error("Error unenrolling from course:", error);
@@ -158,132 +149,136 @@ const Course = () => {
     }
   };
 
-  if (course) {
-    if (course.title === "Intoduction to HDL") {
-      return (
-        <>
-          <div className="course-container">
-            <div className="course-header m-20">
-              <h2 class="font-bold">{course ? course.title : "Loading..."}</h2>
-              <p className="instructor font-medium font-serif text-xl">
-                {course
-                  ? `Instructor: ${
-                      instructor ? instructor.user.name : "Loading"
-                    }`
-                  : "Loading..."}
-              </p>
-            </div>
-            <div className="course-content items-center">
-              {course ? (
-                <div>
-                  <p className="description">{course.description}</p>
-                  {course.materials && course.materials.length > 0 && (
-                    <div>
-                      <h3>Materials</h3>
-                      <ul className="materials-list">
-                        {course.materials.map((material) =>
-                          renderMaterial(material)
-                        )}
-                      </ul>
-                    </div>
-                  )}
-                  <div class="mt-10 items-center w-full">
-                    {/* Embed Verilog compiler iframe */}
-                    <iframe
-                      title={`Verilog tutorial ${course.title}`}
-                      src="https://www.youtube.com/embed/nblGw37Fv8A"
-                      width="80%"
-                      height="400px"
-                      frameBorder="0"
-                      allowFullScreen
-                    ></iframe>
-                    <hr className="m-10"></hr>
-                    <IDECompiler />
-                  </div>
-                  {/* Conditionally render the "Enroll" button or enrollment message */}
-                  {isEnrolled ? (
-                    <div className="m-5">
-                      <p>You are already enrolled in this course.</p>
-                      <button
-                        className="m-5 border-2 p-2 mt-5 bg-amber-500 rounded-full"
-                        onClick={handleUnEnroll}
-                      >
-                        Unenroll
-                      </button>
-                    </div>
-                  ) : (
-                    <button
-                      className="m-5 border-2 p-2 bg-amber-500 rounded-full"
-                      onClick={handleEnroll}
-                    >
-                      Enroll
-                    </button>
-                  )}
-                </div>
-              ) : (
-                <p>Loading course details...</p>
-              )}
-            </div>
-          </div>
-        </>
-      );
-    } else {
-      // Render course details
-      return (
-        <div className="course-container">
-          <div className="course-header m-20">
-            <h2>{course ? course.title : "Loading..."}</h2>
-            <p className="instructor">
-              {course
-                ? `Instructor: ${instructor ? instructor.user.name : "Loading"}`
-                : "Loading..."}
-            </p>
-          </div>
-          <div className="course-content">
-            {course ? (
-              <div>
-                <p className="description">{course.description}</p>
-                {course.materials && course.materials.length > 0 && (
-                  <div>
-                    <h3>Materials</h3>
-                    <ul className="materials-list">
-                      {course.materials.map((material) =>
-                        renderMaterial(material)
-                      )}
-                    </ul>
-                  </div>
-                )}
+  return (
+    <div className="course-page mt-20">
+      <div className="course-header">
+        <h1>{course ? course.title : "Loading..."}</h1>
+        <p>
+          {course
+            ? `Instructor: ${instructor ? instructor.user.name : "Loading..."}`
+            : "Loading..."}
+        </p>
+        <p>{course ? course.description : "Loading..."}</p>
+        <p>Duration: {course ? course.duration : "Loading..."} hours</p>
+      </div>
 
-                {/* Conditionally render the "Enroll" button or enrollment message */}
-                {isEnrolled ? (
-                  <div className="m-5">
-                    <p>You are already enrolled in this course.</p>
-                    <button
-                      className="m-5 border-2 p-2 mt-5 bg-amber-500 rounded-full"
-                      onClick={handleUnEnroll}
-                    >
-                      Unenroll
-                    </button>
-                  </div>
-                ) : (
-                  <button
-                    className="m-5 border-2 p-2 bg-amber-500 rounded-full"
-                    onClick={handleEnroll}
-                  >
-                    Enroll
-                  </button>
-                )}
-              </div>
-            ) : (
-              <p>Loading course details...</p>
-            )}
+      <div className="course-main">
+        <aside className="course-sidebar">
+          <div className="progress-section">
+            <h3>Your Progress</h3>
+            <div className="progress-bar">
+              <div className="progress" style={{ width: "70%" }}></div>
+            </div>
+            <span>70%</span>
           </div>
-        </div>
-      );
-    }
-  } else {
-    return null; // Or any other fallback JSX if needed
-  }
+          <div className="grades-section">
+            <h3>Grades</h3>
+            <ul>
+              <li>
+                Assignment 01 <span>10</span>
+              </li>
+              <li>
+                Assignment 02 <span>10</span>
+              </li>
+              <li>
+                Assignment 03 <span>10</span>
+              </li>
+              <li>
+                Assignment 04 <span>10</span>
+              </li>
+              <li>
+                Overall <span>10</span>
+              </li>
+            </ul>
+          </div>
+          <div className="discussion-forums">
+            <h3>Discussion Forums</h3>
+            <textarea placeholder="Any doubts..."></textarea>
+            <button>Submit</button>
+          </div>
+        </aside>
+
+        <main className="course-content">
+          <section className="learning-materials">
+            <h2>Learning Materials</h2>
+            <details>
+              {course && course.materials
+                ? course.materials.map((material) => renderMaterial(material))
+                : "Loading..."}
+            </details>
+            <details>
+              <summary>Videos</summary>
+              <div className="video-grid">
+                {course && course.materials
+                  ? course.materials
+                      .filter((material) => material.type === "video")
+                      .map((material) => renderMaterial(material))
+                  : "Loading..."}
+              </div>
+            </details>
+            <details>
+              <summary>Notes</summary>
+              <ul>
+                {course && course.materials
+                  ? course.materials
+                      .filter((material) => material.type === "note")
+                      .map((material) => renderMaterial(material))
+                  : "Loading..."}
+              </ul>
+            </details>
+            <details>
+              <summary>Recommended Books</summary>
+              <ul>
+                {course && course.materials
+                  ? course.materials
+                      .filter((material) => material.type === "book")
+                      .map((material) => renderMaterial(material))
+                  : "Loading..."}
+              </ul>
+            </details>
+          </section>
+
+          {course && course.title === "Intoduction to HDL" && (
+            <>
+              <section className="video-section">
+                <iframe
+                  title="Verilog tutorial"
+                  src="https://www.youtube.com/embed/nblGw37Fv8A"
+                  width="100%"
+                  height="400px"
+                  frameBorder="0"
+                  allowFullScreen
+                ></iframe>
+              </section>
+              <section className="compiler-section">
+                <IDECompiler />
+              </section>
+            </>
+          )}
+
+          <section className="assignment">
+            <h2>Assignment</h2>
+            <p>Details about assignments will be provided here.</p>
+          </section>
+
+          <section className="quiz">
+            <h2>Quiz</h2>
+            <p>Details about quizzes will be provided here.</p>
+          </section>
+          {isEnrolled ? (
+            <div className="enrollment">
+              <p>You are already enrolled in this course.</p>
+              <button onClick={handleUnEnroll}>Unenroll</button>
+            </div>
+          ) : (
+            <button className="enroll-button" onClick={handleEnroll}>
+              Enroll
+            </button>
+          )}
+        </main>
+      </div>
+    </div>
+  );
 };
 
 export default Course;

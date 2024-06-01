@@ -49,8 +49,8 @@ const CreateCourse = ({ userId }) => {
       });
   
       if (response.ok) {
-        // Course created successfully
         alert('Course created successfully!');
+        window.location.href = 'http://localhost:3000/courses';
       } else {
         // Handle errors
         const data = await response.json();
@@ -117,15 +117,10 @@ const CreateCourse = ({ userId }) => {
               <option value="youtube">YouTube Video</option>
             </select>
           </div>
-
           <div class="mb-5">
             <label class="block mb-2 text-base font-medium text-gray-900" htmlFor="instructor">Instructor</label>
             <input type="text" id="instructor" value={instructor} onChange={(e) => setInstructor(e.target.value)} required/>
           </div>
-
-          
-
-
           <button class="m-10 p-2 w-32 rounded-full font-bold hover:scale-110 bg-amber-500 text-white"  onClick={handleSubmit}  type="submit">Create Course</button>
         </form>
       </div>
