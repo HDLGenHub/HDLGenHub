@@ -39,15 +39,17 @@
 }
 .smallcoursecardpack h2{
     text-align: center;
+    max-height: 10px;
     font-size: 100%;
     margin: 0;
-    color: rgb(225, 0, 255);
+    color: rgb(0, 0, 0);
 }
 .smallcoursecardcover{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 80%;
+    max-height: 150px;
 }
 .smallcoursecardcontainer button{
     height: 100%;

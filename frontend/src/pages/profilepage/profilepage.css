@@ -1,0 +1,198 @@
+.profilecontainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 3% 0 0 0;
+}
+.dpandname{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.dpcontainer{
+    width: 200px;
+}
+.dpandname h1{
+    text-align: center;
+}
+.profileform{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 50%;
+    max-width: 400px;
+    margin-bottom: 20px;
+    background-color: #e1e1e1;
+    padding: 3% 0 3% 0;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 black;
+}
+.email{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.email input{
+    width: 80%;
+}
+.registrationnumber{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.registrationnumber input{
+    width: 80%;
+}
+.age{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.age input{
+    width: 80%;
+}
+.dpurl{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.dpurl input{
+    width: 80%;
+}
+.gender{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.gender input{
+    width: 80%;
+}
+.chatid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.chatid input{
+    width: 80%;
+}
+.profileform button{
+    width: 30%;
+    height: 24px;
+}
+@media screen and (max-width:600px){
+    .profilecontainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .dpandname{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .dpcontainer{
+        width: 100px;
+    }
+    .dpandname h1{
+        font-size: 20px;
+        text-align: center;
+    }
+    .profileform{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 90%;
+        margin-bottom: 20px;
+        font-size: 10px;
+    }
+    .email{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .email input{
+        width: 80%;
+        font-size: 10px;
+    }
+    .registrationnumber{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .registrationnumber input{
+        width: 80%;
+        font-size: 10px;
+    }
+    .age{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .age input{
+        width: 80%;
+        font-size: 10px;
+    }
+    .dpurl{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .dpurl input{
+        width: 80%;
+        font-size: 10px;
+    }
+    .gender{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .gender input{
+        width: 80%;
+        font-size: 10px;
+    }
+    .chatid{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .chatid input{
+        width: 80%;
+        font-size: 10px;
+    }
+    .profileform button{
+        width: 30%;
+        height: 24px;
+        font-size: 10px;
+    }
+}

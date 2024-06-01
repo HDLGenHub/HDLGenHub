@@ -16,7 +16,7 @@ const Smallcoursecard =(Data)=>{
             <button onClick={handleSmallcourseclick}>
                 <div className="smallcoursecardpack">
                     <h1>{data.name}</h1>
-                    <h2>{data.description}</h2>
+                    <h2>{((data.description).length<100)?data.description:null}</h2>
                     <div className='smallcoursecardcover'>{data.coverimage?(<Coverimage Image={data.coverimage}/>):null}</div>
                 </div>
             </button>

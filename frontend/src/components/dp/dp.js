@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import './coverimage.css';
+import './dp.css';
 
-const Coverimage =(image)=>{
+const Dp =(image)=>{
     const {Image} = image;
     const [ImageID, setImageID] = useState('');
 
     const getImageID =(Image)=>{
+        console.log(Image);
         var pivot = 0;
         var ret='';
         for(var i=0;i<Image.length;i++){
@@ -37,8 +38,8 @@ const Coverimage =(image)=>{
     },[]);
 
     return(
-        <img className="coverimage" src={`https://drive.google.com/thumbnail?id=${ImageID}&sz=w1000`} alt="Cover Image"/>
+        <img className="dp" src={`https://drive.google.com/thumbnail?id=${ImageID}&sz=w1000`} alt="Profile Picture"/>
     );
 }
 
-export default Coverimage;
+export default Dp;

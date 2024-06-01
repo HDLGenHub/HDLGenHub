@@ -55,7 +55,7 @@ const Navbar =()=>{
                     </div>
                     <div className="navbarrightcontainer">
                         <ul>
-                            <li className='navbarsignin'><a href='/signinpage'>Teacher</a></li>
+                            <li className='navbarsignin'><a href='/profile'>Teacher</a></li>
                             <li className='navbarsignup'><button onClick={handleLogout}>Logout</button></li>
                         </ul>
                     </div>
@@ -75,7 +75,7 @@ const Navbar =()=>{
                     </div>
                     <div className="navbarrightcontainer">
                         <ul>
-                            <li className='navbarsignin'><a href='/signinpage'>Student</a></li>
+                            <li className='navbarsignin'><a href='/profile'>Student</a></li>
                             <li className='navbarsignup'><button onClick={handleLogout}>Logout</button></li>
                         </ul>
                     </div>

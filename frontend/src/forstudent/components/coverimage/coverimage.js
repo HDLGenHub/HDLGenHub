@@ -10,7 +10,7 @@ const Coverimage =(image)=>{
         var ret='';
         for(var i=0;i<Image.length;i++){
             console.log("Loop is running");
-            if(Image[i]==="d"){
+            if(pivot===0 && Image[i]==="d"){
                 pivot=1;
             }
             else if(pivot===1 && Image[i]=='/'){

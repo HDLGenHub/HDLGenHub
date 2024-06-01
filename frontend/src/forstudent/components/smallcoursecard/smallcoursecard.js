@@ -3,6 +3,7 @@ import './smallcoursecard.css';
 
 const Smallcoursecard=(Data)=>{
     const {data} = Data;
+    console.log("Last page: ", data);
 
     return(
         <div className='student-smallcoursecardcontainer'>
