@@ -46,6 +46,7 @@ router.post('/', async(req, res)=>{
 router.put('/:id', async(req, res)=>{
     try{
         const updateTeacher = await Teacher.findByIdAndUpdate(req.params.id,req.body);
+        console.log(updateTeacher);
         res.status(200).json(updateTeacher);
     } catch(error){
         res.status(400).json({message:error.message});

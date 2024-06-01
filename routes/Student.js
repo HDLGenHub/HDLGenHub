@@ -46,8 +46,10 @@ router.post('/', async(req, res)=>{
 router.put('/:id', async(req, res)=>{
     try{
         const updateStudent = await Student.findByIdAndUpdate(req.params.id,req.body);
+        console.log(updateStudent);
         res.status(200).json(updateStudent);
     } catch(error){
+        console.log(error);
         res.status(400).json({message:error.message});
     }
 });

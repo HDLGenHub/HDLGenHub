@@ -65,5 +65,14 @@ router.get('/enrolledcourses/:courseid', async (req, res)=>{
         res.status(400).json({message:error.message});
     }
 })
-
+router.get('/student/:studentid', async (req, res)=>{
+    const courseid = req.params.studentid;
+    console.log(studentid);
+    try{
+        const response = await EnrolledCourse.find({"enrolledby":studentid});
+        res.status(201).json(response);
+    } catch(error){
+        res.status(400).json({message:error.message});
+    }
+})
 module.exports = router;
