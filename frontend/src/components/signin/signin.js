@@ -37,6 +37,15 @@ const Signin =()=>{
                     setCache('HDLGenHub_loggedState',1);
                     alert('Teacher logged');
                 }
+                if(teacher.data.status === "incorrect password" || student.data.status === "incorrect password"){
+                    alert("Incorrect password")
+                }
+                if(teacher.data.status === "user not found" || student.data.status === "user not found"){
+                    alert("User not found")
+                }
+                if(teacher.data.status === "error with login" || student.data.status === "error with login"){
+                    alert("Error with login")
+                }
                 console.log({student, teacher});
                 setEmail('');
                 setPassword('');

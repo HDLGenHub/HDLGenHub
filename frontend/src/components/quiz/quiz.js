@@ -13,17 +13,18 @@ const Quiz =(quizId)=>{
 
     useEffect(()=>{
         getQuestions();
-    },[])
+    },[]);
+
     return(
         <div className='quiz-component-conatiner'>
             {questions?questions.map((question,i=0)=>(
                 <div className='quiz-component-question'>
                     <h2>{++i}.{question.problem}</h2>
-                    <h2>{question.image}</h2>
-                    <h2>{question.answer}</h2>
-                    <h2>{question.wronganswer1}</h2>
-                    <h2>{question.wronganswer2}</h2>
-                    <h2>{question.wronganswer3}</h2>
+                    <h3>{question.image}</h3>
+                    <h3>Correct Answer: {question.answer}</h3>
+                    <h3>Wrong Answer: {question.wronganswer1}</h3>
+                    <h3>Wrong Answer: {question.wronganswer2}</h3>
+                    <h3>Wrong Answer: {question.wronganswer3}</h3>
                 </div>
             )):null}
         </div>
