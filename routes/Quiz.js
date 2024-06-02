@@ -58,5 +58,15 @@ router.delete('/:id', async (req, res)=>{
         res.status(400).json({message:error.message});
     }
 });
+router.get('/teacher/:teacherid', async (req, res)=>{
+    const teacherid = req.params.teacherid;
+    console.log(teacherid);
+    try{
+        const response = await Quiz.find({"teacherid":teacherid});
+        res.status(201).json(response);
+    } catch(error){
+        res.status(400).json({message:error.message});
+    }
+});
 
 module.exports = router;
