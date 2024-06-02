@@ -79,4 +79,30 @@ margin: 20px;
     height: 500px;
     background-color: #e1e1e1;
     box-shadow: 0 0 10px 0 black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quizcreation-popup-form{
+    border-style: groove;
+    width: 95%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+.quizcreation-popup-form input{
+    max-width: 200px;
+    width: 90%;
+    height: 20px;
+}
+.quizcreation-popup-form button{
+    margin-top: 20px;
+    max-width: 200px;
+    width: 90%;
+    height: 30px;
+    background-color: #fa9746;
+    border-style: none;
 }
