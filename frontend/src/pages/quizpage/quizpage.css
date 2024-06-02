@@ -1,0 +1,9 @@
+.quizpage-container{
+    border-style: groove;
+    background-color: #e1e1e1;
+    height: 100%;
+    width: 100%;
+}
+.quizpage-quiz-container{
+    border-style: groove;
+}
