@@ -29,28 +29,33 @@ const Signin =()=>{
                     setCache('HDLGenHub_User', JSON.stringify({data:student.data.response, role:'student'}));
                     setCache('HDLGenHub_loggedState',1);
                     alert('Student logged');
+                    console.log({student, teacher});
+                    setEmail('');
+                    setPassword('');
+                    navigate('/');
+                    window.location.reload();
                 }
-                if(teacher.data.status === "success"){
+                else if(teacher.data.status === "success"){
                     setLoggedteacher(teacher);
                     setCache('HDLGenHub_Teacher', JSON.stringify(teacher.data.response));
                     setCache('HDLGenHub_User', JSON.stringify({data:teacher.data.response, role:'teacher'}));
                     setCache('HDLGenHub_loggedState',1);
                     alert('Teacher logged');
+                    console.log({student, teacher});
+                    setEmail('');
+                    setPassword('');
+                    navigate('/');
+                    window.location.reload();
                 }
-                if(teacher.data.status === "incorrect password" || student.data.status === "incorrect password"){
+                else if(teacher.data.status === "incorrect password" || student.data.status === "incorrect password"){
                     alert("Incorrect password")
                 }
-                if(teacher.data.status === "user not found" || student.data.status === "user not found"){
+                else if(teacher.data.status === "user not found" || student.data.status === "user not found"){
                     alert("User not found")
                 }
-                if(teacher.data.status === "error with login" || student.data.status === "error with login"){
+                else if(teacher.data.status === "error with login" || student.data.status === "error with login"){
                     alert("Error with login")
                 }
-                console.log({student, teacher});
-                setEmail('');
-                setPassword('');
-                navigate('/');
-                window.location.reload();
             } catch{
                 alert('User logging failed');
             }
