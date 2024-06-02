@@ -3,14 +3,9 @@ const Schema = mongoose.Schema;
 
 const QuestionSchema = new Schema(
     {
-        quiz: {
+        quizid: {
             type: Schema.Types.ObjectId,
             ref: "Quiz",
-            require: true
-        },
-        teacher: {
-            type: Schema.Types.ObjectId,
-            ref: "Teacher",
             require: true
         },
         problem: {

@@ -22,11 +22,10 @@ router.get('/:id', async(req, res)=>{
 });
 
 router.post('/', async(req, res)=>{
-    const { problem, image, answers, marks } = req.body;
+    const { quizid, problem, image, answers, wronganswers1, wronganswers2, wronganswers3, marks } = req.body;
     const question = new Question(
         {
-            quiz,
-            teacher,
+            quizid,
             problem,
             image,
             answers,
