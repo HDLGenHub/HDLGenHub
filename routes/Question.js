@@ -60,5 +60,15 @@ router.delete('/:id', async (req, res)=>{
         res.status(400).json({message:error.message});
     }
 });
+router.get('/quiz/:quizid', async (req, res)=>{
+    const quizid = req.params.quizid;
+    console.log(quizid);
+    try{
+        const response = await Question.find({"quizid":quizid});
+        res.status(201).json(response);
+    } catch(error){
+        res.status(400).json({message:error.message});
+    }
+});
 
 module.exports = router;
