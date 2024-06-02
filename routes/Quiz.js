@@ -22,12 +22,13 @@ router.get('/:id', async(req, res)=>{
 });
 
 router.post('/', async(req, res)=>{
-    const { name, description, question, starttime, timespan } = req.body;
+    const { teacherid, name, description, starttime, courseid, timespan } = req.body;
     const quiz = new Quiz(
         {
+            teacherid,
             name,
             description,
-            question,
+            courseid,
             starttime,
             timespan
         }
