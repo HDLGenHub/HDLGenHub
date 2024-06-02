@@ -12,13 +12,15 @@ const CreationPage =()=>{
     const [createdby, setCreatedby] = useState();
     const [quizheading, setQuizheading] = useState();
     const [quizdescription, setQuizdescription] = useState();
-    const [newquestion, setNewquestion] = useState();
+    const [newquizid, setNewquizid] = useState();
+    const [newquestionid, setNewquestionid] = useState();
     const [question, setQuestion] = useState();
     const [questionimage, setQuestionimage] = useState();
     const [correctanswer, setCorrestanswer] = useState();
     const [wronganswer1, setWronganswer1] = useState();
     const [wronganswer2, setWronganswer2] = useState();
     const [wronganswer3, setWronganswer3] = useState();
+    const [marks, setMarks] = useState();
 
     useEffect(()=>{
         setTeacher(getCache('HDLGenHub_Teacher'));
@@ -41,15 +43,78 @@ const CreationPage =()=>{
         }
     }
 
-    const handleAddquestion=()=>{
-        alert(quizheading);
-        alert(quizdescription);
-        alert(question);
-        alert(questionimage);
-        alert(correctanswer);
-        alert(wronganswer1);
-        alert(wronganswer2);
-        alert(wronganswer3);
+    const handleAddquestion=async()=>{
+        console.log(newquizid);
+        if(!newquizid){
+            const name = quizheading;
+            const description = quizdescription;
+            try{
+                const resquiz = await axios.post(`http://localhost:4000/Quiz/`,{
+                    name,
+                    description                    
+                })
+                setNewquizid(resquiz.data._id);
+                alert(resquiz.data._id);
+                const quizid = resquiz.data._id;
+                const problem = question;
+                const image = questionimage;
+                const answer = correctanswer;
+                try{
+                    const resquestion = await axios.post(`http://localhost:4000/Question/`,{
+                        quizid,
+                        problem,
+                        image,
+                        answer,
+                        wronganswer1,
+                        wronganswer2,
+                        wronganswer3,
+                        marks
+                    })
+                    alert(resquestion);
+                    console.log(resquestion);
+                } catch{
+                    alert("Error creating question");
+                }
+            } catch{
+                alert("Error creating the quiz");
+            }
+        }
+        else{
+            const quizid = newquizid;
+            const problem = question;
+            const image = questionimage;
+            const answer = correctanswer;
+            try{
+                const resquestion = await axios.post(`http://localhost:4000/Question/`,{
+                    quizid,
+                    problem,
+                    image,
+                    answer,
+                    wronganswer1,
+                    wronganswer2,
+                    wronganswer3,
+                    marks
+                })
+                alert(resquestion);
+                console.log(resquestion);
+            } catch{
+                alert("Error creating question");
+            }
+        }
+    }
+    const handleSavequiz=async()=>{
+        alert(newquizid);
+        setNewquizid(null);
+        console.log(newquizid);
+        const teacherid = teacher._id;
+        try{
+            const resquiz = await axios.put(`http://localhost:4000/Quiz/${newquizid}`,{
+                teacherid                   
+            })
+            console.log(resquiz);
+        } catch{
+            alert("Error saving the quiz");
+        }
     }
 
     return(
@@ -92,10 +157,13 @@ const CreationPage =()=>{
                                 <input onChange={(e)=>setWronganswer2(e.target.value)} type='text'></input>
                                 <label>Wrong Answer 3</label>
                                 <input onChange={(e)=>setWronganswer3(e.target.value)} type='text'></input>
+                                <label>Mark</label>
+                                <input onChange={(e)=>setMarks(e.target.value)} type='text'></input>
                                 <button onClick={handleAddquestion}>Add</button>
                             </div>
                         </div>
-                    }</Popup>        
+                    }</Popup>   
+                    <button onClick={handleSavequiz}>Save Quiz</button> 
                 </div>
             </div>
         </div>
