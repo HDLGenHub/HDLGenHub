@@ -11,10 +11,10 @@ const QuizSchema = new Schema(
             type: String,
             require: true
         },
-        question: [{
+        course: {
             type: Schema.Types.ObjectId,
-            ref: 'Question'
-        }],
+            ref: 'Course'
+        },
         starttime: {
             type: Number,
             require: false

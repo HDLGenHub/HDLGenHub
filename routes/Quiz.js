@@ -27,7 +27,7 @@ router.post('/', async(req, res)=>{
         {
             name,
             description,
-            question,
+            course,
             starttime,
             timespan
         }

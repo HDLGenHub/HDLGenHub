@@ -3,6 +3,16 @@ const Schema = mongoose.Schema;
 
 const QuestionSchema = new Schema(
     {
+        quiz: {
+            type: Schema.Types.ObjectId,
+            ref: "Quiz",
+            require: true
+        },
+        teacher: {
+            type: Schema.Types.ObjectId,
+            ref: "Teacher",
+            require: true
+        },
         problem: {
             type: String,
             require: true
@@ -11,14 +21,26 @@ const QuestionSchema = new Schema(
             type: String,
             require: true
         },
-        answers: [{
+        answers: {
             type: String,
             require: true
-        }],
-        marks: [{
+        },
+        wronganswers1: {
+            type: String,
+            require: true
+        },
+        wronganswers2: {
+            type: String,
+            require: true
+        },
+        wronganswers3: {
+            type: String,
+            require: true
+        },
+        marks: {
             type: Number,
             require: true
-        }]
+        }
     }
 )
 
