@@ -16,19 +16,19 @@ const QuestionSchema = new Schema(
             type: String,
             require: true
         },
-        answers: {
+        answer: {
             type: String,
             require: true
         },
-        wronganswers1: {
+        wronganswer1: {
             type: String,
             require: true
         },
-        wronganswers2: {
+        wronganswer2: {
             type: String,
             require: true
         },
-        wronganswers3: {
+        wronganswer3: {
             type: String,
             require: true
         },
