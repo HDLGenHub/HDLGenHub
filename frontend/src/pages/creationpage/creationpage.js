@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './creationpage.css';
 import { getCache } from '../../caching/cache';
 import axios from 'axios';
+import Popup from 'reactjs-popup';
 
 const CreationPage =()=>{
     const [teacher, setTeacher] = useState();
@@ -9,6 +10,9 @@ const CreationPage =()=>{
     const [coverimage, setCoverimage] = useState();
     const [description, setDescription] = useState();
     const [createdby, setCreatedby] = useState();
+    const [quizheading, setQuizheading] = useState();
+    const [quizdescription, setQuizdescription] = useState();
+    const [newquestion, setNewquestion] = useState();
 
     useEffect(()=>{
         setTeacher(getCache('HDLGenHub_Teacher'));
@@ -34,6 +38,7 @@ const CreationPage =()=>{
     return(
         <div className='creationpagecontainer'>
             <div className='creationcoursecontainer'>
+                <h1>Course Creation</h1>
                 <div className='creationcourseform'>
                     <label>Course Heading</label>
                     <input alt='name' value={name} onChange={(e)=>setName(e.target.value)} type='text'></input>
@@ -45,8 +50,23 @@ const CreationPage =()=>{
                 </div>
             </div>
             <div className='creationquizcontainer'>
+                <h1>Quiz Creation</h1>
                 <div className='creationquizform'>
-                    <h1>Currently Quizes Are Unavailable!</h1>
+                    <label>Quiz Heading</label>
+                    <input alt='quizheading' value={quizheading} onChange={(e)=>setQuizheading(e.target.value)} type='text'></input>
+                    <label>Quiz Description</label>     
+                    <input alt='quizdescription' value={quizdescription} onChange={(e)=>setQuizdescription(e.target.value)} type='text'></input>
+                    <Popup className='quizcreation-button' trigger={
+                        <button>
+                            Add a question
+                        </button>
+                    } modal nested>{
+                        <div className='quizcreation-popup'>
+                            <div>
+                                
+                            </div>
+                        </div>
+                    }</Popup>        
                 </div>
             </div>
         </div>
