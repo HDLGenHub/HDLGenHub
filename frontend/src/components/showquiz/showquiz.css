@@ -1,0 +1,19 @@
+.quizcomponent-conatainer{
+    border-style: groove;
+    max-width: 300px;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    background-color: #e1e1e1;
+    border: none;
+    box-shadow: 0 0 10px 0 black;
+}
+.quizcomponent-conatainer button{
+    width: 90%;
+    height: 30px;
+    background-color: #fa9746;
+    border-style: none;
+}
