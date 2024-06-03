@@ -26,7 +26,7 @@ const Quiz =(quizId)=>{
                         <h2>{question.problem}</h2>
                         <h3>{question.image}</h3>
                         <div className='quiz-component-answers'>
-                            <h3>Correct Answer</h3>
+                            <h3 style={{backgroundColor:'lightgreen'}}>Correct Answer</h3>
                             <h4>{question.answer}</h4>
                             <h3>Wrong Answer</h3>
                             <h4>{question.wronganswer1}</h4>
