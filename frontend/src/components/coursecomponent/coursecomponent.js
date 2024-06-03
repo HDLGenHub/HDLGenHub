@@ -3,6 +3,7 @@ import Video from "../video/video";
 import axios from "axios";
 import './coursecomponent.css';
 import Document from "../document/document";
+import Showquiz from "../showquiz/showquiz";
 
 const Coursecomponent =(Id)=>{
     const {id} = Id;
@@ -22,6 +23,7 @@ const Coursecomponent =(Id)=>{
                 <div className="coursecomponent">
                     {(coursecomponent.data.itemtype==="video")?(<Video id={coursecomponent.data.item}/>):null}
                     {/*{(coursecomponent.data.itemtype==="document")?(<Document id={coursecomponent.data.item}/>):null}*/}
+                    {(coursecomponent.data.itemtype==="quiz")?(<Showquiz id={coursecomponent.data.item}/>):null}
                 </div>
             ):null}
         </div>
