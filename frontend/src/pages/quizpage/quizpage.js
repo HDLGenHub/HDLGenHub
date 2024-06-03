@@ -3,6 +3,7 @@ import './quizpage.css';
 import { getCache } from '../../caching/cache';
 import axios from 'axios';
 import Quiz from '../../components/quiz/quiz';
+import Popup from 'reactjs-popup';
 
 const Quizpage=()=>{
     const [teacher ,setTeacher] = useState();
@@ -26,7 +27,12 @@ const Quizpage=()=>{
                 <div className='quizpage-quiz-container'>
                     <p>{++i}</p>
                     <div className='quizpage-quiz'>
-                        <h1>{quiz.name}</h1>
+                        <Popup trigger={<button>{quiz.name}</button>}
+                        modal nested>{
+                            <div className='quizpage-quizid'>
+                                <p>Quiz Id: {quiz._id}</p>
+                            </div>
+                        }</Popup>
                         <h2>{quiz.description}</h2>
                         <div className='quizpage-quiz-question-container'>
                             <Quiz quizid = {quiz._id}/>

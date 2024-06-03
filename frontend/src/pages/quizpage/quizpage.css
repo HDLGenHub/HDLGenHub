@@ -37,7 +37,7 @@
     align-items: start;
     justify-content: start;
 }
-.quizpage-quiz h1{
+.quizpage-quiz button{
     width: 100%;
     background-color: #e1e1e1;
     box-shadow: 0 0 10px 0 black;
@@ -46,10 +46,15 @@
     justify-content: center;
     margin: 0;
     padding: 0;
+    border: none;
     text-align: left;
     color: black;
     border-radius: 20px;
     padding: 10px;
+    font-size: 20px;
+}
+.quizpage-quiz button:hover{
+    box-shadow: 0 0 20px 0 black;
 }
 .quizpage-quiz h2{
     display: flex;
@@ -61,9 +66,22 @@
 }
 .quizpage-quiz-question-container{
     width: 100%;
+    max-width: 280px;
     background-color: #e1e1e1;
     box-shadow: 0 0 10px 0 black;
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 20px;
+}
+.quizpage-quizid{
+    border-style: groove;
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e1e1e1;
+    border-radius: 20px;
+    border-style: none;
+    box-shadow: 0 0 10px 0 black;
 }
