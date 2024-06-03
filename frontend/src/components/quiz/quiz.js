@@ -26,10 +26,14 @@ const Quiz =(quizId)=>{
                         <h2>{question.problem}</h2>
                         <h3>{question.image}</h3>
                         <div className='quiz-component-answers'>
-                            <h3>Correct Answer: {question.answer}</h3>
-                            <h3>Wrong Answer: {question.wronganswer1}</h3>
-                            <h3>Wrong Answer: {question.wronganswer2}</h3>
-                            <h3>Wrong Answer: {question.wronganswer3}</h3>
+                            <h3>Correct Answer</h3>
+                            <h4>{question.answer}</h4>
+                            <h3>Wrong Answer</h3>
+                            <h4>{question.wronganswer1}</h4>
+                            <h3>Wrong Answer</h3>
+                            <h4>{question.wronganswer2}</h4>
+                            <h3>Wrong Answer</h3>
+                            <h4>{question.wronganswer3}</h4>
                         </div>
                     </div>
                 </div>
