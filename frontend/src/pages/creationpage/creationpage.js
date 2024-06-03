@@ -3,6 +3,7 @@ import './creationpage.css';
 import { getCache } from '../../caching/cache';
 import axios from 'axios';
 import Popup from 'reactjs-popup';
+import { useNavigate } from 'react-router';
 
 const CreationPage =()=>{
     const [teacher, setTeacher] = useState();
@@ -13,7 +14,7 @@ const CreationPage =()=>{
     const [quizheading, setQuizheading] = useState();
     const [quizdescription, setQuizdescription] = useState();
     const [newquizid, setNewquizid] = useState();
-    const [newquestionid, setNewquestionid] = useState();
+    //const [newquestionid, setNewquestionid] = useState();
     const [question, setQuestion] = useState();
     const [questionimage, setQuestionimage] = useState();
     const [correctanswer, setCorrestanswer] = useState();
@@ -21,6 +22,7 @@ const CreationPage =()=>{
     const [wronganswer2, setWronganswer2] = useState();
     const [wronganswer3, setWronganswer3] = useState();
     const [marks, setMarks] = useState();
+    const navigate = useNavigate();
 
     useEffect(()=>{
         setTeacher(getCache('HDLGenHub_Teacher'));
@@ -116,6 +118,9 @@ const CreationPage =()=>{
             alert("Error saving the quiz");
         }
     }
+    const handleGotoquizes=()=>{
+        navigate('/quizpage');
+    }
 
     return(
         <div className='creationpagecontainer'>
@@ -137,7 +142,7 @@ const CreationPage =()=>{
                     <label>Quiz Heading</label>
                     <input alt='quizheading' value={quizheading} onChange={(e)=>setQuizheading(e.target.value)} type='text'></input>
                     <label>Quiz Description</label>     
-                    <input alt='quizdescription' value={quizdescription} onChange={(e)=>setQuizdescription(e.target.value)} type='text'></input>
+                    <input style={{minHeight:"260px"}} alt='quizdescription' value={quizdescription} onChange={(e)=>setQuizdescription(e.target.value)} type='text'></input>
                     <Popup className='quizcreation-button' trigger={
                         <button>
                             Add a question
@@ -163,7 +168,8 @@ const CreationPage =()=>{
                             </div>
                         </div>
                     }</Popup>   
-                    <button onClick={handleSavequiz}>Save Quiz</button> 
+                    <button onClick={handleSavequiz}>Save Quiz</button>
+                    <button onClick={handleGotoquizes}>Go to Quizes</button>
                 </div>
             </div>
         </div>

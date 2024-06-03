@@ -24,9 +24,14 @@ const Quizpage=()=>{
         <div className='quizpage-container'>
             {quizes?quizes.data.map((quiz,i=0)=>(
                 <div className='quizpage-quiz-container'>
-                    <h1>{++i}.{quiz.name}</h1>
-                    <h1>{quiz.description}</h1>
-                    <Quiz quizid = {quiz._id}/>
+                    <p>{++i}</p>
+                    <div className='quizpage-quiz'>
+                        <h1>{quiz.name}</h1>
+                        <h2>{quiz.description}</h2>
+                        <div className='quizpage-quiz-question-container'>
+                            <Quiz quizid = {quiz._id}/>
+                        </div>
+                    </div>
                 </div>
             )):null}
         </div>

@@ -3,7 +3,63 @@
     background-color: #e1e1e1;
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 .quizpage-quiz-container{
     border-style: groove;
+    max-width: 400px;
+    width: 95%;
+    display: flex;
+}
+.quizpage-quiz-container p{
+    display: flex;
+    border-style: groove;
+    margin-top: 10px;
+    height: 100%;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+}
+.quizpage-quiz{
+    border-style: groove;
+    height: 100%;
+    max-width: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+.quizpage-quiz h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    border-style: groove;
+    text-align: left;
+    color: blueviolet;
+}
+.quizpage-quiz h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 0;
+    border-style: groove;
+    font-size: 12px;
+}
+.quizpage-quiz-question-container{
+    border-style: groove;
+    width: 100%;
 }
