@@ -6,10 +6,32 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+.codespace-files{
+    border-style: groove;
+    border-color: white;
+    flex: 1;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start; 
+    background-color: black;
+}
+.codespace-files p{
+    color: white;
+    font-size: 10px;
+}
+.codespace-file-each{
+    height: 30px;
+    border-style: groove;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .coding-container{
     border-style: groove;
     border-color: white;
-    flex: 2;
+    flex: 4;
     height: 80vh;
     display: flex;
     align-items: center;
@@ -18,7 +40,7 @@
 .running-container{
     border-style: groove;
     border-color: white;
-    flex: 1;
+    flex: 2;
     height: 80vh;
     display: flex;
     align-items: center;
@@ -28,10 +50,17 @@
  }
  .running-container button{
     border-style: groove;
-    width: 100%;
-    height: 7%;
     background-color: lightgreen;
     font-weight: 700;
+    width: 100%;
+    height: 100%;
+ }
+ .running-saving{
+    width: 100%;
+    height: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
  }
  .running-container h1{
     width: 90%;
