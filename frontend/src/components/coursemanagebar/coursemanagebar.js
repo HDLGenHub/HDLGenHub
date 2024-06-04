@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { SERVER } from '../../env.js';
 import './coursemanagebar.css';
 import axios from 'axios';
 import { useParams } from 'react-router';
@@ -15,7 +16,7 @@ const Coursemanagebar =()=>{
     console.log("courseId", id);
     useEffect(()=>{
         const fetchEnrollment =async()=>{
-            const response = await axios.get(`${process.env.SERVER}/EnrolledCourse/enrolledcourses/${id}`);
+            const response = await axios.get(`${SERVER}/EnrolledCourse/enrolledcourses/${id}`);
             setEnrolls(response.data);
         }
         fetchEnrollment();

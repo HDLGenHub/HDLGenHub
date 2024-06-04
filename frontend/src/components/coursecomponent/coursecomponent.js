@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { SERVER } from '../../env.js';
 import Video from "../video/video";
 import axios from "axios";
 import './coursecomponent.css';
@@ -10,7 +11,7 @@ const Coursecomponent =(Id)=>{
     const [coursecomponent, setCoursecomponent] = useState(null);
     useEffect(()=>{
         const getCoursecomponent =async()=>{
-            const response = await axios.get(`${process.env.SERVER}/Coursecomponent/${id}`);
+            const response = await axios.get(`${SERVER}/Coursecomponent/${id}`);
             setCoursecomponent(response);
         }
         getCoursecomponent();

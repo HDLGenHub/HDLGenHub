@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { SERVER } from '../../env.js';
 import './coding.css';
 import { Editor } from '@monaco-editor/react';
 import { Rapidapiexecute, execute } from '../api/compiler';
@@ -21,7 +22,7 @@ const Coding=()=>{
         return text
     }
     const getCodefiles=async()=>{
-        const res = await axios.get(`${process.env.SERVER}/Code/`);
+        const res = await axios.get(`${SERVER}/Code/`);
         console.log(res);
         setCodefiles(res);
     }
@@ -30,7 +31,7 @@ const Coding=()=>{
         const type = "playground";
         const date = new Date();
         const filename = student.name+RandomText()+ date;
-        const res = await axios.post(`${process.env.SERVER}/Code/`, {
+        const res = await axios.post(`${SERVER}/Code/`, {
             student,
             code,
             type,

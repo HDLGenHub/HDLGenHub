@@ -1,4 +1,5 @@
 import axios from "axios";
+import { SERVER } from '../../../env.js';
 import { useEffect, useState } from "react";
 import Coverimage from "../coverimage/coverimage";
 import './coursecard.css';
@@ -13,7 +14,7 @@ const Coursecard=(Data)=>{
         const getCourse=async(courseid)=>{
             //alert(courseid);
            try{
-               const res = await axios.get(`${process.env.SERVER}/Course/${courseid}`);
+               const res = await axios.get(`${SERVER}/Course/${courseid}`);
                setCourse(res.data);
                //alert(JSON.stringify(res));
            } catch{

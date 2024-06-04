@@ -1,4 +1,5 @@
 import './showquiz.css';
+import { SERVER } from '../../env.js';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
@@ -10,7 +11,7 @@ const Showquiz=(Id)=>{
 
     useEffect(()=>{
         const getQuiz=async()=>{
-            const res = await axios.get(`${process.env.SERVER}/Quiz/${id}`);
+            const res = await axios.get(`${SERVER}/Quiz/${id}`);
             setQuiz(res);
         }
         getQuiz();

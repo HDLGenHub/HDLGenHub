@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { SERVER } from '../../../env.js';
 import './addingvideo.css';
 import axios from 'axios';
 import { useParams } from 'react-router';
@@ -19,7 +20,7 @@ const Addingvideo =(courseId)=>{
         const description = videodescription;
         const url = videolink;
         if(name && description && url){
-            const postedvideoresponse = await axios.post(`${process.env.SERVER}/Video`, {
+            const postedvideoresponse = await axios.post(`${SERVER}/Video`, {
                 name,
                 description,
                 url
@@ -41,7 +42,7 @@ const Addingvideo =(courseId)=>{
             const description = video.data.description;
             const item = video.data._id;
             if(courseid && name && description && item && itemtype){
-                const postedcoursecomponentresponse = await axios.post(`${process.env.SERVER}/Coursecomponent/`, {
+                const postedcoursecomponentresponse = await axios.post(`${SERVER}/Coursecomponent/`, {
                     courseid,
                     name,
                     description,

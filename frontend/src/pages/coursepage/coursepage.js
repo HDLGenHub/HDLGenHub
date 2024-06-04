@@ -1,4 +1,5 @@
 import axios from "axios";
+import { SERVER } from '../../env.js';
 import { useEffect, useState } from "react";
 import { getCache } from "../../caching/cache";
 import Smallcoursecard from "../../components/smallcoursecard/smallcoursecard";
@@ -16,7 +17,7 @@ const CoursePage =()=>{
     },[]);
 
     const getcourses =async(id)=>{
-        const response = await axios.get(`${process.env.SERVER}/Course/courses/${id}`);
+        const response = await axios.get(`${SERVER}/Course/courses/${id}`);
         setCourse(response);
         console.log("Courses under the logged user: ",response);
     }

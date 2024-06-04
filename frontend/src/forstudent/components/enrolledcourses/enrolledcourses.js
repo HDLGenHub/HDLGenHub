@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { SERVER } from '../../../env.js';
 import { getCache } from "../../../caching/cache";
 import axios from "axios";
 import Coverimage from "../coverimage/coverimage";
@@ -14,7 +15,7 @@ const Enrolledcourses=()=>{
         const getEnrolled=async()=>{
             console.log("Start fetching...");
             const id = getCache('HDLGenHub_Student')._id
-            const res = await axios.get(`${process.env.SERVER}/EnrolledCourse/student/${id}`);
+            const res = await axios.get(`${SERVER}/EnrolledCourse/student/${id}`);
             setEnrolledCourses(res.data);
         }
         setStudent(getCache('HDLGenHub_Student'));

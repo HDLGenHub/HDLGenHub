@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { SERVER } from '../../env.js';
 import './quizpage.css';
 import { getCache } from '../../caching/cache';
 import axios from 'axios';
@@ -11,7 +12,7 @@ const Quizpage=()=>{
 
     const getQuizes =async()=>{
         console.log(teacher)
-        const res = await axios.get(`${process.env.SERVER}/Quiz/teacher/${getCache('HDLGenHub_Teacher')._id}`);
+        const res = await axios.get(`${SERVER}/Quiz/teacher/${getCache('HDLGenHub_Teacher')._id}`);
         setQuizes(res);
         console.log(res);
     }

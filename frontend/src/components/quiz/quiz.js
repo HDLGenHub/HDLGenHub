@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { SERVER } from '../../env.js';
 import './quiz.css';
 import axios from 'axios';
 
@@ -7,7 +8,7 @@ const Quiz =(quizId)=>{
     const [questions, setQuestions] = useState();
 
     const getQuestions=async()=>{
-        const res = await axios.get(`${process.env.SERVER}/Question/quiz/${quizid}`);
+        const res = await axios.get(`${SERVER}/Question/quiz/${quizid}`);
         setQuestions(res.data);
     }
 

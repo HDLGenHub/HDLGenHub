@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { SERVER } from '../../../env.js';
 import { getCache } from "../../../caching/cache";
 import './courses.css';
 import axios from "axios";
@@ -9,7 +10,7 @@ const Courses=()=>{
 
     useEffect(()=>{
         const getcourses=async()=>{
-            const res = await axios.get(`${process.env.SERVER}/Course/`);
+            const res = await axios.get(`${SERVER}/Course/`);
             setCourses(res.data);
             console.log(res.data);
         }

@@ -1,4 +1,5 @@
 import { useParams } from "react-router";
+import { SERVER } from '../../env.js';
 import './deletecourse.css';
 import { useState } from "react";
 import axios from "axios";
@@ -9,7 +10,7 @@ const Deletecourse=()=>{
     console.log(courseid.id);
 
     const handleDelete=async()=>{
-        const res = await axios.delete(`${process.env.SERVER}/Course/${courseid.id}`);
+        const res = await axios.delete(`${SERVER}/Course/${courseid.id}`);
         console.log(res);
         alert("Deleted :", courseid.id);
         setIsopen(0);
