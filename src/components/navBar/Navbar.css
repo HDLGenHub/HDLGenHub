@@ -1,0 +1,208 @@
+.navbarcontainer {
+  z-index: 1;
+  min-height: 60px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 0px 5px 1px #e1e1e1;
+  font-weight: 500;
+  background-color: #fff;
+}
+
+.navbarcontainer a {
+  text-decoration: none;
+}
+
+.navbarleftcontainer {
+  display: flex;
+  float: left;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbarleftcontainer ul {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbarleftcontainer ul li {
+  display: flex;
+}
+
+.navbarsignup button {
+  background-color: transparent;
+  border-style: none;
+  font-size: 12px;
+}
+
+.navbarsignup button:hover {
+  color: red;
+}
+
+.navbarsignup button:active {
+  color: purple;
+}
+
+.navbarrightcontainer {
+  display: flex;
+  float: right;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+}
+
+.navbarrightcontainer ul {
+  display: flex;
+  gap: 30px;
+}
+
+.navbarrightcontainer ul li {
+  display: flex;
+}
+
+.navbarhometext {
+  width: 105px;
+  margin-left: -10px;
+  font-weight: 700;
+}
+
+.navbarsignin {
+  background-color: #fa9746;
+  width: 80px;
+  height: 30px;
+  border-radius: 20px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.navbarsignup {
+  background-color: #e1e1e1;
+  width: 80px;
+  height: 30px;
+  border-radius: 20px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+  .navbarcontainer {
+    min-height: 60px;
+  }
+  .navbarleftcontainer ul {
+    gap: 20px;
+    font-size: 14px;
+  }
+  .navbarrightcontainer ul {
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbarcontainer {
+    min-height: 40px;
+  }
+  .navbarleftcontainer ul {
+    gap: 8px;
+  }
+  .navbarleftcontainer ul li {
+    font-size: 10px;
+  }
+  .navbarrightcontainer {
+    margin-right: 10px;
+  }
+  .navbarrightcontainer ul {
+    gap: 8px;
+  }
+  .navbarhometext {
+    width: 65px;
+    margin-left: -30px;
+  }
+  .navbarsignin,
+  .navbarsignup {
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .navbarcontainer {
+    flex-direction: column;
+  }
+  .navbarleftcontainer {
+    width: 100%;
+  }
+  .navbarleftcontainer ul {
+    gap: 1%;
+    width: 100%;
+    margin-left: -30px;
+  }
+  .navbarleftcontainer ul li {
+    font-size: 10px;
+    margin-right: 5%;
+  }
+  .navbarrightcontainer {
+    width: 100%;
+    margin-right: 0;
+  }
+  .navbarrightcontainer ul {
+    gap: 10%;
+    width: 100%;
+    margin-left: -30px;
+  }
+  .navbarhometext {
+    width: 52px;
+  }
+  .navbarsignin,
+  .navbarsignup {
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 200px) {
+  .navbarcontainer {
+    flex-direction: column;
+  }
+  .navbarleftcontainer {
+    width: 100%;
+  }
+  .navbarleftcontainer ul {
+    flex-direction: column;
+    width: 100%;
+    margin-left: -30px;
+  }
+  .navbarleftcontainer ul li {
+    font-size: 8px;
+    margin-right: 5%;
+    margin-bottom: 10px;
+  }
+  .navbarrightcontainer {
+    width: 100%;
+    margin-right: 0;
+  }
+  .navbarrightcontainer ul {
+    gap: 10%;
+    width: 100%;
+    margin-left: -30px;
+  }
+  .navbarhometext {
+    width: 52px;
+  }
+  .navbarsignin,
+  .navbarsignup {
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    font-size: 8px;
+  }
+}
