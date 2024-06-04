@@ -13,35 +13,46 @@ const Signin = () => {
     const handleSignin = async () => {
         if (email && password) {
             try {
-                console.log({ email, password });
-                const admin = await axios.post('http://localhost:4000/Admin', {
+                console.log("Attempting to sign in with:", { email, password });
+                const admin = await axios.post('http://localhost:4000/Admin/login', {
                     email,
                     password
                 });
-                if (admin.data.status === 201) {
-                    setLoggedadmin(admin);
-                    console.log("hhjj");
-                    setCache('HDLGenHub_Admin', JSON.stringify(admin.data.response));
-                    setCache('HDLGenHub_User', JSON.stringify({ data: admin.data.response, role: 'admin' }));
-                    setCache('HDLGenHub_loggedState', 1);
-                    alert('Admin logged');
-                    
-                    console.log({ admin });
-                    setEmail('');
-                    setPassword('');
-                    navigate('/adminPage');
-                    window.location.reload();
-                } else if (admin.data.status === "incorrect password") {
-                    alert("Incorrect password")
-                } else if (admin.data.status === "user not found") {
-                    alert("User not found")
-                } else if (admin.data.status === "error with login") {
-                    alert("Error with login")
+
+                console.log("Admin response:", admin);
+
+                if (admin.status === 200 || admin.status === 201) {
+                    if (admin.data.status === "success") {
+                        setLoggedadmin(admin);
+                        console.log("Admin logged in successfully");
+
+                        setCache('HDLGenHub_Admin', JSON.stringify(admin.data.response));
+                        setCache('HDLGenHub_User', JSON.stringify({ data: admin.data.response, role: 'admin' }));
+                        setCache('HDLGenHub_loggedState', 1);
+
+                        alert('Admin logged');
+                        setEmail('');
+                        setPassword('');
+                        navigate('/adminPage');
+                        window.location.reload();
+                    } else if (admin.data.status === "incorrect password") {
+                        alert("Incorrect password");
+                    } else if (admin.data.status === "user not found") {
+                        alert("User not found");
+                    } else if (admin.data.status === "error with login") {
+                        alert("Error with login");
+                    } else {
+                        alert("Unexpected response status: " + admin.data.status);
+                    }
+                } else {
+                    alert("Unexpected HTTP status code: " + admin.status);
                 }
             } catch (error) {
                 console.error('User logging failed:', error);
                 alert('User logging failed');
             }
+        } else {
+            alert('Please enter both email and password');
         }
     }
 
@@ -64,7 +75,7 @@ const Signin = () => {
                     <label>By clicking "Sign in," you agree to our <span className='signinterms'>
                         <a href='#'>Terms of Use</a>
                     </span> and our <span className='signinprivacy'>
-                            <a href='#'>Privacy Policy</a></span>.
+                        <a href='#'>Privacy Policy</a></span>.
                     </label>
                 </div>
                 <div className='signinbutton'>

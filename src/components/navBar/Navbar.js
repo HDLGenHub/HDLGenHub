@@ -49,7 +49,7 @@ const Navbar = () => {
                     <div className="navbarleftcontainer">
                         <ul>
                             <li className="navbarhometext"><a href='/'><span style={{color:'#fa9746'}}>HDL</span> Gen Hub</a></li>
-                            <li><a href='/courses'>Courses</a></li>
+                            <li><a href='/courses'>Admin console</a></li>
                         </ul>
                     </div>
                     <div className="navbarrightcontainer">
