@@ -64,12 +64,16 @@ const Coding=()=>{
         alert("File Saved");
     }
 
+    const handleSelectfile=(file)=>{
+        setCode(file.code);
+    }
+
     return(
         <div className='codespace-container'>
             <div className='codespace-files'>
                 {codefiles?codefiles.data.map((codefile)=>(
                     <div className='codespace-file-each'>
-                        <p>{codefile.filename}</p>
+                        <button onClick={()=>handleSelectfile(codefile)}>{codefile.filename}</button>
                     </div>
                 )):null}
             </div>
