@@ -48,6 +48,9 @@ app.use('/Teacher', TeacherRouter);
 const VideoRouter = require('./routes/Video');
 app.use('/Video', VideoRouter);
 
+const CodeRouter = require('./routes/Code');
+app.use('/Code', CodeRouter);
+
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
