@@ -7,7 +7,7 @@ const Quiz =(quizId)=>{
     const [questions, setQuestions] = useState();
 
     const getQuestions=async()=>{
-        const res = await axios.get(`http://localhost:4000/Question/quiz/${quizid}`);
+        const res = await axios.get(`${process.env.SERVER}/Question/quiz/${quizid}`);
         setQuestions(res.data);
     }
 

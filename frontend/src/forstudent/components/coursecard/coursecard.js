@@ -13,7 +13,7 @@ const Coursecard=(Data)=>{
         const getCourse=async(courseid)=>{
             //alert(courseid);
            try{
-               const res = await axios.get(`http://localhost:4000/Course/${courseid}`);
+               const res = await axios.get(`${process.env.SERVER}/Course/${courseid}`);
                setCourse(res.data);
                //alert(JSON.stringify(res));
            } catch{

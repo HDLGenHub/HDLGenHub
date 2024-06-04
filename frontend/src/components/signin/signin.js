@@ -15,11 +15,11 @@ const Signin =()=>{
         if(email && password){
             try{
                 console.log({email, password});
-                const student = await axios.post('http://localhost:4000/Student/login',{
+                const student = await axios.post(`${process.env.SERVER}/Student/login`,{
                     email,
                     password
                 });
-                const teacher = await axios.post('http://localhost:4000/Teacher/login',{
+                const teacher = await axios.post(`${process.env.SERVER}/Teacher/login`,{
                     email,
                     password
                 });

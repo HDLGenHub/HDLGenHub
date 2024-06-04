@@ -18,7 +18,7 @@ const Signup =()=>{
             var res;
             try{
                 if(role==="Student"){
-                    res = await axios.post('http://localhost:4000/Student', {
+                    res = await axios.post(`${process.env.SERVER}/Student`, {
                         name,
                         email,
                         gender,
@@ -26,7 +26,7 @@ const Signup =()=>{
                     });
                 }
                 else{
-                    res = await axios.post('http://localhost:4000/Teacher', {
+                    res = await axios.post(`${process.env.SERVER}/Teacher`, {
                         name,
                         email,
                         gender,

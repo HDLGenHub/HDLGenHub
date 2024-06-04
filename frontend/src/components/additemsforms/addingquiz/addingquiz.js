@@ -14,7 +14,7 @@ const Addingquiz =()=>{
         const itemtype = 'quiz';
         const item = quizid;
         if(courseid && name && description && item && itemtype){
-            const postedcoursecomponentresponse = await axios.post(`http://localhost:4000/Coursecomponent/`, {
+            const postedcoursecomponentresponse = await axios.post(`${process.env.SERVER}/Coursecomponent/`, {
                 courseid,
                 name,
                 description,

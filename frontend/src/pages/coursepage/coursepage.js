@@ -16,7 +16,7 @@ const CoursePage =()=>{
     },[]);
 
     const getcourses =async(id)=>{
-        const response = await axios.get(`http://localhost:4000/Course/courses/${id}`);
+        const response = await axios.get(`${process.env.SERVER}/Course/courses/${id}`);
         setCourse(response);
         console.log("Courses under the logged user: ",response);
     }

@@ -22,7 +22,7 @@ const Smallcoursecard=(Data)=>{
         const courseid = data._id;
         const key = student._id+data._id;
         try{
-            const res = await axios.post(`http://localhost:4000/EnrolledCourse/`,{
+            const res = await axios.post(`${process.env.SERVER}/EnrolledCourse/`,{
                 enrolledby,
                 courseid,
                 key

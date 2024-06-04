@@ -9,7 +9,7 @@ const Courses=()=>{
 
     useEffect(()=>{
         const getcourses=async()=>{
-            const res = await axios.get('http://localhost:4000/Course/');
+            const res = await axios.get(`${process.env.SERVER}/Course/`);
             setCourses(res.data);
             console.log(res.data);
         }

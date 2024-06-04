@@ -9,7 +9,7 @@ const Video =(Id)=>{
 
     useEffect(()=>{
         const fetchVideo =async()=>{
-            const res = await axios.get(`http://localhost:4000/Video/${id}`);
+            const res = await axios.get(`${process.env.SERVER}/Video/${id}`);
             setVideo(res);
         }
         fetchVideo();

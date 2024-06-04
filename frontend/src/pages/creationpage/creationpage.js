@@ -31,7 +31,7 @@ const CreationPage =()=>{
 
     const postCourse=async()=>{
         if(name && coverimage && description){
-            const res = await axios.post(`http://localhost:4000/Course/`, {
+            const res = await axios.post(`${process.env.SERVER}/Course/`, {
                 name,
                 coverimage,
                 description,
@@ -51,7 +51,7 @@ const CreationPage =()=>{
             const name = quizheading;
             const description = quizdescription;
             try{
-                const resquiz = await axios.post(`http://localhost:4000/Quiz/`,{
+                const resquiz = await axios.post(`${process.env.SERVER}/Quiz/`,{
                     name,
                     description                    
                 })
@@ -62,7 +62,7 @@ const CreationPage =()=>{
                 const image = questionimage;
                 const answer = correctanswer;
                 try{
-                    const resquestion = await axios.post(`http://localhost:4000/Question/`,{
+                    const resquestion = await axios.post(`${process.env.SERVER}/Question/`,{
                         quizid,
                         problem,
                         image,
@@ -87,7 +87,7 @@ const CreationPage =()=>{
             const image = questionimage;
             const answer = correctanswer;
             try{
-                const resquestion = await axios.post(`http://localhost:4000/Question/`,{
+                const resquestion = await axios.post(`${process.env.SERVER}/Question/`,{
                     quizid,
                     problem,
                     image,
@@ -110,7 +110,7 @@ const CreationPage =()=>{
         console.log(newquizid);
         const teacherid = teacher._id;
         try{
-            const resquiz = await axios.put(`http://localhost:4000/Quiz/${newquizid}`,{
+            const resquiz = await axios.put(`${process.env.SERVER}/Quiz/${newquizid}`,{
                 teacherid                   
             })
             console.log(resquiz);

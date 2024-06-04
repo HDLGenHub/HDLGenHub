@@ -7,7 +7,7 @@ const Enrolledstudentshow =(studentId)=>{
     const [student, setStudent] = useState(); 
     useEffect(()=>{
         const fetchStudent =async()=>{
-            const response = await axios.get(`http://localhost:4000/Student/${studentid}`);
+            const response = await axios.get(`${process.env.SERVER}/Student/${studentid}`);
             setStudent(response.data.name);
         }
         fetchStudent(studentid);

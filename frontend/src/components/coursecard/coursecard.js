@@ -12,11 +12,11 @@ const Coursecard =()=>{
     useEffect(()=>{
         const fetchCoursecomponents=async(data)=>{
             console.log("under fetching course components: ", data);
-            const res = await axios.get(`http://localhost:4000/Coursecomponent/course/${id}`);
+            const res = await axios.get(`${process.env.SERVER}/Coursecomponent/course/${id}`);
             setCoursecomponents(res.data);
         }
         const fetchData=async()=>{
-            const response = await axios.get(`http://localhost:4000/Course/${id}`);
+            const response = await axios.get(`${process.env.SERVER}/Course/${id}`);
             setData(response.data);
         }
         fetchData();

@@ -11,7 +11,7 @@ const Removecourseitem =()=>{
 
     useEffect(()=>{
         const fetchCourses=async()=>{
-            const res = await axios.get(`http://localhost:4000/Coursecomponent/course/${id}`);
+            const res = await axios.get(`${process.env.SERVER}/Coursecomponent/course/${id}`);
             setCoursecomponents(res.data);
         }
         fetchCourses();
@@ -34,7 +34,7 @@ const Removecourseitem =()=>{
         }
     }
     const deleteCoursecomponent=async(coursecomponentid)=>{
-        const res = await axios.delete(`http://localhost:4000/Coursecomponent/${coursecomponentid}`);
+        const res = await axios.delete(`${process.env.SERVER}/Coursecomponent/${coursecomponentid}`);
         console.log("response: ", res);
     }
     const handleDelete=()=>{
