@@ -1,4 +1,5 @@
-import './document.css'
+import './document.css';
+import { SERVER } from '../../env.js';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import DocViewer from "react-doc-viewer";
@@ -9,7 +10,7 @@ const Document =(Id)=>{
 
     useEffect(()=>{
         const fetchDocument =async()=>{
-            const res = await axios.get(`${process.env.SERVER}/Document/${id}`);
+            const res = await axios.get(`${SERVER}/Document/${id}`);
             setDocument(res);
         }
         fetchDocument();

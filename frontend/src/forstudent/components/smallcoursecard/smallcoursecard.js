@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { SERVER } from '../../../env.js';
 import Coverimage from '../coverimage/coverimage';
 import './smallcoursecard.css';
 import { getCache } from '../../../caching/cache';
@@ -22,7 +23,7 @@ const Smallcoursecard=(Data)=>{
         const courseid = data._id;
         const key = student._id+data._id;
         try{
-            const res = await axios.post(`${process.env.SERVER}/EnrolledCourse/`,{
+            const res = await axios.post(`${SERVER}/EnrolledCourse/`,{
                 enrolledby,
                 courseid,
                 key

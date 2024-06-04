@@ -1,4 +1,5 @@
-import ReactPlayer from 'react-player/youtube'
+import ReactPlayer from 'react-player/youtube';
+import { SERVER } from '../../env.js';
 import './video.css'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -9,7 +10,7 @@ const Video =(Id)=>{
 
     useEffect(()=>{
         const fetchVideo =async()=>{
-            const res = await axios.get(`${process.env.SERVER}/Video/${id}`);
+            const res = await axios.get(`${SERVER}/Video/${id}`);
             setVideo(res);
         }
         fetchVideo();
