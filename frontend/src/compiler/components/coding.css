@@ -1,0 +1,43 @@
+.codespace-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.coding-container{
+    border-style: groove;
+    border-color: white;
+    flex: 2;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.running-container{
+    border-style: groove;
+    border-color: white;
+    flex: 1;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+ }
+ .running-container button{
+    border-style: groove;
+    width: 100%;
+    height: 7%;
+    background-color: lightgreen;
+    font-weight: 700;
+ }
+ .running-container h1{
+    width: 90%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    text-align: start;
+    font-size: 12px;
+ }
