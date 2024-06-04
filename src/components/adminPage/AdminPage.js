@@ -1,9 +1,9 @@
 import React from 'react';
-import './HomePage.css';
+import './AdminPage.css';
 import coursesIcon from '../../images/courses.png';
 import settingsIcon from '../../images/settings.png';
 import userIcon from '../../images/user.jpg';
-import backgroundImage from '../../images/background.jpg'; // Ensure this path is correct
+import backgroundImage from '../../images/background.png'; // Ensure this path is correct
 
 function HomePage() {
   return (
