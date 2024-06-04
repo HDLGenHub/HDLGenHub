@@ -11,7 +11,7 @@ const Quizpage=()=>{
 
     const getQuizes =async()=>{
         console.log(teacher)
-        const res = await axios.get(`http://localhost:4000/Quiz/teacher/${getCache('HDLGenHub_Teacher')._id}`);
+        const res = await axios.get(`${process.env.SERVER}/Quiz/teacher/${getCache('HDLGenHub_Teacher')._id}`);
         setQuizes(res);
         console.log(res);
     }

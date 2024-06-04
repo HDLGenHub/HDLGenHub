@@ -9,7 +9,7 @@ const Deletecourse=()=>{
     console.log(courseid.id);
 
     const handleDelete=async()=>{
-        const res = await axios.delete(`http://localhost:4000/Course/${courseid.id}`);
+        const res = await axios.delete(`${process.env.SERVER}/Course/${courseid.id}`);
         console.log(res);
         alert("Deleted :", courseid.id);
         setIsopen(0);

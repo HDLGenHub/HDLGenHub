@@ -9,7 +9,7 @@ const Document =(Id)=>{
 
     useEffect(()=>{
         const fetchDocument =async()=>{
-            const res = await axios.get(`http://localhost:4000/Document/${id}`);
+            const res = await axios.get(`${process.env.SERVER}/Document/${id}`);
             setDocument(res);
         }
         fetchDocument();

@@ -14,7 +14,7 @@ const Enrolledcourses=()=>{
         const getEnrolled=async()=>{
             console.log("Start fetching...");
             const id = getCache('HDLGenHub_Student')._id
-            const res = await axios.get(`http://localhost:4000/EnrolledCourse/student/${id}`);
+            const res = await axios.get(`${process.env.SERVER}/EnrolledCourse/student/${id}`);
             setEnrolledCourses(res.data);
         }
         setStudent(getCache('HDLGenHub_Student'));

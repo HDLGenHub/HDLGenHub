@@ -15,7 +15,7 @@ const Coursemanagebar =()=>{
     console.log("courseId", id);
     useEffect(()=>{
         const fetchEnrollment =async()=>{
-            const response = await axios.get(`http://localhost:4000/EnrolledCourse/enrolledcourses/${id}`);
+            const response = await axios.get(`${process.env.SERVER}/EnrolledCourse/enrolledcourses/${id}`);
             setEnrolls(response.data);
         }
         fetchEnrollment();

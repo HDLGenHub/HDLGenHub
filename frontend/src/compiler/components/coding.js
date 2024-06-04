@@ -21,7 +21,7 @@ const Coding=()=>{
         return text
     }
     const getCodefiles=async()=>{
-        const res = await axios.get(`http://localhost:4000/Code/`);
+        const res = await axios.get(`${process.env.SERVER}/Code/`);
         console.log(res);
         setCodefiles(res);
     }
@@ -30,7 +30,7 @@ const Coding=()=>{
         const type = "playground";
         const date = new Date();
         const filename = student.name+RandomText()+ date;
-        const res = await axios.post(`http://localhost:4000/Code/`, {
+        const res = await axios.post(`${process.env.SERVER}/Code/`, {
             student,
             code,
             type,

@@ -10,7 +10,7 @@ const Showquiz=(Id)=>{
 
     useEffect(()=>{
         const getQuiz=async()=>{
-            const res = await axios.get(`http://localhost:4000/Quiz/${id}`);
+            const res = await axios.get(`${process.env.SERVER}/Quiz/${id}`);
             setQuiz(res);
         }
         getQuiz();
