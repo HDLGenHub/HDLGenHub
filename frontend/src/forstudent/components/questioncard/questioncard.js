@@ -16,19 +16,19 @@ const Questioncard=(questionData)=>{
                         <p>Choose the correct answer</p>
                         <div className='questioncard-answers-each'>
                             <label>
-                                <input type='radio'></input>
+                                <input name='ans' type='radio'></input>
                                 {questiondata.answer}
                             </label>
                             <label>
-                                <input type='radio'></input>
+                                <input name='ans' type='radio'></input>
                                 {questiondata.wronganswer1}
                             </label>
                             <label>
-                                <input type='radio'></input>
+                                <input name='ans' type='radio'></input>
                                 {questiondata.wronganswer2}
                             </label>
                             <label>
-                                <input type='radio'></input>
+                                <input name='ans' type='radio'></input>
                                 {questiondata.wronganswer3}
                             </label>
                         </div>
