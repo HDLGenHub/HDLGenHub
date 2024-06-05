@@ -60,6 +60,7 @@ router.delete('/:id', async (req, res)=>{
         res.status(400).json({message:error.message});
     }
 });
+
 router.get('/quiz/:quizid', async (req, res)=>{
     const quizid = req.params.quizid;
     console.log(quizid);

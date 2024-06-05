@@ -21,7 +21,7 @@ router.get('/:id', async(req, res)=>{
 });
 
 router.post('/', async(req, res)=>{
-    const { courseid, quizid, questionid, answer, assignedmarks, marksgot } = req.body;
+    const { studentid, courseid, quizid, questionid, answer, assignedmarks, marksgot, iscompleted } = req.body;
     const attemptedQuiz = new AttemptedQuiz(
         {
             courseid,
@@ -29,7 +29,9 @@ router.post('/', async(req, res)=>{
             questionid,
             answer,
             assignedmarks,
-            marksgot
+            marksgot,
+            iscompleted,
+            studentid
         }
     )
     try{
