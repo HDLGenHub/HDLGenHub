@@ -2,8 +2,6 @@
     width: 100%;
     min-height: 400px;
     height: 100%;
-    border-style: groove;
-    border-color: aqua;
     max-width: 600px;
     display: flex;
     flex-direction: column;
@@ -11,48 +9,37 @@
     justify-content: center;
 }
 .questioncard-question{
-    border-style: groove;
-    border-color: blue;
     width: 100%;
     min-height: 240px;
-    background-color: aquamarine;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color: #e1e1e1;
 }
 .questioncard-question p{
-    border-style: groove;
-    border-color: brown;
-    width: 95%;
+    width: 100%;
     flex: 1;
     height: 100%;
     font-size: 15px;
     font-weight: 800;
 }
 .questioncard-question img{
-    width: 95%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-style: groove;
-    border-color: brown;
     flex: 2;
     height: 100%;
 }
 .questioncard-answers{
-    border-style: groove;
-    border-color: rgb(3, 160, 45);
-    width: 95%; 
+    width: 90%; 
     min-height: 160px;
-    background-color: beige;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .questioncard-answers-set{
-    border-style: groove;
-    border-color: rgb(3, 160, 45);
     width: 100%;
 }
 .questioncard-answers-set p{
@@ -60,8 +47,6 @@
     font-weight: 700;
 }
 .questioncard-answers-each{
-    border-style: groove;
-    border-color: rgb(155, 3, 160);
     display: flex;
     flex-direction: column;
     align-items: start;
