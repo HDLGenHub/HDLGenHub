@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './index.css';
 import { SERVER } from './env.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/homepage/homepage';
@@ -16,6 +16,8 @@ import StudentCoursePage from './forstudent/studentcoursepage/studentcoursepage'
 import Quizpage from './pages/quizpage/quizpage';
 import Attemptingquiz from './forstudent/attemptingquiz/attemptingquiz';
 import Coding from './compiler/components/coding';
+import Aboutpage from './pages/aboutpage/aboutpage.js';
+import Helppage from './pages/helppage/helppage.js';
 
 function App() {
   return (
@@ -36,6 +38,8 @@ function App() {
             <Route path='/quizpage' element={<Quizpage/>}/>
             <Route path='/attemptingquiz/:quizid' element={<Attemptingquiz/>}/>
             <Route path='/playground' element={<Coding/>}/>
+            <Route path='/about' element={<Aboutpage/>}/>
+            <Route path='/help' element={<Helppage/>}/>
           </Routes>
         </div>
         <Footer/>

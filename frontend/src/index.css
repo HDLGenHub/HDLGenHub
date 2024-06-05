@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /*
 ! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com
 */
