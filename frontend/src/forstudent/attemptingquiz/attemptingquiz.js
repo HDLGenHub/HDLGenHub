@@ -10,6 +10,7 @@ const Attemptingquiz =()=>{
     const {quizid} = useParams();
     const student = getCache('HDLGenHub_Student');
     const [questions, setQuestions] = useState();
+    const [page, setPage] = useState(0);
 
     const getQuestions =async()=>{
         try{
@@ -24,12 +25,19 @@ const Attemptingquiz =()=>{
     });
 
     return(
-        <div>
-            <div>
+        <div className='attemptingquiz-container'>
+            <div className='attemptingquiz-pack'>
                 {questions?(
-                    questions.map(question=>(
-                        <Questioncard questiondata = {question}/>
-                    ))
+                    <div className='attemptingquiz-nav'>
+                        <div className='attemptingquiz-question'>
+                            <Questioncard questiondata={questions[page]}/>
+                            <p>Page {page+1}</p>
+                        </div>
+                        <div className='attemptingquiz-bottom'>
+                            <button onClick={()=>setPage(page!==0?(page-1):0)}>Previous</button>
+                            <button onClick={()=>setPage(questions.length-1>page?(page+1):page)}>Next</button>
+                        </div>
+                    </div>
                 ):null}
             </div>
         </div>

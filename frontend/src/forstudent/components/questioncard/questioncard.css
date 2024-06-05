@@ -1,0 +1,7 @@
+.questioncard-conatiner{
+    width: 100%;
+    min-height: 300px;
+    border-style: groove;
+    border-color: aqua;
+    max-width: 600px;
+}
