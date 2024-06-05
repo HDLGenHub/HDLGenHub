@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { SERVER } from '../../env.js';
 import './creationpage.css';
 import { getCache } from '../../caching/cache';
 import axios from 'axios';
@@ -31,7 +32,7 @@ const CreationPage =()=>{
 
     const postCourse=async()=>{
         if(name && coverimage && description){
-            const res = await axios.post(`http://localhost:4000/Course/`, {
+            const res = await axios.post(`${SERVER}/Course/`, {
                 name,
                 coverimage,
                 description,
@@ -51,7 +52,7 @@ const CreationPage =()=>{
             const name = quizheading;
             const description = quizdescription;
             try{
-                const resquiz = await axios.post(`http://localhost:4000/Quiz/`,{
+                const resquiz = await axios.post(`${SERVER}/Quiz/`,{
                     name,
                     description                    
                 })
@@ -62,7 +63,7 @@ const CreationPage =()=>{
                 const image = questionimage;
                 const answer = correctanswer;
                 try{
-                    const resquestion = await axios.post(`http://localhost:4000/Question/`,{
+                    const resquestion = await axios.post(`${SERVER}/Question/`,{
                         quizid,
                         problem,
                         image,
@@ -87,7 +88,7 @@ const CreationPage =()=>{
             const image = questionimage;
             const answer = correctanswer;
             try{
-                const resquestion = await axios.post(`http://localhost:4000/Question/`,{
+                const resquestion = await axios.post(`${SERVER}/Question/`,{
                     quizid,
                     problem,
                     image,
@@ -110,7 +111,7 @@ const CreationPage =()=>{
         console.log(newquizid);
         const teacherid = teacher._id;
         try{
-            const resquiz = await axios.put(`http://localhost:4000/Quiz/${newquizid}`,{
+            const resquiz = await axios.put(`${SERVER}/Quiz/${newquizid}`,{
                 teacherid                   
             })
             console.log(resquiz);

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { SERVER } from '../../env.js';
 import './profilepage.css';
 import { deleteCache, getCache, setCache } from '../../caching/cache';
 import axios from 'axios';
@@ -16,7 +17,7 @@ const ProfilePage=()=>{
 
     const fetchUser=async()=>{
         if(user.role==='student'){
-            const res = await axios.get(`http://localhost:4000/Student/${user.data._id}`);
+            const res = await axios.get(`${SERVER}/Student/${user.data._id}`);
             setUser(res);
             console.log(res);
             setCache('HDLGenHub_User', JSON.stringify({data:res.data, role:'student'}));
@@ -31,7 +32,7 @@ const ProfilePage=()=>{
             window.location.reload();
         }
         else if(user.role==='teacher'){
-            const res = await axios.get(`http://localhost:4000/Teacher/${user.data._id}`);
+            const res = await axios.get(`${SERVER}/Teacher/${user.data._id}`);
             setUser(res);
             console.log(res);
             setCache('HDLGenHub_User', JSON.stringify({data:res.data, role:'teacher'}));
@@ -68,7 +69,7 @@ const ProfilePage=()=>{
             console.log(id);
             if(user.role==='student'){
                 console.log("Student");
-                const res = await axios.put(`http://localhost:4000/Student/${id}`,{
+                const res = await axios.put(`${SERVER}/Student/${id}`,{
                     name,
                     email,
                     registrationnumber,
@@ -80,7 +81,7 @@ const ProfilePage=()=>{
                 console.log(res);
             } else if(user.role==='teacher'){
                 console.log("Teacher");
-                const res = await axios.put(`http://localhost:4000/Teacher/${id}`,{
+                const res = await axios.put(`${SERVER}/Teacher/${id}`,{
                     name,
                     email,
                     registrationnumber,

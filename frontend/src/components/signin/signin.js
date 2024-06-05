@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { SERVER } from '../../env.js';
 import './signin.css'
 import axios from 'axios';
 import { setCache } from '../../caching/cache';
@@ -15,11 +16,11 @@ const Signin =()=>{
         if(email && password){
             try{
                 console.log({email, password});
-                const student = await axios.post('http://localhost:4000/Student/login',{
+                const student = await axios.post(`${SERVER}/Student/login`,{
                     email,
                     password
                 });
-                const teacher = await axios.post('http://localhost:4000/Teacher/login',{
+                const teacher = await axios.post(`${SERVER}/Teacher/login`,{
                     email,
                     password
                 });

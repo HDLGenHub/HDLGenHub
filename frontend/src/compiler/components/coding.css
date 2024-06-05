@@ -1,0 +1,78 @@
+.codespace-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.codespace-files{
+    border-style: groove;
+    border-color: white;
+    flex: 1;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start; 
+    background-color: black;
+}
+.codespace-files button{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+}
+.codespace-files button:hover{
+    background-color: rgb(182, 80, 80);
+}
+.codespace-file-each{
+    height: 50px;
+    width: 100%;
+    border-style: groove;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.coding-container{
+    border-style: groove;
+    border-color: white;
+    flex: 4;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.running-container{
+    border-style: groove;
+    border-color: white;
+    flex: 2;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+ }
+ .running-container button{
+    border-style: groove;
+    background-color: lightgreen;
+    font-weight: 700;
+    width: 100%;
+    height: 100%;
+ }
+ .running-saving{
+    width: 100%;
+    height: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .running-container h1{
+    width: 90%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    text-align: start;
+    font-size: 12px;
+ }
