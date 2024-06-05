@@ -1,7 +1,6 @@
 .attemptingquiz-container{
     width: 100%;
     height: 100%;
-    border-style: groove;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,25 +8,26 @@
 .attemptingquiz-pack{
     width: 100%;
     height: 100%;
-    border-style: groove;
+    max-width: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 0 10px 0 black;
+    margin: 20px;
 }
 .attemptingquiz-nav{
+    margin: 20px;
     width: 100%;
     height: 100%;
-    border-style: groove;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 .attemptingquiz-question{
-    width: 95%;
+    width: 100%;
     max-width: 600px;
     height: 95%;
-    border-style: groove;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,27 +36,33 @@
 .attemptingquiz-question p{
     width: 100%;
     max-width: 600px;
-    border-style: groove;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .attemptingquiz-bottom{
-    width: 95%;
+    width: 100%;
     max-width: 600px;
-    border-style: groove;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 .attemptingquiz-bottom button{
-    width: 100px;
+    width: 120px;
     height: 30px;
-    background-color: #fa9746;
+    background-color: transparent;
     border-style: none;
-    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.attemptingquiz-bottom button:hover{
-    background-color: #fa9746;
-    border-style: groove;
+.attemptingquiz-bottom ion-icon{
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-style: none;
+}
+.attemptingquiz-bottom ion-icon:hover{
+    width: 36px;
+    height: 36px;
 }

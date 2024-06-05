@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { getCache } from '../../caching/cache';
 import Questioncard from '../components/questioncard/questioncard.js';
+import 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'
 
 const Attemptingquiz =()=>{
     const {quizid} = useParams();
@@ -22,7 +23,7 @@ const Attemptingquiz =()=>{
     }
     useEffect(()=>{
         getQuestions();
-    });
+    },[]);
 
     return(
         <div className='attemptingquiz-container'>
@@ -34,8 +35,12 @@ const Attemptingquiz =()=>{
                             <p>Page {page+1}</p>
                         </div>
                         <div className='attemptingquiz-bottom'>
-                            <button onClick={()=>setPage(page!==0?(page-1):0)}>Previous</button>
-                            <button onClick={()=>setPage(questions.length-1>page?(page+1):page)}>Next</button>
+                            <button onClick={()=>setPage(page!==0?(page-1):0)}>
+                                <ion-icon name="arrow-back-circle-sharp"></ion-icon>
+                            </button>
+                            <button onClick={()=>setPage(questions.length-1>page?(page+1):page)}>
+                                <ion-icon name="arrow-forward-circle-sharp"></ion-icon>
+                            </button>
                         </div>
                     </div>
                 ):null}
