@@ -25,12 +25,13 @@
     font-weight: 800;
 }
 .questioncard-question img{
-    width: 100%;
+    width: 80%;
+    border-style: groove;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 2;
-    height: 100%;
 }
 .questioncard-answers{
     width: 90%; 
@@ -52,4 +53,42 @@
     align-items: start;
     justify-content: center;
     gap: 10px;
+}
+.questioncard-submission-set{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border-style: none;
+    background-color: transparent;
+    width: 100%;
+    gap: 10px;
+}
+.questioncard-submission-set button{
+    background-color: transparent;
+    border-style: none; 
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.questioncard-submission{
+    background-color: #fa9746;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+}
+.questioncard-submission:hover{
+    font-size: 12px;
+    width: 120px;
+    height: 32px;
+    border-radius: 15px;
 }

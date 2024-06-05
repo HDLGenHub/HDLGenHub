@@ -38,16 +38,6 @@ const Attemptingquiz =()=>{
                             <button onClick={()=>setPage(page!==0?(page-1):0)}>
                                 <ion-icon name="arrow-back-circle-sharp"></ion-icon>
                             </button>
-                            <button>
-                                <div className='attemptingquiz-submission'>
-                                    save answer
-                                </div>
-                            </button>
-                            <button>
-                                <div className='attemptingquiz-submission'>
-                                    submit answers
-                                </div>
-                            </button>
                             <button onClick={()=>setPage(questions.length-1>page?(page+1):page)}>
                                 <ion-icon name="arrow-forward-circle-sharp"></ion-icon>
                             </button>
