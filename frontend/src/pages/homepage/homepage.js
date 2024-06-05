@@ -4,7 +4,7 @@ import HomeBottom from '../../images/HomeBottom.png'
 
 const HomePage =()=>{
     return(
-        <div className="homepagecontainer">
+        <div className="homepagecontainer bg-black">
             <div className='homerow1'>
                 <div className='homerow1left'>
                     <div className='homerow1left-p'>
