@@ -66,6 +66,16 @@ router.get('/course/:id', async (req, res)=>{
     } catch(error){
         res.status(400).json({message:error.message});
     }
+});
+router.get('/item/:id', async (req, res)=>{
+    const id = req.params.id;
+    console.log(id);
+    try{
+        const response = await CourseComponent.find({"item":id});
+        res.status(201).json(response);
+    } catch(error){
+        res.status(400).json({message:error.message});
+    }
 })
 
 module.exports = router;
