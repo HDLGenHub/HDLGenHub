@@ -48,13 +48,39 @@
     justify-content: space-between;
 }
 .attemptingquiz-bottom button{
+    width: 120px;
+    height: 30px;
+    background-color: transparent;
+    border-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.attemptingquiz-bottom ion-icon{
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-style: none;
+}
+.attemptingquiz-bottom ion-icon:hover{
+    width: 36px;
+    height: 36px;
+}
+.attemptingquiz-submission{
+    background-color: #fa9746;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
     width: 100px;
     height: 30px;
-    background-color: #fa9746;
-    border-style: none;
     border-radius: 15px;
 }
-.attemptingquiz-bottom button:hover{
-    background-color: #fa9746;
-    border-style: groove;
+.attemptingquiz-submission:hover{
+    font-size: 12px;
+    width: 120px;
+    height: 32px;
+    border-radius: 15px;
 }
