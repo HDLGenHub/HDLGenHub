@@ -10,9 +10,10 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        setUser(getCache('HDLGenHub_User'));
-        if (user) {
-            if (user.role === "admin") {
+        const cachedUser = getCache('HDLGenHub_User');
+        setUser(cachedUser);
+        if (cachedUser) {
+            if (cachedUser.role === "admin") {
                 setAdmin(getCache('HDLGenHub_Admin'));
             } else {
                 alert("Missing role");
@@ -41,7 +42,12 @@ const Navbar = () => {
         navigate('/signup');
     };
 
+    const handleAdminConsole = () => {
+        navigate('/adminPage');
+    };
+
     console.log("Logged user: ", user);
+
     if (user) {
         if (admin) {
             return (
@@ -49,7 +55,7 @@ const Navbar = () => {
                     <div className="navbarleftcontainer">
                         <ul>
                             <li className="navbarhometext"><a href='/'><span style={{color:'#fa9746'}}>HDL</span> Gen Hub</a></li>
-                            <li><a href='/courses'>Admin console</a></li>
+                            <li><button onClick={handleAdminConsole}>Admin console</button></li>
                         </ul>
                     </div>
                     <div className="navbarrightcontainer">

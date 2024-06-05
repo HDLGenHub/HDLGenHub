@@ -1,0 +1,42 @@
+.usersContainer {
+    background-image: url('../../images/background.png'); /* Adjust the path accordingly */
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    min-height: 100vh;
+    color: #fff; /* Default text color for better visibility against the background */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+    justify-content: center; /* Center the content vertically */
+    text-align: center;  /* Adjust text color for better visibility against the background */
+}
+
+.teachersSection, .studentsSection {
+    background: rgba(120, 183, 228, 0.5); /* Add a semi-transparent background to sections */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: #333; /* Font color for the content inside the sections */
+    max-width: 800px; /* Limit the maximum width of the sections */
+    width: 100%; 
+}
+
+h1, h2 {
+    text-align: center;
+    color: black;
+}
+.teachersSection ul, .studentsSection ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    
+}
+
+.teachersSection li, .studentsSection li {
+    margin: 10px 0;
+    color: #000; /* Font color for list items */
+}
+
+.teachersSection p, .studentsSection p {
+    color: #000; /* Font color for the no data message */
+}
