@@ -15,6 +15,10 @@ const AttemptedQuizSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: "Question"
         },
+        studentid: {
+            type: Schema.Types.ObjectId,
+            ref: "Student"
+        },
         answer: {
             type: String,
             require: false
@@ -26,9 +30,14 @@ const AttemptedQuizSchema = new Schema(
         marksgot: {
             type: String,
             require: false
+        },
+        iscompleted: {
+            type: Boolean,
+            require: true,
+            default: false
         }
     }
 )
 
 const AttemptedQuiz = mongoose.model("AttemptedQuiz", AttemptedQuizSchema);
-module.export = AttemptedQuiz;
+module.exports = AttemptedQuiz;
