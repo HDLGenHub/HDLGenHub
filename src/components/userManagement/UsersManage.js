@@ -41,7 +41,7 @@ const UsersManage = () => {
                     <ul>
                         {teachers.map((teacher) => (
                             <li key={teacher.id}>
-                                <Link to={`/teacher/userprofile/${teacher.id}`}>{teacher.name}</Link>
+                                <Link to={`/teacher/userprofile/${teacher._id}`}>{teacher.name}</Link>
                             </li>
                         ))}
                     </ul>
@@ -55,7 +55,7 @@ const UsersManage = () => {
                     <ul>
                         {students.map((student) => (
                             <li key={student.id}>
-                                <Link to={`/student/userprofile/${student.id}`}>{student.name}</Link>
+                                <Link to={`/student/userprofile/${student._id}`}>{student.name}</Link>
                             </li>
                         ))}
                     </ul>
