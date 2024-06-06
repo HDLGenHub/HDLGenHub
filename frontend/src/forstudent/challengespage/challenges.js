@@ -9,10 +9,18 @@ const Challenges=()=>{
     }
 
     return(
-        <div>
-            <div>
-                <button onClick={handleOpenplayground}>Open Play Ground</button>
+        <div className='challenges-page-container'>
+            <div className='challenges-page-playground'>
+                <button onClick={handleOpenplayground}>Go to Play Ground</button>
             </div>
+            <dv className='challenges-page-challenges-container'>
+                <div className='assigned-challenges-container'>
+
+                </div>       
+                <div className='public-challenges-container'>
+
+                </div>
+            </dv>
         </div>
     );
 }
