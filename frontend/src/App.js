@@ -16,6 +16,7 @@ import StudentCoursePage from './forstudent/studentcoursepage/studentcoursepage'
 import Quizpage from './pages/quizpage/quizpage';
 import Attemptingquiz from './forstudent/attemptingquiz/attemptingquiz';
 import Coding from './compiler/components/coding';
+import Challenges from './forstudent/challengespage/challenges.js';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path='/quizpage' element={<Quizpage/>}/>
             <Route path='/attemptingquiz/:quizid' element={<Attemptingquiz/>}/>
             <Route path='/playground' element={<Coding/>}/>
+            <Route path='/challenges' element={<Challenges/>}/>
           </Routes>
         </div>
         <Footer/>

@@ -15,24 +15,6 @@ const Attemptingquiz =()=>{
     const [page, setPage] = useState(0);
     const [coursecomponent, setCoursecomponent] = useState();
 
-    const fetchCourse=async()=>{
-        const res = await axios.get(`${SERVER}/Coursecomponent/item/${quizid}`);
-        setCoursecomponent(res.data);
-        alert(JSON.stringify(res.data));
-    }
-    const postAttemptedquiz=async()=>{
-        alert(courseid);
-        alert(quizid);
-        alert(getCache('HDLGenHub_Student')._id);
-        const res = await axios.post(`${SERVER}/AttemptedQuiz/`, {
-            courseid:courseid,
-            quizid:quizid,
-            studentid:getCache('HDLGenHub_Student')._id
-        });
-        alert(JSON.stringify(res));
-        setCache('HDLGenHub_Attemptedquiz', JSON.stringify(res.data));
-    }
-
     const getQuestions =async()=>{
         try{
             const res = await axios.get(`${SERVER}/Question/quiz/${quizid}`);
@@ -44,8 +26,7 @@ const Attemptingquiz =()=>{
     useEffect(()=>{
     setCourseid(getCache('HDLGenHub_Loggedcourse')._id);
         getQuestions();
-        fetchCourse();
-        postAttemptedquiz();
+        //fetchCourse();
     },[]);
 
     return(
