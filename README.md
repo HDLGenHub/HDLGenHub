@@ -18,9 +18,9 @@ This is a group project for the Software Group Project module at the Faculty of 
 
 ## Team Members
 
-1. Siriwardana R.T. (EG/2020/4219)
+1. Siriwardhana T.D.R.D. (EG/2020/4219)
 2. Sandarenu D.T (EG/2020/4191)
-3. Jayarathnr G.U.T.N.C. (EG/2020/3981)
+3. Jayarathne G.U.T.N.C. (EG/2020/3981)
 4. Nethsarani D.W.D. (EG/2020/4096)
 
 
