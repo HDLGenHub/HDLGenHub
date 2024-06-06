@@ -8,6 +8,7 @@ import Signin from './components/signin/Signin';
 import AdminPage from './components/adminPage/AdminPage';
 import UserManagement from './components/userManagement/UsersManage';
 import CourseManagement from './components/courseManagement/CourseManage';
+import UserProfile from './components/userProfile/UserProfile';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
       <Route path='/adminPage' element={<AdminPage/>}/>
       <Route path="/user-management" element={<UserManagement />} />
       <Route path="/course-management" element={<CourseManagement />} />
+      <Route path="/teacher/userprofile/:id" element={<UserProfile role="teacher"/>} />
+     
       </Routes>
     </Router>
   );

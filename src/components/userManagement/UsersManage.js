@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import './UsersManage.css';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
+import './UsersManage.css'; // Ensure this path is correct
 
-const Users = () => {
+const UsersManage = () => {
     const [teachers, setTeachers] = useState([]);
     const [students, setStudents] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -39,7 +40,9 @@ const Users = () => {
                 {teachers.length > 0 ? (
                     <ul>
                         {teachers.map((teacher) => (
-                            <li key={teacher.id}>{teacher.name} - {teacher.email}</li>
+                            <li key={teacher.id}>
+                                <Link to={`/teacher/userprofile/${teacher.id}`}>{teacher.name}</Link>
+                            </li>
                         ))}
                     </ul>
                 ) : (
@@ -51,7 +54,9 @@ const Users = () => {
                 {students.length > 0 ? (
                     <ul>
                         {students.map((student) => (
-                            <li key={student.id}>{student.name} - {student.email}</li>
+                            <li key={student.id}>
+                                <Link to={`/student/userprofile/${student.id}`}>{student.name}</Link>
+                            </li>
                         ))}
                     </ul>
                 ) : (
@@ -60,6 +65,6 @@ const Users = () => {
             </div>
         </div>
     );
-}
+};
 
-export default Users;
+export default UsersManage;
