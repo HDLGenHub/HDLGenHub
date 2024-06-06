@@ -22,6 +22,7 @@ const UsersManage = () => {
                 console.error('Error fetching data:', error);
             } finally {
                 setLoading(false);
+                console.log("ef3f3rf");
             }
         };
 
