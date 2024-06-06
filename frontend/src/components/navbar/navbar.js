@@ -88,9 +88,9 @@ const Navbar =()=>{
                     <div className="navbarleftcontainer">
                         <ul>
                             <li className="navbarhometext"><a href='/'><span style={{color:'#fa9746'}}>HDL</span> Gen Hub</a></li>
-                            <li><a href='#'>Contact</a></li>
-                            <li><a href='#'>About</a></li>
-                            <li><a href='#'>Help</a></li>
+                            <li><a href='/contact'>Contact</a></li>
+                            <li><a href='/about'>About</a></li>
+                            <li><a href='/help'>Help</a></li>
                         </ul>
                     </div>
                     <div className="navbarrightcontainer">
@@ -109,6 +109,7 @@ const Navbar =()=>{
                 <div className="navbarleftcontainer">
                     <ul>
                         <li className="navbarhometext"><a href='/'><span style={{color:'#fa9746'}}>HDL</span> Gen Hub</a></li>
+                        <li><a href='/conatact'>Contact</a></li>
                         <li><a href='#'>Contact</a></li>
                         <li><a href='/about'>About</a></li>
                         <li><a href='/help'>Help</a></li>
