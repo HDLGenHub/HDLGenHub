@@ -51,6 +51,9 @@ app.use('/Video', VideoRouter);
 const CodeRouter = require('./routes/Code');
 app.use('/Code', CodeRouter);
 
+const AttemptedQuizRouter = require('./routes/AttemptedQuiz');
+app.use('/AttemptedQuiz', AttemptedQuizRouter);
+
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
