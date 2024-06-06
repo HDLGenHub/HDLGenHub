@@ -3,7 +3,7 @@ import { SERVER } from '../../../env.js';
 import Coverimage from '../coverimage/coverimage';
 import './questioncard.css';
 import axios from 'axios';
-import { getCache } from '../../../caching/cache';
+import { getCache, setCache } from '../../../caching/cache';
 
 const Questioncard=(questionData)=>{
     const { questiondata } = questionData;
@@ -24,12 +24,32 @@ const Questioncard=(questionData)=>{
         });
         alert(JSON.stringify(res));
     }
+    /*
+    const fetchCourse=async()=>{
+        const res = await axios.get(`${SERVER}/Coursecomponent/item/${quizid}`);
+        setCoursecomponent(res.data);
+        alert(JSON.stringify(res.data));
+    }
+    const postAttemptedquiz=async()=>{
+        alert(courseid);
+        alert(quizid);
+        alert(getCache('HDLGenHub_Student')._id);
+        const res = await axios.post(`${SERVER}/AttemptedQuiz/`, {
+            courseid:courseid,
+            quizid:quizid,
+            studentid:getCache('HDLGenHub_Student')._id
+        });
+        alert(JSON.stringify(res));
+        setCache('HDLGenHub_Attemptedquiz', JSON.stringify(res.data));
+    }*/
+
     const putAttemptedquizsubmit=async()=>{
         const res = await axios.put(`${SERVER}/AttemptedQuiz/${postedattemptedquiz._id}`, {
             iscompleted:true
         });
         alert(JSON.stringify(res));
     }
+
     const SuffleAnswers=()=>{
         var rand = [questiondata.answer, questiondata.wronganswer1, questiondata.wronganswer2, questiondata.wronganswer3];
         var x = rand.length;

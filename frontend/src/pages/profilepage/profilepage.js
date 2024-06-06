@@ -97,7 +97,7 @@ const ProfilePage=()=>{
             alert("Profile Saving Error");
         }
     }
-    
+
     if(user){
         return(
             <div className='profilecontainer'>

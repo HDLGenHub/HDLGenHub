@@ -14,6 +14,7 @@
 .quizcomponent-conatainer button{
     width: 90%;
     height: 30px;
+    margin-bottom: 20px;
     background-color: #fa9746;
     border-style: none;
 }

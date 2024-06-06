@@ -18,6 +18,7 @@ import Attemptingquiz from './forstudent/attemptingquiz/attemptingquiz';
 import Coding from './compiler/components/coding';
 import Aboutpage from './pages/aboutpage/aboutpage.js';
 import Helppage from './pages/helppage/helppage.js';
+import Challenges from './forstudent/challengespage/challenges.js';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             <Route path='/playground' element={<Coding/>}/>
             <Route path='/about' element={<Aboutpage/>}/>
             <Route path='/help' element={<Helppage/>}/>
+            <Route path='/challenges' element={<Challenges/>}/>
           </Routes>
         </div>
         <Footer/>
