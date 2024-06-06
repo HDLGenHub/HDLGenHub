@@ -5,6 +5,7 @@ import Coverimage from '../coverimage/coverimage';
 import './coursecard.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { setCache } from '../../caching/cache.js';
 
 const Coursecard =()=>{
     const {id} = useParams();
@@ -19,6 +20,7 @@ const Coursecard =()=>{
         const fetchData=async()=>{
             const response = await axios.get(`${SERVER}/Course/${id}`);
             setData(response.data);
+            setCache('HDLGenHub_Loggedcourse', JSON.stringify(response.data));
         }
         fetchData();
         fetchCoursecomponents(data);

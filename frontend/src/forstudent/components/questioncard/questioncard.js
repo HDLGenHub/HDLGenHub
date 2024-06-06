@@ -13,25 +13,10 @@ const Questioncard=(questionData)=>{
     const [answer_d, setAnswer_d] = useState();
     const [selected, setSelected] = useState();
     const [check, setCheck] = useState();
-    const [coursecomponent, setCoursecomponent] = useState();
     const [postedattemptedquiz, setPostedattemptedquiz] = useState();
 
-    const fetchCourse=async()=>{
-        const res = await axios.get(`${SERVER}/Coursecomponent/item/${questiondata.quizid}`);
-        setCoursecomponent(res.data);
-        alert(JSON.stringify(res.data));
-    }
-    const postAttemptedquiz=async()=>{
-        const res = await axios.post(`${SERVER}/AttemptedQuiz/`, {
-            courseid:coursecomponent.item,
-            quizid:questiondata.quizid,
-            studentid:getCache('HDLGenHub_student')
-        });
-        setPostedattemptedquiz(res.data);
-        alert(JSON.stringify(res));
-    }
     const putAttemptedquizsave=async()=>{
-        const res = await axios.put(`${SERVER}/AttemptedQuiz/${postedattemptedquiz._id}`, {
+        const res = await axios.put(`${SERVER}/AttemptedQuiz/${getCache('HDLGenHub_Attemptedquiz')._id}`, {
             questionid:questiondata._id,
             answer:selected,
             assignedmarks:questiondata.marks,
@@ -75,12 +60,14 @@ const Questioncard=(questionData)=>{
     },[questiondata]);
 
     const handleSave=async()=>{
+        setPostedattemptedquiz(getCache('HDLGenHub_Attemptedquiz'));
         alert(selected);
         setCheck(false);
-        if(questiondata.answer===selected){
-            alert("Yeah!");
-        }
-        fetchCourse();
+        putAttemptedquizsave();
+    }
+    const handleSubmit=async()=>{
+        alert("Submitted");
+        putAttemptedquizsubmit();
     }
 
     return(
@@ -125,7 +112,7 @@ const Questioncard=(questionData)=>{
                         save answer
                     </div>
                 </button>
-                <button>
+                <button onClick={handleSubmit}>
                     <div className='questioncard-submission'>
                         submit answers
                     </div>
