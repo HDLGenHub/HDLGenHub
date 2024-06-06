@@ -16,6 +16,8 @@ import StudentCoursePage from './forstudent/studentcoursepage/studentcoursepage'
 import Quizpage from './pages/quizpage/quizpage';
 import Attemptingquiz from './forstudent/attemptingquiz/attemptingquiz';
 import Coding from './compiler/components/coding';
+import Aboutpage from './pages/aboutpage/aboutpage.js';
+import Helppage from './pages/helppage/helppage.js';
 import Challenges from './forstudent/challengespage/challenges.js';
 
 function App() {
@@ -37,6 +39,8 @@ function App() {
             <Route path='/quizpage' element={<Quizpage/>}/>
             <Route path='/attemptingquiz/:quizid' element={<Attemptingquiz/>}/>
             <Route path='/playground' element={<Coding/>}/>
+            <Route path='/about' element={<Aboutpage/>}/>
+            <Route path='/help' element={<Helppage/>}/>
             <Route path='/challenges' element={<Challenges/>}/>
           </Routes>
         </div>
