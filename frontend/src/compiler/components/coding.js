@@ -11,6 +11,7 @@ const Coding=()=>{
     const [response, setResponse] = useState('');
     const [student, setStudent] = useState();
     const [codefiles, setCodefiles] = useState();
+    const [dfile, setFile] = useState();
 
     const RandomText =()=>{
         var text = "";
@@ -68,15 +69,25 @@ const Coding=()=>{
     const handleSelectfile=(file)=>{
         setCode(file.code);
     }
+    const delfile=async(id)=>{
+        alert(id);
+    }
+    const handleDelete=()=>{
+        alert(dfile)
+        delfile(dfile);
+    }
 
     return(
         <div className='codespace-container'>
-            <div className='codespace-files'>
-                {codefiles?codefiles.data.map((codefile)=>(
-                    <div className='codespace-file-each'>
-                        <button onClick={()=>handleSelectfile(codefile)}>{codefile.filename}</button>
-                    </div>
-                )):null}
+            <div className='codespace-files-conatiner'>
+                <div className='codespace-files'>
+                    {codefiles?codefiles.data.map((codefile)=>(
+                        <div className='codespace-file-each'>
+                            <button onClick={()=>(handleSelectfile(codefile) && setFile(codefile))}>{codefile.filename}</button>
+                        </div>
+                    )):null}
+                </div>
+                <button onClick={handleDelete}>Delete</button>
             </div>
             <div className='coding-container'>
                 <Editor 
