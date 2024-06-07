@@ -7,22 +7,28 @@ const UserProfile = () => {
     const { role, id } = useParams();
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchUser = async () => {
             try {
+                console.log(`Fetching user data for role: ${role}, id: ${id}`);
                 let response;
                 if (role === 'teacher') {
                     response = await axios.get(`http://localhost:4000/teacher/${id}`);
                 } else if (role === 'student') {
                     response = await axios.get(`http://localhost:4000/student/${id}`);
+                } else {
+                    throw new Error('Invalid role');
                 }
+                console.log('API response:', response.data);
                 setUser(response.data);
             } catch (error) {
                 console.error('Error fetching user data:', error);
+                setError(error);
             } finally {
                 setLoading(false);
-                console.log("wdewf");
+                console.log("Loading state set to false");
             }
         };
 
@@ -31,6 +37,10 @@ const UserProfile = () => {
 
     if (loading) {
         return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>Error: {error.message}</div>;
     }
 
     if (!user) {

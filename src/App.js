@@ -21,7 +21,7 @@ function App() {
       <Route path='/adminPage' element={<AdminPage/>}/>
       <Route path="/user-management" element={<UserManagement />} />
       <Route path="/course-management" element={<CourseManagement />} />
-      <Route path="/teacher/userprofile/:id" element={<UserProfile role="teacher"/>} />
+      <Route path="/teacher/userprofile/:role/:id" element={<UserProfile role="teacher"/>} />
      
       </Routes>
     </Router>

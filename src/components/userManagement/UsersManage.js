@@ -12,8 +12,8 @@ const UsersManage = () => {
         const fetchData = async () => {
             try {
                 const [teachersResponse, studentsResponse] = await Promise.all([
-                    axios.get('http://localhost:4000/Teacher'),
-                    axios.get('http://localhost:4000/Student')
+                    axios.get('http://localhost:4000/teacher'),
+                    axios.get('http://localhost:4000/student')
                 ]);
 
                 setTeachers(teachersResponse.data);
@@ -42,7 +42,7 @@ const UsersManage = () => {
                     <ul>
                         {teachers.map((teacher) => (
                             <li key={teacher.id}>
-                                <Link to={`/teacher/userprofile/${teacher._id}`}>{teacher.name}</Link>
+                                <Link to={`/teacher/userprofile/${teacher._role}/${teacher._id}`}>{teacher.name}</Link>
                             </li>
                         ))}
                     </ul>
@@ -56,7 +56,8 @@ const UsersManage = () => {
                     <ul>
                         {students.map((student) => (
                             <li key={student.id}>
-                                <Link to={`/student/userprofile/${student._id}`}>{student.name}</Link>
+                                <Link to={`/student/userprofile/${student._role}/${student._id}`}>{student.name}</Link>
+                                
                             </li>
                         ))}
                     </ul>
