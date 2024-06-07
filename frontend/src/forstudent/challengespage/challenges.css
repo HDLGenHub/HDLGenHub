@@ -12,11 +12,14 @@
     justify-content: center;
     align-items: start;
     border-style: groove;
-    margin-left: 8%;
-    width: 100%;
+    width: 92%;
+    padding: 10px;
+    margin-top: 10px;
+    border-width: 1px;
 }
 .challenges-page-playground button{
     height: 30px;
+    min-width: 150px;
     background-color: #fa9746;
     border-radius: 15px;
 }
