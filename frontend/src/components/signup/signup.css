@@ -1,6 +1,7 @@
 .signupcontainer{
     border-style: groove;
     border-color: #fa9746;
+    border-width: 1px;
     min-width: 360px;
     min-height: 500px;
     border-radius: 12px;

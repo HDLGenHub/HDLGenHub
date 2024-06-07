@@ -1,4 +1,7 @@
 .signincontainer{
+    border-style: groove;
+    border-color: #fa9746;
+    border-width: 1px;
     min-width: 360px;
     min-height: 400px;
     display: flex;
