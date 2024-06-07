@@ -6,7 +6,7 @@
     justify-content: center;
     flex-wrap: wrap;
 }
-.codespace-files{
+.codespace-files-conatiner{
     border-style: groove;
     border-color: white;
     flex: 1;
@@ -14,13 +14,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start; 
+    justify-content: space-between; 
     background-color: black;
+    gap: 0;
+    margin: 0;
+}
+.codespace-files{
+    width: 100%;
+    height: 100%;
+    gap: 0;
+    margin: 0;
+}
+.codespace-files-conatiner button{
+    background-color: white;
+    width: 100%;
+    height: 40px;
+}
+.codespace-files-conatiner button:hover{
+    background-color: rgb(182, 80, 80);
 }
 .codespace-files button{
     background-color: white;
     width: 100%;
     height: 100%;
+    height: 50px;
     font-size: 10px;
 }
 .codespace-files button:hover{
@@ -29,12 +46,15 @@
 .codespace-file-each{
     min-height: 50px;
     width: 100%;
+    gap: 0;
     border-style: groove;
     border-color: black;
     border-width: 1px;
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0;
 }
 .coding-container{
     border-style: groove;
