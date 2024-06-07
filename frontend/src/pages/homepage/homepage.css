@@ -54,10 +54,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
 }
 .homerow2 h1{
     text-align: center;
-    font-size: 16px;
+    font-size: 24px;
 }
 .homerow2 h2{
     margin-top: 0px;
@@ -71,7 +72,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-bottom: 0;
+    margin-bottom: 10px;
     padding-bottom: 0;
 }
 .homerow3section{
@@ -87,7 +88,7 @@
     border-radius: 20px 0 20px 0;
     text-align: center;
     font-size: 100%;
-    font-size: 8px;
+    font-size: 16px;
 }
 .homerow3box h1{
     font-weight: 400;
