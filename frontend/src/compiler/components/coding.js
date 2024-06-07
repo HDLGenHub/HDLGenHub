@@ -70,11 +70,12 @@ const Coding=()=>{
         setCode(file.code);
     }
     const delfile=async(id)=>{
-        alert(id);
+        const res = await axios.delete(`${SERVER}/Code/${id}`);
+        //alert(res);
+        getCodefiles();
     }
     const handleDelete=()=>{
-        alert(dfile)
-        delfile(dfile);
+        delfile(dfile._id);
     }
 
     return(
@@ -82,8 +83,8 @@ const Coding=()=>{
             <div className='codespace-files-conatiner'>
                 <div className='codespace-files'>
                     {codefiles?codefiles.data.map((codefile)=>(
-                        <div className='codespace-file-each'>
-                            <button onClick={()=>(handleSelectfile(codefile) && setFile(codefile))}>{codefile.filename}</button>
+                        <div onClick={()=>setFile(codefile)} className='codespace-file-each'>
+                            <button onClick={()=>handleSelectfile(codefile)}>{codefile.filename}</button>
                         </div>
                     )):null}
                 </div>
