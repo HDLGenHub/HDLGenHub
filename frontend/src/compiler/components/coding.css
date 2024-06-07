@@ -27,9 +27,11 @@
     background-color: rgb(182, 80, 80);
 }
 .codespace-file-each{
-    height: 50px;
+    min-height: 50px;
     width: 100%;
     border-style: groove;
+    border-color: black;
+    border-width: 1px;
     display: flex;
     align-items: center;
     justify-content: center;
