@@ -7,6 +7,7 @@ const Navbar = () => {
     const [admin, setAdmin] = useState(null);
     const [user, setUser] = useState(null);
     const [logged, setLogged] = useState(0);
+    
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -45,6 +46,9 @@ const Navbar = () => {
     const handleAdminConsole = () => {
         navigate('/adminPage');
     };
+    const handleAdminProfile = (id) => {
+        navigate(`/admin/${id}`); // Correctly use backticks for template literal
+    };
 
     console.log("Logged user: ", user);
 
@@ -60,7 +64,9 @@ const Navbar = () => {
                     </div>
                     <div className="navbarrightcontainer">
                         <ul>
-                            <li className='navbarsignin'><a href='/profile'>Admin</a></li>
+                        <li className='navbarsignin'>
+                        <button onClick={() => handleAdminProfile(admin._id)}>Admin</button>
+                            </li>
                             <li className='navbarsignup'><button onClick={handleLogout}>Logout</button></li>
                         </ul>
                     </div>

@@ -9,6 +9,8 @@ import AdminPage from './components/adminPage/AdminPage';
 import UserManagement from './components/userManagement/UsersManage';
 import CourseManagement from './components/courseManagement/CourseManage';
 import UserProfile from './components/userProfile/UserProfile';
+import AdminProfile from './components/adminProfile/AdminProfile'; // Import AdminProfile
+
 
 function App() {
   return (
@@ -21,8 +23,9 @@ function App() {
       <Route path='/adminPage' element={<AdminPage/>}/>
       <Route path="/user-management" element={<UserManagement />} />
       <Route path="/course-management" element={<CourseManagement />} />
-      <Route path="/teacher/userprofile/:role/:id" element={<UserProfile role="teacher"/>} />
-     
+      <Route path="/userprofile/:id" element={<UserProfile />} />
+      <Route path="/admin/:id" element={<AdminProfile />} /> {/* Add this route */}
+
       </Routes>
     </Router>
   );

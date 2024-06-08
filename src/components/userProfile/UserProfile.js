@@ -1,23 +1,28 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 // import './UserProfile.css'; // Ensure this path is correct
 
 const UserProfile = () => {
-    const { role, id } = useParams();
+    const { id } = useParams();
     const [user, setUser] = useState(null);
+    //const [teacher, setTeacher] = useState(null);
+    //const [student, setStudent] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    //const navigate = useNavigate();
+    const role = localStorage.getItem('userRole'); // Retrieve role from localStorage
 
     useEffect(() => {
+        
         const fetchUser = async () => {
             try {
                 console.log(`Fetching user data for role: ${role}, id: ${id}`);
                 let response;
                 if (role === 'teacher') {
-                    response = await axios.get(`http://localhost:4000/teacher/${id}`);
+                    response = await axios.get(`http://localhost:4000/Teacher/${id}`);
                 } else if (role === 'student') {
-                    response = await axios.get(`http://localhost:4000/student/${id}`);
+                    response = await axios.get(`http://localhost:4000/Student/${id}`);
                 } else {
                     throw new Error('Invalid role');
                 }
