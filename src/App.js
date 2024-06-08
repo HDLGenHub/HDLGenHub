@@ -23,7 +23,7 @@ function App() {
       <Route path='/adminPage' element={<AdminPage/>}/>
       <Route path="/user-management" element={<UserManagement />} />
       <Route path="/course-management" element={<CourseManagement />} />
-      <Route path="/userprofile/:id" element={<UserProfile />} />
+      <Route path="/:role/userprofile/:id" element={<UserProfile />} />
       <Route path="/admin/:id" element={<AdminProfile />} /> {/* Add this route */}
 
       </Routes>

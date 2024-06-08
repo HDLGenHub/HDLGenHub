@@ -4,14 +4,14 @@ import axios from 'axios';
 // import './UserProfile.css'; // Ensure this path is correct
 
 const UserProfile = () => {
-    const { id } = useParams();
+    const { role,id } = useParams();
     const [user, setUser] = useState(null);
     //const [teacher, setTeacher] = useState(null);
     //const [student, setStudent] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     //const navigate = useNavigate();
-    const role = localStorage.getItem('userRole'); // Retrieve role from localStorage
+   // const role = localStorage.getItem('userRole')||'unknown'; // Retrieve role from localStorage
 
     useEffect(() => {
         
