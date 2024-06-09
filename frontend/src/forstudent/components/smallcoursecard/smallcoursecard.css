@@ -1,19 +1,17 @@
 .student-smallcoursecardmaincontainer{
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
 }
 .student-smallcoursecardcontainer{
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column; 
-    height: 200px;
-    width: 100%;
+    height: 250px;
+    width: 300px;
     padding: 10px;
-    box-shadow: 0px 0px 10px 0px rgb(178, 167, 167);
+    box-shadow: 0px 0px 10px 0px rgb(202, 200, 200);
     transition: transform 0.5s ease-out;
-    transition: transform 0.5s ease-out;
-    border-radius: 15px;
+    border-radius: 20px;
+    margin: 0px 0px 20px 0px;
 }
 .student-smallcoursecardcontainer:hover{
     transform: scale(1.1);
@@ -26,46 +24,31 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    height: 100%;
-}
-.student-smallcoursecardtext{
-    flex: 1;
-    width: 100%;
-    margin: 10px;
-}
-.student-smallcoursecardtext h1{
-    width: 100%;
-    height: 60%;
-    min-height: 40px;
-    display: flex;
-    align-items: center;
-    text-align: start;
-    font-size: 16px;
-    margin: 2px;
-}
-.student-smallcoursecardtext h2{
-    font-size: 100%;
-    width: 100%;
-    height: 40%;
-    font-size: 10px;
-    display: flex;
-    align-items: center;
-    text-align: start;
-    margin: 2px;
-    color: #858585;
+    justify-content: center;
+    justify-items: center;
 }
 .student-smallcoursecardcover{
+    width: 260px;
+    height: 130px;
+    margin: 10px;
+}
+.student-smallcoursecardtext{
+    width: 100%;
+}
+.student-smallcoursecardtext h1{
+    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100px;
-    margin-bottom: 1px;
-    flex: 1;
+    text-align: center;
+}
+.student-smallcoursecardtext h2{
+    font-size: 10px;
+    color: #858585;
 }
 .student-smallcoursecardcontainer button{
     height: 100%;
+    width: 100%;
 }
 .enroll-container{
     display: flex;

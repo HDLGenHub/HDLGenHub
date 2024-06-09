@@ -40,7 +40,7 @@
 .student-coursecardtext h2{
     font-size: 10px;
     margin: 10px;
-    
+    color: #858585;
 }
 @media screen and (max-width:400px) {
     .student-coursecardmaincontainer{
@@ -49,9 +49,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 20px;
-        box-shadow: 0 0 10px 0 black;
-        margin-top: 20px;
     }
     .student-coursecardmaincontainer button{
         padding: 0;
