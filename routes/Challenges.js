@@ -22,15 +22,16 @@ router.get('/:id', async(req, res)=>{
 });
 
 router.post('/', async(req, res)=>{
-    const { name, challenges } = req.body;
-    const challenges = new Challenges(
+    const { name, private, challenges } = req.body;
+    const _challenges = new Challenges(
         {
             name , 
-            challenges
+            challenges,
+            private
         }
     )
     try{
-        const newchallenges = await challenges.save();
+        const newchallenges = await _challenges.save();
         res.status(201).json(newchallenges);
     } catch(error){
         res.status(400).json({message:error.message});

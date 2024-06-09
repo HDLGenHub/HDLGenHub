@@ -10,6 +10,10 @@ const ChallengesSchema = new Schema(
         problem: {
             type: String,
             require: true
+        },
+        private: {
+            type: Boolean,
+            require: true
         }
     }
 )
