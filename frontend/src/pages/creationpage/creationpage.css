@@ -127,3 +127,17 @@
     justify-content: center; 
     gap: 10px; 
 }
+.creationchallengesform label{
+    width: 70%;
+    text-align: center;
+}
+.creationchallengesform input{
+    width: 70%;
+}
+.creationchallengesform button{
+    width: 71%;
+    min-height: 30px;
+    margin-bottom: 10px;
+    background-color: #fa9746;
+    border-style: none;
+}
