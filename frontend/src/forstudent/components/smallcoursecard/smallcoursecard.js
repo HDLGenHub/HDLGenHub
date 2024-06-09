@@ -10,6 +10,7 @@ const Smallcoursecard=(Data)=>{
     const {data} = Data;
     const [student, setStudent] = useState();
     const [enrollmentkey, setEnrollmentkey] = useState();
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
     console.log("Last page: ", data);
 
     useEffect(()=>{
@@ -37,7 +38,7 @@ const Smallcoursecard=(Data)=>{
 
     return(
         <div className='student-smallcoursecardmaincontainer'>
-            <Popup trigger = {
+            <Popup trigger = { 
                 <button className='student-smallcoursecardcontainer'>
                     <div className="student-smallcoursecardpack">
                         <div className='student-smallcoursecardcover'>{data.coverimage?(<Coverimage Image={data.coverimage}/>):null}</div>
@@ -49,11 +50,12 @@ const Smallcoursecard=(Data)=>{
                 </button>
             } modal nested>
             {
-                <div className='enroll-conatiner'>
+                <div className='enroll-container'>
                     <div className='enroll-section'>
-                        <label>Enter the enrollmet key</label>
+                        <label>{data.name}</label>
+                        <h1 class="font-medium">Enrollmet key</h1>
                         <input type='text' onChange={(e)=>setEnrollmentkey(e.target.value)}/>
-                        <button onClick={handleEnroll}>Enroll</button>
+                        <button class='hover:scale-105' onClick={handleEnroll}>Enroll</button>
                     </div>
                 </div>
             }

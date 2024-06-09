@@ -6,32 +6,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    height: 180px;
+    flex-direction: column; 
+    height: 200px;
     width: 100%;
     padding: 10px;
-    box-shadow: 0px 0px 10px 0px black;
+    box-shadow: 0px 0px 10px 0px rgb(178, 167, 167);
     transition: transform 0.5s ease-out;
     transition: transform 0.5s ease-out;
     border-radius: 15px;
 }
 .student-smallcoursecardcontainer:hover{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    height: 180px;
-    box-shadow: 0px 0px 10px 0px #000000;
-    transform: translate(0, -10px);
+    transform: scale(1.1);
 }
 .student-smallcoursecardcontainer:active{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    height: 180px;
-    box-shadow: 0px 0px 10px 0px #000000;
-    transform: translate(0, -100px);
+    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
 }
 .student-smallcoursecardpack{
     width: 100%;
@@ -44,6 +32,7 @@
 .student-smallcoursecardtext{
     flex: 1;
     width: 100%;
+    margin: 10px;
 }
 .student-smallcoursecardtext h1{
     width: 100%;
@@ -53,7 +42,7 @@
     align-items: center;
     text-align: start;
     font-size: 16px;
-    margin: 0;
+    margin: 2px;
 }
 .student-smallcoursecardtext h2{
     font-size: 100%;
@@ -63,7 +52,7 @@
     display: flex;
     align-items: center;
     text-align: start;
-    margin: 0;
+    margin: 2px;
     color: #858585;
 }
 .student-smallcoursecardcover{
@@ -78,35 +67,44 @@
 .student-smallcoursecardcontainer button{
     height: 100%;
 }
-.enroll-conatiner{
+.enroll-container{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    background-color: #e1e1e1;
-    box-shadow: 0 0 10px 0 black;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 0 rgb(193, 193, 193);
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    z-index: 20;
 }
 .enroll-section{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 20px;
     width: 100%;
     padding: 20px;
 }
 .enroll-section label{
     font-weight: 700;
+    margin: 10px;
 }
 .enroll-section input{
-    height: 20px;
+    height: 30px;
     border-radius: 20px;
-    padding-left: 10px;
+    padding: 10px;
+    background-color: rgb(227, 231, 229);
+    margin: 20px 0px 20px 0px;
+    border: 1px solid rgb(179, 184, 181);
 }
 .enroll-section button{
     height: 30px;
     width: 80px;
-    background-color: antiquewhite;
+    background-color: rgb(232, 144, 29);
     border-radius: 20px;
+    border: none;
+    color: white;
 }
