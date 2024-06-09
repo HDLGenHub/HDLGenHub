@@ -10,6 +10,9 @@ import UserManagement from './components/userManagement/UsersManage';
 import CourseManagement from './components/courseManagement/CourseManage';
 import UserProfile from './components/userProfile/UserProfile';
 import AdminProfile from './components/adminProfile/AdminProfile'; // Import AdminProfile
+import Courses from './components/courses/Courses'; // Import AdminProfile
+import CourseEdit from './components/courseEdit/CourseEdit';
+import CourseDelete from './components/courseDelete/CourseDelete';
 
 
 function App() {
@@ -25,6 +28,9 @@ function App() {
       <Route path="/course-management" element={<CourseManagement />} />
       <Route path="/:role/userprofile/:id" element={<UserProfile />} />
       <Route path="/admin/:id" element={<AdminProfile />} /> {/* Add this route */}
+      <Route path="/courses/:id" element={<Courses />} />
+      <Route path="/courseEdit/:id" element={<CourseEdit />} />
+      <Route path="/courseDelete/:id" element={<CourseDelete />} />
 
       </Routes>
     </Router>
