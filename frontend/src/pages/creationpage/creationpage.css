@@ -106,3 +106,24 @@
     background-color: #fa9746;
     border-style: none;
 }
+
+.challenges-creation-container{
+    margin-top: 0%;
+    border-style: groove;
+    display: flex;
+    width: 60%;
+    max-width: 400px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #e1e1e1;
+}
+.creationchallengesform{
+    border-style: groove;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    gap: 10px; 
+}

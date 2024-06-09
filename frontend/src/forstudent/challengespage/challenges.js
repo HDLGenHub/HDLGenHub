@@ -15,7 +15,6 @@ const Challenges=()=>{
             </div>
             <dv className='challenges-page-challenges-container'>
                 <div className='assigned-challenges-container'>
-
                 </div>       
                 <div className='public-challenges-container'>
 
