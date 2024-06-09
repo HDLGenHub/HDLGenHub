@@ -2,43 +2,58 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding: 3% 0 0 0;
+    background-color: bisque;
 }
 .dpandname{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    justify-items: center;
+    background-color: rgb(255, 255, 255);
 }
 .dpcontainer{
     width: 200px;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .dpandname h1{
     text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    margin-top:20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .profileform{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    text-align: left;
+    gap: 20px;
     width: 50%;
     max-width: 400px;
     margin-bottom: 20px;
-    background-color: #e1e1e1;
+    background-color: "bisque";
     padding: 3% 0 3% 0;
-    border-radius: 20px;
-    box-shadow: 0 0 10px 0 black;
 }
 .email{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: left;
     width: 100%;
 }
 .email input{
-    width: 80%;
+    width: 100%;
+    border-radius: 20px;
+    padding: 6px;
+}
+.email label{
+    width: 100%;
+    margin: 5px;
 }
 .registrationnumber{
     display: flex;
@@ -48,7 +63,13 @@
     width: 100%;
 }
 .registrationnumber input{
-    width: 80%;
+    width: 100%;
+    border-radius: 20px;
+    padding: 6px;
+}
+.registrationnumber label{
+    width: 100%;
+    margin: 5px;
 }
 .age{
     display: flex;
@@ -58,6 +79,11 @@
     width: 100%;
 }
 .age input{
+    width: 100%;
+    border-radius: 20px;
+    padding: 6px;
+}
+.age label{
     width: 80%;
 }
 .dpurl{
@@ -68,6 +94,12 @@
     width: 100%;
 }
 .dpurl input{
+    width: 100%;
+    border-radius: 20px;
+    padding: 6px;
+    height: auto;
+}
+.dpurl label{
     width: 80%;
 }
 .gender{
@@ -78,6 +110,11 @@
     width: 100%;
 }
 .gender input{
+    width: 100%;
+    border-radius: 20px;
+    padding: 6px;
+}
+.gender label{
     width: 80%;
 }
 .chatid{
@@ -88,6 +125,11 @@
     width: 100%;
 }
 .chatid input{
+    width: 100%;
+    border-radius: 20px;
+    padding: 6px;
+}
+.chatid label{
     width: 80%;
 }
 .profileform button{
@@ -95,11 +137,19 @@
     height: 24px;
 }
 @media screen and (max-width:600px){
-    .profilecontainer{
+    .main-display{
         display: flex;
-        flex-direction: column;
+        flex-direction:column;
         align-items: center;
         justify-content: center;
+    }
+    .profilecontainer{
+        display: flex;
+        flex-direction: col;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
     }
     .dpandname{
         display: flex;
@@ -109,6 +159,7 @@
     }
     .dpcontainer{
         width: 100px;
+        padding: 0;
     }
     .dpandname h1{
         font-size: 20px;
@@ -119,9 +170,9 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 10px;
+        gap: 20px;
         width: 90%;
-        margin-bottom: 20px;
+        margin: 20px;
         font-size: 10px;
     }
     .email{
