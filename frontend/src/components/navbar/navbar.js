@@ -75,8 +75,8 @@ const Navbar =()=>{
                     </div>
                     <div className="navbarrightcontainer">
                         <ul>
-                            <li className='navbarsignin'><a href='/profile'>Student</a></li>
-                            <li className='navbarsignup'><button onClick={handleLogout}>Logout</button></li>
+                            <li className='w-16 h-7 md:w-20 md:h-9 text-white bg-amber-500 hover:bg-amber-600 text-xs md:font-medium rounded-3xl flex items-center justify-center md:text-sm text-center'><a href='/profile'>Student</a></li>
+                            <li className='w-16 h-7 md:w-20 md:h-9 text-white bg-gray-400 hover:bg-amber-600 text-xs md:font-medium rounded-3xl flex items-center justify-center md:text-sm text-center'><button onClick={handleLogout}>Logout</button></li>
                         </ul>
                     </div>
                 </div>
@@ -91,12 +91,15 @@ const Navbar =()=>{
                             <li><a href='/contact'>Contact</a></li>
                             <li><a href='/about'>About</a></li>
                             <li><a href='/help'>Help</a></li>
+                            <li><a href='/contact'>Contact</a></li>
+                            <li><a href='/about'>About</a></li>
+                            <li><a href='/help'>Help</a></li>
                         </ul>
                     </div>
                     <div className="navbarrightcontainer">
                         <ul>
-                            <li className='navbarsignin'><a href='/signinpage'>Sign In</a></li>
-                            <li className='navbarsignup'><a href='/signuppage'>Sign Up</a></li>
+                            <li className='w-16 h-7 md:w-20 md:h-9 text-white bg-amber-500 hover:bg-amber-600 text-xs md:font-medium rounded-3xl flex items-center justify-center md:text-sm text-center'><a href='/signinpage'>Sign In</a></li>
+                            <li className='w-16 h-7 md:w-20 md:h-9 text-white bg-gray-400 hover:bg-amber-600 text-xs md:font-medium rounded-3xl flex items-center justify-center md:text-sm text-center'><a href='/signuppage'>Sign Up</a></li>
                         </ul>
                     </div>
                 </div>
@@ -109,15 +112,15 @@ const Navbar =()=>{
                 <div className="navbarleftcontainer">
                     <ul>
                         <li className="navbarhometext"><a href='/'><span style={{color:'#fa9746'}}>HDL</span> Gen Hub</a></li>
-                        <li><a href='/conatact'>Contact</a></li>
+                        <li><a href='/contact'>Contact</a></li>
                         <li><a href='/about'>About</a></li>
                         <li><a href='/help'>Help</a></li>
                     </ul>
                 </div>
                 <div className="navbarrightcontainer">
                     <ul>
-                        <li className='navbarsignin'><a href='/signinpage'>Sign In</a></li>
-                        <li className='navbarsignup'><a href='/signuppage'>Sign Up</a></li>
+                        <li className='w-16 h-7 md:w-20 md:h-9 text-white bg-amber-500 hover:bg-amber-600 text-xs md:font-medium rounded-3xl flex items-center justify-center md:text-sm text-center'><a href='/signinpage'>Sign In</a></li>
+                        <li className='w-16 h-7 md:w-20 md:h-9 text-white bg-gray-400 hover:bg-amber-600 text-xs md:font-medium rounded-3xl flex items-center justify-center md:text-sm text-center'><a href='/signuppage'>Sign Up</a></li>
                     </ul>
                 </div>
             </div>

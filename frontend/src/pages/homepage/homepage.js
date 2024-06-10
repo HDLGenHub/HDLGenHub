@@ -1,70 +1,94 @@
-import './homepage.css';
-import HomeImage from '../../images/HomeImage.png';
-import HomeBottom from '../../images/HomeBottom.png'
+
+import homeimage from "../../images/Ico.jpg";
+import notes from "../../images/notes.png";
+import settings from "../../images/settings.png";
+import world from "../../images/world.png";
+import work from "../../images/work.png";
 
 const HomePage =()=>{
     return(
-        <div className="homepagecontainer">
-            <div className='homerow1'>
-                <div className='homerow1left'>
-                    <div className='homerow1left-p'>
-                        <h2><span style={{fontWeight:"800"}}><span style={{color:"#fa9746"}}>HDL</span> Gen Hub</span> for learners</h2><br></br>
-                        <h1>
-                            Fast & easiest<br></br>
-                            way to<br></br>
-                            learn <span style={{color:"#fa9746"}}>HDL</span>
-                        </h1>
-                    </div>
-                </div>
-                <div className='homerow1right'>
-                    <img src={HomeImage}/>
-                </div>
-            </div>
-            <hr className='homesectionbreakline'></hr>
-            <div className='homerow2'>
-                <h1>Exclusive content, exceptional quality</h1>
-                <h2>Unlock the world of HDLs through our immersive e-learning platform. From beginner basics to advanced techniques, dive into digital design at your
-                    own pace. Engage, practice, and connect in a community-driven space designed for mastering hardware description languages.</h2>
-            </div>
-            <div className='homerow3'>
-                <div className='homerow3section'>
-                    <div className='homerow3box'>
-                        <h1>
-                            <span style={{color:"#fa9746", fontSize:"30px", fontWeight:'700'}}>100+</span><br></br>
-                            hours of content to<br></br>
-                            gain knowledge<br></br>
-                            (updating regularly)
-                        </h1>
-                    </div>
-                </div>
-                <div className='homerow3section'>
-                    <div className='homerow3box'>
-                        <h1>
-                            <span style={{color:"#fa9746", fontSize:"30px", fontWeight:'700'}}>10+</span><br></br>
-                            experts from the<br></br>
-                            university with the<br></br>
-                            best guidance
-                        </h1>
-                    </div>
-                </div>
-                <div className='homerow3section'>
-                    <div className='homerow3box'>
-                        <h1>
-                            <span style={{color:"#fa9746", fontSize:"30px", fontWeight:'700'}}>350+</span><br></br>
-                            users to unleash their<br></br>
-                            Potential through E-<br></br>
-                            Learning Excellence
-                        </h1>
-                    </div>
-                </div>
-            </div>
-            <hr className='homesectionbreakline'></hr>
-            <div className='homerow4'>
-                <div className='homerow4items'>
-                    <img src={HomeBottom}></img>
-                </div>
-            </div>
+        <div className="flex flex-col mt-2 bg-white">
+      <div className="flex flex-col md:flex-row items-center pb-0 p-5">
+        <div className="md:w-1/2 text-left md:ml-32 mt-10">
+          <h3 className="font-bold md:text-2xl text-sm md:p-5 p-1">
+            <span style={{ color: "orange" }}>HDL</span> Gen Hub{" "}
+            <span className="font-thin">for learners</span>
+          </h3>
+          <h1 className="font-extrabold lg:text-7xl md:p-3 p-1 text-5xl">
+            Fast & <span style={{ color: "orange" }}>Easiest</span>
+          </h1>
+          <h1 className="font-extrabold lg:text-6xl md:p-3 p-1 text-5xl">
+            Way to Learn
+          </h1>
+          <h1 className="font-extrabold lg:text-7xl md:p-3 p-1 text-5xl">
+            <span style={{ color: "orange" }}>HDL</span>
+          </h1>
         </div>
+        <img
+          src={homeimage}
+          alt="Home"
+          className="lg:h-96 h-52 mt-10 md:mt-0 md:mr-20"
+        />
+      </div>
+      <div className="h-0.5 bg-gray-200"></div>
+      <p className="font-bold text-xl text-center md:m-14 m-10 md:mb-0 md:mt-20 mb-0">
+        Exclusive content, exceptional quality
+      </p>
+      <div className="text-center md:m-10 md:ml-36 md:mr-36 m-5 mb-16">
+        <p className="md:text-base text-gray-500 text-justify">
+          Unlock the world of HDLs through our immersive e-learning platform.
+          From beginner basics to advanced techniques, dive into digital design
+          at your own pace. Engage, practice, and connect in a community-driven
+          space designed for mastering hardware description languages.
+        </p>
+      </div>
+
+      <div className="md:flex md:justify-around md:flex-row flex flex-col gap-16 text-center items-center md:m-20 md:mt-10 mt-0 mb-10">
+        <div className="transform transition duration-300 ease-in-out w-96 h-48 bg-gray-100 rounded-ss-3xl rounded-ee-3xl hover:scale-110 flex justify-center flex-col shadow-lg">
+          <p className="text-3xl font-bold text-amber-500 m-5">100+</p>
+          <p className="md:text-xl sm:text-base font-extralight m-5 mt-0">
+            hours of content to gain knowledge <br />
+            (updating regularly)
+          </p>
+        </div>
+        <div className="transform transition duration-300 ease-in-out w-96 h-48 bg-gray-100 rounded-ss-3xl rounded-ee-3xl hover:scale-110 flex justify-center flex-col shadow-lg">
+          <p className="text-3xl font-bold text-amber-500 m-9 mb-3">100+</p>
+          <p className="md:text-xl sm:text-base font-extralight m-10 mt-0">
+            experts from the university with the best guidance
+          </p>
+        </div>
+        <div className="transform transition duration-300 ease-in-out w-96 h-48 bg-gray-100 rounded-ss-3xl rounded-ee-3xl hover:scale-110 flex justify-center flex-col shadow-lg">
+          <p className="text-3xl sm:text-2xl sm:mb-0 font-bold text-amber-500 m-5 mb-3">350+</p>
+          <p className="md:text-xl sm:text-base font-extralight m-7 mt-0">
+            users unleashing their potential through E-Learning excellence
+          </p>
+        </div>
+      </div>
+      <div></div>
+      <div className="bg-black md:h-80 h-96 md:rounded-ss-3xl md:rounded-t-3xl rounded-ss-2xl rounded-t-2xl mt-10 p-5">
+        <h1 className="text-white md:m-12 m-10 md:text-2xl text-lg font-bold text-center">
+          Job-ready talent, Superior outcomes
+        </h1>
+        <div class="flex text-white justify-around">
+          <div class="md:flex md:w-60 gap-5 w-20 m-2">
+            <img src={notes} alt="note" class="md:w-20 mb-5 md:h-20" />
+            <p>Curriculum co-created with industry leaders</p>
+          </div>
+          <div class="md:flex md:w-60 gap-5 w-20 m-2">
+            <img src={settings} alt="note" class="w-20 mb-5" />
+            <p>Personalized feedback ensures mastery</p>
+          </div>
+          <div class="md:flex md:w-60 gap-5 w-20 m-2">
+            <img src={work} alt="note" class="w-20 mb-5" />
+            <p>Hands-on projects, not step-by-step guides</p>
+          </div>
+          <div class="md:flex md:w-60 gap-5 w-20 m-2">
+            <img src={world} alt="note" class="w-20 mb-5" />
+            <p class="mt-2">10+ highly vetted expert network</p>
+          </div>
+        </div>
+      </div>
+    </div>
     );
 }
 

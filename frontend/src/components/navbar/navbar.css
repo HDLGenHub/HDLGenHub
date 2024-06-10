@@ -52,7 +52,7 @@
 }
 .navbarhometext{
     width: 105px;
-    margin-left: -10px;
+    margin-left: 20px;
     font-weight: 700;
 }
 .navbarsignin{
@@ -130,7 +130,7 @@
     }
     .navbarhometext{
         width: 105px;
-        margin-left: -10px;
+        margin-left: 20px;
         font-weight: 700;
     }
     .navbarsignin{
@@ -172,7 +172,7 @@
     }
     .navbarleftcontainer ul{
         display: flex;
-        gap: 8px;
+        gap: 10px;
         align-items: center;
         justify-content: center;
     }
@@ -189,19 +189,19 @@
     }
     .navbarrightcontainer ul{
         display: flex;
-        gap: 8px;
+        gap: 10px;
     }
     .navbarrightcontainer ul li{
         display: flex;
         font-size: 10px;
     }
     .navbarhometext{
-        width: 65px;
-        margin-left: -30px;
+        width: 90px;
+        margin-left: 20px;
     }
     .navbarsignin{
         background-color: #fa9746;
-        width: 40px;
+        width: 60px;
         height: 20px;
         border-radius: 10px;
         font-size: 8px;
@@ -211,7 +211,7 @@
     }
     .navbarsignup{
         background-color: #e1e1e1;
-        width: 40px;
+        width: 60px;
         height: 20px;
         border-radius: 10px;
         font-size: 8px;
