@@ -25,7 +25,8 @@
     flex: 1;
 }
 .homerow1right img{
-    width: 100%;
+    width: 80%;
+    z-index: -1;
 }
 .homerow1left-p h2{
     padding: 0;
@@ -62,6 +63,7 @@
 }
 .homerow2 h2{
     margin-top: 0px;
+    margin-bottom: 40px;
     text-align: center;
     font-size: 12px;
     width: 90%;
@@ -115,9 +117,11 @@
 @media screen and (max-width:750px){
     .homerow1left-p h2{
         width: 90%;
+        font-size: 80%;
     }
     .homerow1left-p h1{
         width: 90%;
+        font-size: 200%;
     }
     .homerow3{
         display: flex;

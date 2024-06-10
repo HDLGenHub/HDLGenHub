@@ -3,6 +3,7 @@ import { SERVER } from '../../env.js';
 import './signup.css';
 import axios from 'axios';
 import { Hashing } from '../../security/hashing';
+import { useNavigate } from 'react-router';
 
 const Signup =()=>{
     const [gender, setGender] = useState("");
@@ -11,6 +12,7 @@ const Signup =()=>{
     const [lastname, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     const handleSignup =async()=>{
         console.log({gender, role, firstname, lastname, email, password});
@@ -42,11 +44,16 @@ const Signup =()=>{
                 setRole('');
                 setEmail('');
                 setPassword('');
+                navigate('/signinpage');
             } catch{
                 alert("User Registration Failed");
             }
         }
+        else{
+            alert("Please fill all the fields");
+        }
     }
+
     return(
         <div className="signupcontainer">
             <div className='signupheader'>
