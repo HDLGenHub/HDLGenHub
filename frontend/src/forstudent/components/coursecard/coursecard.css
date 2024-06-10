@@ -1,57 +1,46 @@
 .student-coursecardmaincontainer{
-    width: 360px;
-    height: 265px;
+    width: 300px;
+    height: 250px;
     display: flex;
     align-items: center;
-    justify-content: center;
     border-radius: 20px;
-    box-shadow: 0 0 10px 0 black;
-    margin-top: 20px;
+    box-shadow: 0 0 10px 0 rgb(202, 200, 200);
+    margin: 20px 0px 20px 0px;
     transition: transform 0.5s ease-out;
 }
 .student-coursecardmaincontainer:hover{
-    width: 360px;
-    height: 265px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
-    box-shadow: 0 0 20px 0 rgb(0, 0, 0);
-    margin-top: 20px;
-    transform: translate(0, -10px);
+    transform: scale(1.1);
 }
 .student-coursecardmaincontainer button{
     padding: 0;
     width: 100%;
     height: 100%;
-    border-radius: 20px;
 }
 .student-coursecardcontainer{
     width: 95%;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
 }
 .student-coursecardcover{
-    width: 340px;
-    height: 200px;
+    margin: 20px;
+    width: 260px;
+    height: 130px;
 }
 .student-coursecardtext{
     width: 100%;
 }
 .student-coursecardtext h1{
     font-size: 14px;
-    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin: 0;
 }
 .student-coursecardtext h2{
     font-size: 10px;
-    margin: 0;
+    margin: 10px;
+    color: #858585;
 }
 @media screen and (max-width:400px) {
     .student-coursecardmaincontainer{
@@ -60,9 +49,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 20px;
-        box-shadow: 0 0 10px 0 black;
-        margin-top: 20px;
     }
     .student-coursecardmaincontainer button{
         padding: 0;
