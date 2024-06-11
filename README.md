@@ -23,6 +23,6 @@ This is a group project for the Software Group Project module at the Faculty of 
 3. Jayarathne G.U.T.N.C. (EG/2020/3981)
 4. Nethsarani D.W.D. (EG/2020/4096)
 
-###Contribution Statistics
+## Contribution Statistics
 <img src="https://org-stats-widget-server.onrender.com/screenshot/test-2"/>
 
