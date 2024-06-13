@@ -11,9 +11,15 @@ const AdminSchema = new Schema(
             type: String,
             require: true
         },
+        key: {
+            type: String,
+            require: true,
+            default:"12345678"
+        },
         encryptionkey: {
             type: String,
-            require: true
+            require: true,
+            default:"12345678"
         },
         about: {
             type: String,

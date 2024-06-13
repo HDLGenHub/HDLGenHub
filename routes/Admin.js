@@ -22,10 +22,11 @@ router.get('/:id', async(req, res)=>{
 });
 
 router.post('/', async(req, res)=>{
-    const { name, email, encryptionkey, about, password } = req.body;
+    const { name, key, email, encryptionkey, about, password } = req.body;
     const admin = new Admin(
         {
             name , 
+            key,
             email, 
             encryptionkey, 
             about, 
