@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { SERVER } from "../../env.js";
 import "./profilepage.css";
-import { deleteCache, getCache, setCache } from "../../caching/cache";
+import { getCache, setCache } from "../../caching/cache";
 import axios from "axios";
 import Dp from "../../components/dp/dp";
 
@@ -65,7 +65,7 @@ const ProfilePage = () => {
       setGender(user.data.gender);
       setChatid(user.data.chatid);
     }
-  }, []);
+  }, [ user ]);
 
   const handleSave = async () => {
     console.log(name, email, registrationnumber, age, dp, gender, chatid);
