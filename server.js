@@ -54,6 +54,8 @@ app.use('/Code', CodeRouter);
 const AttemptedQuizRouter = require('./routes/AttemptedQuiz');
 app.use('/AttemptedQuiz', AttemptedQuizRouter);
 
+app.use('/uploads', express.static('uploads'));
+
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
