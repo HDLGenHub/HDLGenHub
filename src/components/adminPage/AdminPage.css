@@ -1,63 +1,63 @@
 .home-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url('../../images/background.png'); /* Path to your background image */
-    background-size: cover;
-    background-position: center;
-    position: relative;
-  }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity */
-    z-index: 1;
-  }
-  
-  .content {
-    position: relative;
-    z-index: 2;
-  }
-  
-  .button-container {
-    display: flex;
-    gap: 30px; /* Increased gap between buttons */
-  }
-  
-  .home-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 150px;  /* Increased size */
-    height: 150px; /* Increased size */
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 50%; /* Keeps the button circular */
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .home-button img {
-    width: 60px; /* Increased size */
-    height: 60px; /* Increased size */
-    margin-bottom: 10px;
-    border-radius: 50%; /* Keeps the image circular */
-  }
-  
-  .home-button span {
-    font-size: 16px; /* Increased font size */
-    color: #333;
-  }
-  
-  .home-button:hover {
-    transform: scale(1.05);
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('../../images/background.png'); /* Path to your background image */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity */
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+.button-container {
+  display: flex;
+  gap: 30px; /* Increased gap between buttons */
+}
+
+.home-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 150px;  /* Increased size */
+  height: 150px; /* Increased size */
+  background-color: #eead7c;
+  border: none;
+  border-radius: 20%; /* Keeps the button circular */
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.home-button img {
+  width: 80px; /* Increased size */
+  height: 80px; /* Increased size */
+  border-radius: 50%; /* Keeps the image circular */
+}
+
+.home-button span {
+  font-size: 16px; /* Increased font size */
+  color: #333;
+  margin-top: 10px;
+}
+
+.home-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}

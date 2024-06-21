@@ -59,7 +59,7 @@ const Navbar = () => {
                     <div className="navbarleftcontainer">
                         <ul>
                             <li className="navbarhometext"><a href='/'><span style={{color:'#fa9746'}}>HDL</span> Gen Hub</a></li>
-                            <li><button onClick={handleAdminConsole}>Admin console</button></li>
+                            <li className='navbaradminconsole'><button onClick={handleAdminConsole}>Admin console</button></li>
                         </ul>
                     </div>
                     <div className="navbarrightcontainer">

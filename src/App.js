@@ -1,3 +1,5 @@
+//import React from 'react';
+import './App.css';
 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -13,6 +15,7 @@ import AdminProfile from './components/adminProfile/AdminProfile'; // Import Adm
 import Courses from './components/courses/Courses'; // Import AdminProfile
 import CourseEdit from './components/courseEdit/CourseEdit';
 import CourseDelete from './components/courseDelete/CourseDelete';
+import Footer from './components/footer/Footer';
 
 
 function App() {
@@ -33,6 +36,7 @@ function App() {
       <Route path="/courseDelete/:id" element={<CourseDelete />} />
 
       </Routes>
+        <Footer/>
     </Router>
   );
 }
