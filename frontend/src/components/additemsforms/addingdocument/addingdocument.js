@@ -6,14 +6,14 @@ import axios from 'axios';
 const Addingdocument =()=>{
     const {id} = useParams();
     const [heading, setHeading] = useState();
-    const [description, setDescription] = useState();
+    const [docdescription, setDescription] = useState();
     const [link, setLink] = useState();
     const [document, SetDocument] = useState();
     const [coursecomponent, setCoursecomponent] = useState();
 
     const postItem =async()=>{
         const name = heading;
-        const description = description;
+        const description = docdescription;
         const url = link;
         if(name && description && url){
             const postedresponse = await axios.post(`${SERVER}/Document`, {
