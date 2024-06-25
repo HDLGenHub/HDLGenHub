@@ -4,8 +4,12 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 require('dotenv').config();
 const app = express();
-
-app.use(cors(['*']));
+app.use(cors({
+    origin: ["http://localhost:3000",
+            "http://localhost:3001",
+            "https://drive.google.com/file/d/",
+            "https://hdl-gen-hub-backend.vercel.app/"]
+}));
 app.use(bodyParser.json());
 
 mongoose.connect(process.env.MONGO_URI, {
