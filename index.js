@@ -9,7 +9,9 @@ app.use(cors({
             "http://localhost:3001",
             "https://drive.google.com/file/d/",
             "https://hdl-gen-hub-backend.vercel.app/",
-            "https://hdl-gen-hub-backend.vercel.app"]
+            "https://hdl-gen-hub-backend.vercel.app",
+            "https://hdl-gen-hub-frontend.vercel.app/",
+            "https://hdl-gen-hub-frontend.vercel.app"]
 }));
 app.use(bodyParser.json());
 
