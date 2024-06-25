@@ -8,7 +8,8 @@ app.use(cors({
     origin: ["http://localhost:3000",
             "http://localhost:3001",
             "https://drive.google.com/file/d/",
-            "https://hdl-gen-hub-backend.vercel.app/"]
+            "https://hdl-gen-hub-backend.vercel.app/",
+            "https://hdl-gen-hub-backend.vercel.app"]
 }));
 app.use(bodyParser.json());
 
