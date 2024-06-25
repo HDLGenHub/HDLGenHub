@@ -11,7 +11,10 @@ app.use(cors({
             "https://hdl-gen-hub-backend.vercel.app/",
             "https://hdl-gen-hub-backend.vercel.app",
             "https://hdl-gen-hub-frontend.vercel.app/",
-            "https://hdl-gen-hub-frontend.vercel.app"]
+            "https://hdl-gen-hub-frontend.vercel.app",
+            "https://hdl-gen-hub-frontend.vercel.app/",
+            "https://hdl-gen-hub-frontend.vercel.app"
+        ]
 }));
 app.use(bodyParser.json());
 
