@@ -33,10 +33,6 @@ const CoursePage = () => {
             <div className="coursepagecover">
                 <Coursepagecover />
             </div>
-            <div className="coursepageheading">
-                <h1 className="text-4xl text-white">Courses</h1>
-            </div>
-            
             <div className="coursepagecoursecontainer bg-white">
                 {courses.length > 0 ? (
                     courses.map((course) => (
