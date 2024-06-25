@@ -1,0 +1,13 @@
+.document-adding-container{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    background-color: #e1e1e1;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px 0 black;
+}
+.document-adding-container button{
+    margin-top: 10px;
+    background-color: #fa9746;
+}
