@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './CourseDelete.css'; // Ensure this path is correct
 
 const CourseDelete = () => {
   const { id } = useParams();
@@ -21,10 +22,15 @@ const CourseDelete = () => {
   };
 
   return (
-    <div className="course-delete">
-      <h1>Are you sure you want to delete this course?</h1>
-      <button onClick={handleDelete}>Yes, Delete</button>
-      <button onClick={handleCancel}>No, Cancel</button>
+    <div className="course-delete-container">
+      <div className="course-delete-form">
+        <h1>Confirm Deletion</h1>
+        <p>Are you sure you want to delete this course?</p>
+        <div className="form-actions">
+          <button className="delete-button" onClick={handleDelete}>Yes, Delete</button>
+          <button className="cancel-button" onClick={handleCancel}>No, Cancel</button>
+        </div>
+      </div>
     </div>
   );
 };

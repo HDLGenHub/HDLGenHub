@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-// import './CourseDetail.css';
+import './Courses.css';
 
 const CourseDetail = () => {
   const { id } = useParams();
   const [course, setCourse] = useState(null);
-  const [creator, setCreator] = useState(null); // State for creator
+  const [creator, setCreator] = useState(null); 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [role, setRole] = useState(null); // State for role
+  const [role, setRole] = useState(null); 
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,6 +17,7 @@ const CourseDetail = () => {
     axios.get(`http://localhost:4000/Course/${id}`)
       .then(response => {
         const courseData = response.data;
+        console.log('Course Data:', courseData); // Debug line
         setCourse(courseData);
 
         // Fetch creator's details
@@ -63,13 +64,12 @@ const CourseDetail = () => {
   return (
     <div className="course-detail">
       <h1>{course.name}</h1>
+      <img src={course.coverimage} alt={course.name} className="course-cover-image" />
       <p>{course.description}</p>
-      <p>Created by: {creator ? creator.name : 'Unknown'}</p> {/* Display creator's name */}
-      {/* Add other course details as needed */}
+      <p>Created by: {creator ? creator.name : 'Unknown'}</p>
       
-          <button onClick={handleEditCourse}>Edit</button>
-          <button onClick={handleDeleteCourse}>Delete</button>
-    
+      <button onClick={handleEditCourse}>Edit</button>
+      <button onClick={handleDeleteCourse}>Delete</button>
     </div>
   );
 };

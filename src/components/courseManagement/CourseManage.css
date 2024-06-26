@@ -1,0 +1,76 @@
+/* Container for the entire course management page */
+.course-management {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f9;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Main title for the course management page */
+.course-management h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Section for all courses */
+.course-section {
+    width: 100%;
+    max-width: 800px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Subheading for the course section */
+.course-section h2 {
+    font-size: 24px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Styling the list of courses */
+.course-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Styling individual course items */
+.course-section ul li {
+    background: #f8f8f8;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.3s;
+}
+
+/* Hover effect on course items */
+.course-section ul li:hover {
+    background: #ececec;
+}
+
+/* Link to the course details */
+.course-section ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #007bff;
+}
+
+/* Hover effect on links */
+.course-section ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Adjusting the link and any additional content alignment */
+.course-section ul li a + span {
+    margin-left: 10px;
+    font-size: 16px;
+    color: #555;
+}

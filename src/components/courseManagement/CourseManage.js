@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate
-
+import './CourseManage.css'; // Import the CSS file
+ 
 const CourseManagement = () => {
   const [allCourses, setAllCourses] = useState([]);
   const [error, setError] = useState(null);

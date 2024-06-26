@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-// import './CourseEdit.css'; // Ensure this path is correct
+import './CourseEdit.css'; // Ensure this path is correct
 
 const CourseEdit = () => {
   const { id } = useParams();
   const [course, setCourse] = useState({
     name: '',
     description: '',
-    // Add other fields as needed
+    coverimage: '', // Include coverimage field
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -23,6 +23,7 @@ const CourseEdit = () => {
       .catch(error => {
         console.error('Error fetching course details:', error);
         setError(error);
+        setLoading(false);
       });
   }, [id]);
 
@@ -49,10 +50,10 @@ const CourseEdit = () => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div className="course-edit">
+    <div className="course-edit-container">
       <h1>Edit Course</h1>
-      <form>
-        <div>
+      <form className="course-edit-form">
+        <div className="form-group">
           <label htmlFor="name">Course Name:</label>
           <input
             type="text"
@@ -60,19 +61,33 @@ const CourseEdit = () => {
             name="name"
             value={course.name}
             onChange={handleChange}
+            required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="description">Description:</label>
           <textarea
             id="description"
             name="description"
             value={course.description}
             onChange={handleChange}
+            required
           />
         </div>
-        {/* Add other fields as needed */}
-        <button type="button" onClick={handleSave}>Save</button>
+        <div className="form-group">
+          <label htmlFor="coverimage">Cover Image URL:</label>
+          <input
+            type="text"
+            id="coverimage"
+            name="coverimage"
+            value={course.coverimage}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-actions">
+          <button type="button" onClick={handleSave}>Save</button>
+        </div>
       </form>
     </div>
   );

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-// import './UserProfile.css'; // Ensure this path is correct
+import './UserProfile.css'; // Ensure this path is correct
 
 const UserProfile = () => {
     const { role, id } = useParams();
@@ -22,14 +22,12 @@ const UserProfile = () => {
                 } else {
                     throw new Error('Invalid role');
                 }
-                console.log('API response:', response.data);
                 setUser(response.data);
             } catch (error) {
                 console.error('Error fetching user data:', error);
                 setError(error);
             } finally {
                 setLoading(false);
-                console.log("Loading state set to false");
             }
         };
 
@@ -79,7 +77,7 @@ const UserProfile = () => {
                         <ul>
                             {courses.map(course => (
                                 <li key={course._id}>
-                                    <img src={course.coverimage} alt={course.name} style={{ width: '50px', height: '50px' }} />
+                                    <img src={course.coverimage || 'defaultImage.jpg'} alt={course.name} style={{ width: '50px', height: '50px' }} />
                                     {course.name}
                                 </li>
                             ))}
@@ -93,8 +91,8 @@ const UserProfile = () => {
                         <ul>
                             {courses.map(course => (
                                 <li key={course._id}>
-                                    <img src={course.coverimage} alt={course.name} style={{ width: '50px', height: '50px' }} />
-                                    {course.name}
+                                    <img src={course?.coverimage || 'defaultImage.jpg'} alt={course?.name} style={{ width: '50px', height: '50px' }} />
+                                    {course?.name}
                                 </li>
                             ))}
                         </ul>
