@@ -66,14 +66,19 @@ router.get('/enrolledcourses/:courseid', async (req, res)=>{
         res.status(400).json({message:error.message});
     }
 })
-router.get('/student/:studentid', async (req, res)=>{
+router.get('/student/:studentid', async (req, res) => {
     const studentid = req.params.studentid;
-    console.log(studentid);
-    try{
-        const response = await EnrolledCourse.find({"enrolledby":studentid});
-        res.status(201).json(response);
-    } catch(error){
-        res.status(400).json({message:error.message});
+    try {
+        // Fetch enrolled courses with course details
+        const enrolledCourses = await EnrolledCourse.find({ enrolledby: studentid })
+            .populate({
+                path: 'courseid',
+                select: 'name coverimage' // Ensure you're selecting the necessary fields
+            });
+        res.status(200).json(enrolledCourses);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
     }
-})
+});
+
 module.exports = router;
