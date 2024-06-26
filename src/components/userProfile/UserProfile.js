@@ -1,20 +1,16 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 // import './UserProfile.css'; // Ensure this path is correct
 
 const UserProfile = () => {
-    const { role,id } = useParams();
+    const { role, id } = useParams();
     const [user, setUser] = useState(null);
-    //const [teacher, setTeacher] = useState(null);
-    //const [student, setStudent] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    //const navigate = useNavigate();
-   // const role = localStorage.getItem('userRole')||'unknown'; // Retrieve role from localStorage
+    const [courses, setCourses] = useState([]);
 
     useEffect(() => {
-        
         const fetchUser = async () => {
             try {
                 console.log(`Fetching user data for role: ${role}, id: ${id}`);
@@ -37,7 +33,25 @@ const UserProfile = () => {
             }
         };
 
+        const fetchCourses = async () => {
+            try {
+                if (role === 'teacher') {
+                    const response = await axios.get(`http://localhost:4000/Course/courses/${id}`);
+                    setCourses(response.data);
+                } else if (role === 'student') {
+                    const response = await axios.get(`http://localhost:4000/Enrolledcourse/student/${id}`);
+                    // Extracting course details from response
+                    const enrolledCourses = response.data.map(enrolled => enrolled.courseid);
+                    setCourses(enrolledCourses);
+                }
+            } catch (error) {
+                console.error('Error fetching courses:', error);
+                setError(error);
+            }
+        };
+
         fetchUser();
+        fetchCourses();
     }, [role, id]);
 
     if (loading) {
@@ -55,33 +69,37 @@ const UserProfile = () => {
     return (
         <div className="userProfileContainer">
             <div className="userProfile">
-                <img src={user.profileImage} alt={`${user.name}'s profile`} />
+                <img src={user.dp} alt={`${user.name}'s profile`} />
                 <h1>Name: {user.name}</h1>
                 <p>Email: {user.email}</p>
-                
-                {role === 'teacher' && user.courses && (
+
+                {role === 'teacher' && courses.length > 0 && (
                     <div>
                         <h2>Created Courses</h2>
                         <ul>
-                            {user.courses.map(course => (
-                                <li key={course._id}>{course.name}</li>
+                            {courses.map(course => (
+                                <li key={course._id}>
+                                    <img src={course.coverimage} alt={course.name} style={{ width: '50px', height: '50px' }} />
+                                    {course.name}
+                                </li>
                             ))}
                         </ul>
                     </div>
                 )}
 
-                {role === 'student' && user.enrolledCourses && (
+                {role === 'student' && courses.length > 0 && (
                     <div>
                         <h2>Enrolled Courses</h2>
                         <ul>
-                            {user.enrolledCourses.map(course => (
-                                <li key={course._id}>{course.name}</li>
+                            {courses.map(course => (
+                                <li key={course._id}>
+                                    <img src={course.coverimage} alt={course.name} style={{ width: '50px', height: '50px' }} />
+                                    {course.name}
+                                </li>
                             ))}
                         </ul>
                     </div>
                 )}
-
-                {/* Add other user details as needed */}
             </div>
         </div>
     );
