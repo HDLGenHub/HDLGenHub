@@ -1,117 +1,382 @@
-.navbarcontainer {
-    z-index: 10;
+.navbarcontainer{
+    z-index: 1;
     min-height: 60px;
     display: flex;
     justify-content: space-between;
     box-shadow: 0px 0px 5px 1px #e1e1e1;
     font-weight: 500;
-    background-color: #fff;
-    padding: 0 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
 }
-
-.navbarcontainer a {
+.navbarcontainer a{
     text-decoration: none;
-    color: inherit;
 }
-
-.navbarleftcontainer,
-.navbarrightcontainer {
+.navbarleftcontainer{
     display: flex;
+    float: left;
     align-items: center;
+    justify-content: center;
 }
-
-.navbarleftcontainer ul,
-.navbarrightcontainer ul {
+.navbarleftcontainer ul{
     display: flex;
     gap: 30px;
     align-items: center;
     justify-content: center;
 }
-
-.navbarleftcontainer ul li,
-.navbarrightcontainer ul li {
+.navbarleftcontainer ul li{
     display: flex;
 }
-.navbarcontainer ul li :hover{
-    color: #fa9746;
-    padding: 5px 0px;
-    border-bottom: 2px solid #fa9746;
-}
-.navbarhometext {
-    margin-left: 20px;
-    font-weight: 700;
-}
-
-.navbarsignup a,
-.navbarsignin a {
+.navbarsignup button{
     background-color: transparent;
     border-style: none;
     font-size: 12px;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    text-align: center;
-    color: white;
 }
-
-.navbarsignin a {
+.navbarsignup button:hover{
+    color: red;
+}
+.navbarsignup button:active{
+    color: purple;
+}
+.navbarrightcontainer{
+    display: flex;
+    float: right;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+}
+.navbarrightcontainer ul{
+    display: flex;
+    gap: 30px;
+}
+.navbarrightcontainer ul li{
+    display: flex;
+}
+.navbarhometext{
+    width: 105px;
+    margin-left: 20px;
+    font-weight: 700;
+}
+.navbarsignin{
     background-color: #fa9746;
+    width: 80px;
+    height: 30px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-.navbarsignup a {
-    background-color: #918d8d;
+.navbarsignup{
+    background-color: #e1e1e1;
+    width: 80px;
+    height: 30px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-
-@media screen and (max-width: 800px) {
-    .navbarleftcontainer ul,
-    .navbarrightcontainer ul {
+@media screen and (max-width: 800px){
+    .navbarcontainer{
+        z-index: 1;
+        min-height: 60px;
+        display: flex;
+        justify-content: space-between;
+        box-shadow: 0px 0px 5px 1px #e1e1e1;
+        font-weight: 500;
+    }
+    .navbarcontainer a{
+        text-decoration: none;
+    }
+    .navbarleftcontainer{
+        display: flex;
+        float: left;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbarleftcontainer ul{
+        display: flex;
         gap: 20px;
+        align-items: center;
+        justify-content: center;
         font-size: 14px;
     }
+    .navbarleftcontainer ul li{
+        display: flex;
+    }
+    .navbarsignup button{
+        background-color: transparent;
+        border-style: none;
+        font-size: 12px;
+    }
+    .navbarsignup button:hover{
+        color: red;
+    }
+    .navbarsignup button:active{
+        color: purple;
+    }
+    .navbarrightcontainer{
+        display: flex;
+        float: right;
+        align-items: center;
+        justify-content: center;
+        margin-right: 30px;
+    }
+    .navbarrightcontainer ul{
+        display: flex;
+        gap: 10px;
+    }
+    .navbarrightcontainer ul li{
+        display: flex;
+    }
+    .navbarhometext{
+        width: 105px;
+        margin-left: 20px;
+        font-weight: 700;
+    }
+    .navbarsignin{
+        background-color: #fa9746;
+        width: 80px;
+        height: 30px;
+        border-radius: 20px;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbarsignup{
+        background-color: #e1e1e1;
+        width: 80px;
+        height: 30px;
+        border-radius: 20px;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
-@media screen and (max-width: 600px) {
-    .navbarleftcontainer ul,
-    .navbarrightcontainer ul {
-        gap: 10px;
+@media screen and (max-width: 600px){
+    .navbarsignup button{
         font-size: 10px;
     }
-}
-
-@media screen and (max-width: 380px) {
-    .navbarcontainer {
-        flex-direction: column;
-    }
-    .navbarleftcontainer ul,
-    .navbarrightcontainer ul {
-        gap: 5%;
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media screen and (max-width: 200px) {
-    .navbarcontainer {
+    .navbarcontainer{
         min-height: 40px;
+        display: flex;
+        justify-content: space-between;
     }
-    .navbarleftcontainer ul,
-    .navbarrightcontainer ul {
-        gap: 2%;
-        flex-direction: column;
+    .navbarleftcontainer{
+        display: flex;
+        float: left;
         align-items: center;
+        justify-content: center;
+    }
+    .navbarleftcontainer ul{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbarleftcontainer ul li{
+        display: flex;
+        font-size: 10px;
+    }
+    .navbarrightcontainer{
+        display: flex;
+        float: right;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+    }
+    .navbarrightcontainer ul{
+        display: flex;
+        gap: 10px;
+    }
+    .navbarrightcontainer ul li{
+        display: flex;
+        font-size: 10px;
+    }
+    .navbarhometext{
+        width: 90px;
+        margin-left: 20px;
+    }
+    .navbarsignin{
+        background-color: #fa9746;
+        width: 60px;
+        height: 20px;
+        border-radius: 10px;
+        font-size: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbarsignup{
+        background-color: #e1e1e1;
+        width: 60px;
+        height: 20px;
+        border-radius: 10px;
+        font-size: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
-.navbarleftcontainer ul li.active-tab {
-    color: #fa9746;
-    padding: 5px 10px;
-    border-bottom: 2px solid #fa9746;
+@media screen and (max-width: 380px){
+    .navbarsignup button{
+        font-size: 10px;
+    }
+    .navbarcontainer{
+        min-height: 40px;
+        display: flex;
+        flex-direction: row;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .navbarleftcontainer{
+        display: flex;
+        float: none;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbarleftcontainer ul{
+        display: flex;
+        gap: 1%;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-left: -30px;
+    }
+    .navbarleftcontainer ul li{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        margin-right: 5%;
+    }
+    .navbarrightcontainer{
+        display: flex;
+        float: right;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0px;
+    }
+    .navbarrightcontainer ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10%;
+        width: 100%;
+        margin-left: -30px;
+    }
+    .navbarrightcontainer ul li{
+        display: flex;
+        font-size: 10px;
+    }
+    .navbarhometext{
+        width: 52px;
+        margin-left: 0px;
+    }
+    .navbarsignin{
+        background-color: #fa9746;
+        width: 40px;
+        height: 20px;
+        border-radius: 10px;
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbarsignup{
+        background-color: #e1e1e1;
+        width: 40px;
+        height: 20px;
+        border-radius: 10px;
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
-.navbarleftcontainer ul li.active-tab:hover {
-    color: #fa9746;
-    padding: 0px 10px;
-    border-bottom: 0px solid #fa9746;
+@media screen and (max-width: 200px){
+    .navbarsignup button{
+        font-size: 8px;
+    }
+    .navbarcontainer{
+        min-height: 40px;
+        display: flex;
+        flex-direction: row;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .navbarleftcontainer{
+        display: flex;
+        float: none;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+
+        border-style: groove;
+    }
+    .navbarleftcontainer ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-left: -30px;
+        border-style: groove;
+    }
+    .navbarleftcontainer ul li{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 8px;
+        margin-right: 5%;
+        margin-bottom: 10px;
+    }
+    .navbarrightcontainer{
+        display: flex;
+        float: right;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0px;
+    }
+    .navbarrightcontainer ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10%;
+        width: 100%;
+        margin-left: -30px;
+    }
+    .navbarrightcontainer ul li{
+        display: flex;
+        font-size: 8px;
+    }
+    .navbarhometext{
+        width: 52px;
+        margin-left: 0px;
+    }
+    .navbarsignin{
+        background-color: #fa9746;
+        width: 40px;
+        height: 20px;
+        border-radius: 10px;
+        font-size: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbarsignup{
+        background-color: #e1e1e1;
+        width: 40px;
+        height: 20px;
+        border-radius: 10px;
+        font-size: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
