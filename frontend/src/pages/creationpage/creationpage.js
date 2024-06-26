@@ -175,7 +175,7 @@ const CreationPage =()=>{
             </div>
 
             <div className='challenges-creation-container'>
-                <h1>Course Creation</h1>
+                <h1>Challenge Creation</h1>
                 <div className='creationchallengesform'>
                     <label>Challenge Heading</label>
                     <input alt='name' value={name} onChange={(e)=>setQuizheading(e.target.value)} type='text'></input>
@@ -183,14 +183,10 @@ const CreationPage =()=>{
                     <input alt='description' value={description} onChange={(e)=>setDescription(e.target.value)} className='creationchallengeform-description' type='text'></input>
                     <label>Is Challenge Private</label>
                     <div className='challenges-radio'>
-                        <div>
                             <label>Yes</label>
                             <input name='bool' type='radio'/>
-                        </div>
-                        <div>
                             <label>No</label>
                             <input name='bool' type='radio'/>
-                        </div>
                     </div>
                     <button onClick={postCourse}>Create Course</button>
                 </div>
