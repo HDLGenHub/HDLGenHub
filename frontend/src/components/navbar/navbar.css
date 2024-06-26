@@ -39,8 +39,6 @@
     color: #fa9746;
     padding: 5px 0px;
     border-bottom: 2px solid #fa9746;
-    transition: ease-in-out;
-    
 }
 .navbarhometext {
     margin-left: 20px;
@@ -56,13 +54,6 @@
     border-radius: 20px;
     text-align: center;
     color: white;
-}
-
-.navbarsignup a:hover,
-.navbarsignin a:hover {
-    background-color: rgb(201, 94, 12);
-    border-bottom: none;
-    transition: none;
 }
 
 .navbarsignin a {
@@ -114,12 +105,12 @@
     }
 }
 
-.active-tab {
+.navbarleftcontainer ul li.active-tab {
     color: #fa9746;
     padding: 5px 10px;
     border-bottom: 2px solid #fa9746;
 }
-.active-tab:hover {
+.navbarleftcontainer ul li.active-tab:hover {
     color: #fa9746;
     padding: 0px 10px;
     border-bottom: 0px solid #fa9746;
