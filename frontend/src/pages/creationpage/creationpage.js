@@ -32,7 +32,7 @@ const CreationPage =()=>{
 
     const postCourse=async()=>{
         if(name && coverimage && description){
-            const res = await axios.post(`${SERVER}/Course/`, {
+            const res = await axios.post(${SERVER}/Course/, {
                 name,
                 coverimage,
                 description,
@@ -52,7 +52,7 @@ const CreationPage =()=>{
             const name = quizheading;
             const description = quizdescription;
             try{
-                const resquiz = await axios.post(`${SERVER}/Quiz/`,{
+                const resquiz = await axios.post(${SERVER}/Quiz/,{
                     name,
                     description                    
                 })
@@ -63,7 +63,7 @@ const CreationPage =()=>{
                 const image = questionimage;
                 const answer = correctanswer;
                 try{
-                    const resquestion = await axios.post(`${SERVER}/Question/`,{
+                    const resquestion = await axios.post(${SERVER}/Question/,{
                         quizid,
                         problem,
                         image,
@@ -88,7 +88,7 @@ const CreationPage =()=>{
             const image = questionimage;
             const answer = correctanswer;
             try{
-                const resquestion = await axios.post(`${SERVER}/Question/`,{
+                const resquestion = await axios.post(${SERVER}/Question/,{
                     quizid,
                     problem,
                     image,
@@ -111,7 +111,7 @@ const CreationPage =()=>{
         console.log(newquizid);
         const teacherid = teacher._id;
         try{
-            const resquiz = await axios.put(`${SERVER}/Quiz/${newquizid}`,{
+            const resquiz = await axios.put(${SERVER}/Quiz/${newquizid},{
                 teacherid                   
             })
             console.log(resquiz);
@@ -129,7 +129,7 @@ const CreationPage =()=>{
                 <h1>Course Creation</h1>
                 <div className='creationcourseform'>
                     <label>Course Heading</label>
-                    <input alt='name' value={name} onChange={(e)=>setQuizheading(e.target.value)} type='text'></input>
+                    <input alt='name' value={name} onChange={(e)=>setName(e.target.value)} type='text'></input>
                     <label>Cover Image Url</label>
                     <input alt='coverimage' value={coverimage} onChange={(e)=>setCoverimage(e.target.value)} type='text'></input>
                     <label >Course Description</label>
@@ -174,8 +174,8 @@ const CreationPage =()=>{
                 </div>
             </div>
 
-            <div className='challenges-creation-container'>
-                <h1>Challenge Creation</h1>
+            {/*<div className='challenges-creation-container'>
+                <h1>Course Creation</h1>
                 <div className='creationchallengesform'>
                     <label>Challenge Heading</label>
                     <input alt='name' value={name} onChange={(e)=>setQuizheading(e.target.value)} type='text'></input>
@@ -183,14 +183,18 @@ const CreationPage =()=>{
                     <input alt='description' value={description} onChange={(e)=>setDescription(e.target.value)} className='creationchallengeform-description' type='text'></input>
                     <label>Is Challenge Private</label>
                     <div className='challenges-radio'>
+                        <div>
                             <label>Yes</label>
                             <input name='bool' type='radio'/>
+                        </div>
+                        <div>
                             <label>No</label>
                             <input name='bool' type='radio'/>
+                        </div>
                     </div>
                     <button onClick={postCourse}>Create Course</button>
                 </div>
-            </div>
+            </div>*/}
         </div>
     )
 }
