@@ -14,30 +14,21 @@ const Signup =()=>{
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
-    const handleSignup =async()=>{
-        console.log({gender, role, firstname, lastname, email, password});
-        if(gender && role && firstname && lastname && email && password){
-            const name = firstname+" "+lastname;
-            var res;
-            try{
-                if(role==="Student"){
-                    res = await axios.post(`${SERVER}/Student`, {
-                        name,
-                        email,
-                        gender,
-                        password
-                    });
-                }
-                else{
-                    res = await axios.post(`${SERVER}/Teacher`, {
-                        name,
-                        email,
-                        gender,
-                        password
-                    });
-                }
+    const handleSignup = async () => {
+        console.log({ gender, role, firstname, lastname, email, password });
+        if (gender && role && firstname && lastname && email && password) {
+            const name = firstname + " " + lastname;
+            try {
+                const res = await axios.post(`${SERVER}/signup`, {
+                    name,
+                    email,
+                    gender,
+                    password,
+                    role
+                });
+    
                 console.log(res);
-                alert("User Registered Succussfuly");
+                alert("User Registered Successfully");
                 setFirstName('');
                 setLastName('');
                 setGender('');
@@ -45,14 +36,17 @@ const Signup =()=>{
                 setEmail('');
                 setPassword('');
                 navigate('/signinpage');
-            } catch{
-                alert("User Registration Failed");
+            } catch (error) {
+                if (error.response && error.response.status === 400) {
+                    alert(error.response.data.message);
+                } else {
+                    alert("User Registration Failed");
+                }
             }
-        }
-        else{
+        } else {
             alert("Please fill all the fields");
         }
-    }
+    };
 
     return(
         <div className="signupcontainer">
